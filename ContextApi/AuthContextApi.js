@@ -7,39 +7,32 @@ import React, {
 } from "react";
 
 export const AuthContext = createContext();
-import { createNewUser, verifyOtp, loginAccount } from "../Actions/authAction";
+import {
+  createNewUser,
+  verifyOtp,
+  loginAccount,
+  forgotePasswordURL,
+  resetPassword,
+} from "../Actions/authAction";
+
+import {
+  genericDataHandler,
+  genericDataAndSlugHandler,
+} from "../Utils/generichandler/generichandler";
 
 export default function AuthContextApiProvider({ children }) {
   const [loading, setloading] = useState(false);
 
-  const handelCreateNewUser = async (data) => {
-    try {
-      const response = await createNewUser(data);
-      return response;
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handelverifyOtp = async (data, UrlToken) => {
-    try {
-      console.log(data);
-      const response = await verifyOtp(data, UrlToken);
-      return response;
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handelLogin = async (data) => {
-    try {
-      console.log(data);
-      const response = await loginAccount(data);
-      return response;
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // LOGIN
+  const handelLogin = genericDataHandler(loginAccount);
+  // SING UP
+  const handelCreateNewUser = genericDataHandler(createNewUser);
+  // FORGOTE PASSWORD
+  const handelforgotePasswordURL = genericDataHandler(forgotePasswordURL);
+  // VERIFY OTP
+  const handelverifyOtp = genericDataAndSlugHandler(verifyOtp);
+  // RESET PASSWORD
+  const handelResetPasword = genericDataAndSlugHandler(resetPassword);
 
   return (
     <AuthContext.Provider
@@ -47,6 +40,8 @@ export default function AuthContextApiProvider({ children }) {
         handelCreateNewUser,
         handelverifyOtp,
         handelLogin,
+        handelforgotePasswordURL,
+        handelResetPasword,
         loading,
         setloading,
       }}

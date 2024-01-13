@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import AuthLayout from "../../../Layouts/AuthLayOut/AuthLayout";
 import AuthFormUi from "../../../components/AuthComponents/AuthFormUi";
 import { forgotePasswordInputs } from "../../../JsonData/authFormFiled";
+import { AuthContext } from "../../../ContextApi/AuthContextApi";
 
 export default function ForgotpasswordPage() {
-  const onFormSubmit = (data, handleForm) => {
-    // Your default submission action
-    alert(JSON.stringify(data));
-  };
+  const { handelforgotePasswordURL } = useContext(AuthContext);
   return (
     <>
       <AuthLayout>
@@ -17,7 +15,7 @@ export default function ForgotpasswordPage() {
           formType="Forgotpassword"
           formdescreption="Enter you E-mail for Re-sent Your Password"
           customInputs={forgotePasswordInputs}
-          handleFormSubmit={onFormSubmit}
+          handleFormSubmit={handelforgotePasswordURL}
         />
       </AuthLayout>
     </>

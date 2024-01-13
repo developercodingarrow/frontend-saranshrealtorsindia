@@ -83,3 +83,18 @@ export const verifyOtp = async (requestData, verifyToken) => {
   const method = "post";
   return performAPIAction(method, url, requestData);
 };
+
+// API FOR forgotePasswordURL TO SEND EMAIL
+export const forgotePasswordURL = async (requestData) => {
+  const url =
+    "http://localhost:8000/api/v1/saranshrealtorsindia/user/forgot-password";
+  const method = "post";
+  return performAPIAction(method, url, requestData);
+};
+
+// API FOR OTP RESETPASSWORD
+export const resetPassword = async (requestData, verifyToken) => {
+  const url = `http://localhost:8000/api/v1/saranshrealtorsindia/user/reset-password/${verifyToken}`;
+  const method = "post";
+  return performAPIAction(method, url, requestData);
+};

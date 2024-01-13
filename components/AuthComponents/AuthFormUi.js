@@ -43,7 +43,7 @@ export default function AuthFormUi(props) {
         ? await handleFormSubmit(data, verifyToken)
         : await handleFormSubmit(data);
       console.log(result);
-
+      setloading(false);
       if (result.data.apiFor === "register") {
         router.push(`/userauth/verify-otp/${result.data.UrlToken}`);
         setloading(false);
@@ -57,8 +57,12 @@ export default function AuthFormUi(props) {
       }
 
       if (result.data.apiFor === "forgatePassword") {
-        router.push(`/userauth/forgot-password/${result.data.resetToken}`);
+        console.log(result);
         setloading(false);
+      }
+
+      if (result.data.status === "Error" || result.data.status === "Fails") {
+        toast.error(result.data.message);
       }
     } catch (error) {
       setloading(false);

@@ -6,6 +6,10 @@
   font-family: var(--bs-font-family);
   width: 100%;
   border: 1px solid var(--ts-primary);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .primaryBtnColor {

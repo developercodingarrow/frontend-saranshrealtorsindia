@@ -5,7 +5,7 @@ import { resetpasswordInputs } from "../../../JsonData/authFormFiled";
 import { AuthContext } from "../../../ContextApi/AuthContextApi";
 
 export default function ResetPasswordPage() {
-  const { handelverifyOtp } = useContext(AuthContext);
+  const { handelResetPasword } = useContext(AuthContext);
 
   return (
     <>
@@ -16,7 +16,7 @@ export default function ResetPasswordPage() {
           formType="RESETPASSWORD"
           formdescreption="Enter you NEW PASSWORD"
           customInputs={resetpasswordInputs}
-          handleFormSubmit={handelverifyOtp}
+          handleFormSubmit={handelResetPasword}
         />
       </AuthLayout>
     </>
