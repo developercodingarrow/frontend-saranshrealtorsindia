@@ -56,9 +56,9 @@
 
 /* Styles for the inner dot */
 .innerDot {
-  width: var(--ts-radio-dot-size-10);
-  height: var(--ts-radio-dot-size-10);
-  border-radius: var(--ts-border-radius-50);
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
   background-color: transparent;
   transition: background-color 0.3s ease-in-out;
 }
@@ -71,8 +71,8 @@
 /* Styles for the selected outer circle */
 .outerCircle.selected {
   border-color: var(--ts-primary);
-  width: var(--ts-radio-circle-size-20);
-  height: var(--ts-radio-circle-size-20);
+  width: 20px;
+  height: 20px;
   padding: 0px;
   display: flex;
   align-items: center;

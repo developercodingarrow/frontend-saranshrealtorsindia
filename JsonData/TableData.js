@@ -57,3 +57,43 @@ export const CitysampleData = [
     date: "2023-12-26",
   },
 ];
+
+export const developerDataColoum = [
+  { label: "S No", key: "_id", component: "number" },
+  { label: "Date", key: "date", component: "text" },
+  { label: "Developer Name", key: "developerName", component: "text" },
+  { label: "View", key: "slug", component: "view" },
+];
+
+export const developersampleData = [
+  {
+    _id: "1",
+    date: "2023-12-20",
+    developerName: "Godrej",
+    slug: "/",
+  },
+  {
+    _id: "2",
+    slug: "/",
+    developerName: "Signature",
+    date: "2023-12-21",
+  },
+  {
+    _id: "3",
+    date: "2023-12-22",
+    developerName: "DLF",
+    slug: "/",
+  },
+  {
+    _id: "4",
+    slug: "/",
+    developerName: "GLS",
+    date: "2023-12-23",
+  },
+  {
+    _id: "5",
+    slug: "/",
+    developerName: "Sun City",
+    date: "2023-12-24",
+  },
+];

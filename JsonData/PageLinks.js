@@ -7,25 +7,19 @@ export const asidebarOptions = [
     link: "/super-admin",
   },
   {
-    name: "TEST COMPONENT",
+    name: "ADD PROJECT",
     iconComponent: AiOutlineDashboard, // Use the imported component
-    link: "/super-admin",
+    link: "/super-admin/create-project",
   },
   {
-    name: "Profile Update",
+    name: "CITY PAGE",
     iconComponent: AiOutlineDashboard, // Use the imported component
-    link: "/super-admin",
+    link: "/super-admin/cities",
   },
   {
-    name: "Dynimc Table",
+    name: "DEVELOPER",
     iconComponent: AiOutlineDashboard, // Use the imported component
-    link: "/super-admin",
-  },
-
-  {
-    name: "Test Dynimic Form Filed",
-    iconComponent: AiOutlineDashboard, // Use the imported component
-    link: "/super-admin",
+    link: "/super-admin/developer",
   },
 ];
 

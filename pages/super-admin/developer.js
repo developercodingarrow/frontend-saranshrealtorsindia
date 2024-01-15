@@ -1,25 +1,28 @@
 import React from "react";
 import DashboardLayout from "../../Layouts/DashBoardLayout/DashboardLayout";
 import TwoCloumTableForm from "../../Layouts/TwoColumLayout/TwoCloumTableForm";
-import { CreatecitysFileds, CityDetailsApi } from "../../JsonData/formFileds";
 import {
-  cityDataColoum,
-  CitysampleData,
+  CreateDeveloeprFileds,
+  DeveloperDetailsApi,
+} from "../../JsonData/formFileds";
+import {
+  developerDataColoum,
+  developersampleData,
   SuperAdminColum,
 } from "../../JsonData/TableData";
 
-export default function SuperAdminDashBoardPage() {
+export default function DeveloperPage() {
   return (
     <DashboardLayout>
       <TwoCloumTableForm
-        pageTitle="City Page"
-        tableTitle="City List"
-        formTitle="CREATE CITY"
-        formFields={CreatecitysFileds}
-        apiData={CityDetailsApi}
+        pageTitle="DEVELOPER Page"
+        tableTitle="DEVELOPER List"
+        formTitle="CREATE DEVELOPER"
+        formFields={CreateDeveloeprFileds}
+        apiData={DeveloperDetailsApi}
         forAction="submit"
-        tableColumn={cityDataColoum}
-        tableData={CitysampleData}
+        tableColumn={developerDataColoum}
+        tableData={developersampleData}
         SuperAdminColum={SuperAdminColum}
       >
         <p>Table</p>

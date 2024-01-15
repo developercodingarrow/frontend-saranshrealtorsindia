@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./css/checkBoxElement.module.css";
 
 export default function CheckBoxElement(props) {
   const {
+    inputLabel,
     onChange,
     checkBoxOptions,
     defaultValue,
@@ -31,7 +32,7 @@ export default function CheckBoxElement(props) {
     <div className={styles.main_Container}>
       <div className={styles[checkBoxStyle]}>
         <div className={styles.title_box}>
-          <p>service</p>
+          <p>{inputLabel}</p>
         </div>
 
         <div className={styles[checkBoxContainerStyle]}>

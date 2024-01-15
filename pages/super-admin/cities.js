@@ -8,7 +8,7 @@ import {
   SuperAdminColum,
 } from "../../JsonData/TableData";
 
-export default function SuperAdminDashBoardPage() {
+export default function CitiesPage() {
   return (
     <DashboardLayout>
       <TwoCloumTableForm

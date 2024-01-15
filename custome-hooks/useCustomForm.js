@@ -3,6 +3,7 @@ import InputElement from "../Utils/Elements/inputs-elements/InputElement";
 import SelectElement from "../Utils/Elements/select-elements/SelectElement";
 import CheckBoxElement from "../Utils/Elements/checkbox-elements/CheckBoxElement";
 import RadioElement from "../Utils/Elements/radio-elements/RadioElement";
+import TextareaElement from "../Utils/Elements/inputs-elements/TextareaElement";
 
 export function useCustomForm(apiData) {
   const { handleSubmit, formState, control, watch, setValue } = useForm({
@@ -15,6 +16,18 @@ export function useCustomForm(apiData) {
     switch (input.type) {
       case "text":
         InputComponent = InputElement;
+        specificProps = {
+          inputDesign: "inputDesign",
+          inputPadding: "input_Padding",
+          inputplaceholder: input.placeholder,
+          inputContainer: "block_container",
+          inputLabel: input.label,
+          lableStyle: "lable_style",
+          defaultValue: defaultValue || "",
+        };
+        break;
+      case "textarea":
+        InputComponent = TextareaElement;
         specificProps = {
           inputDesign: "inputDesign",
           inputPadding: "input_Padding",
@@ -53,7 +66,7 @@ export function useCustomForm(apiData) {
           selectedOption: watch(input.name),
           inputLabel: input.label,
           lableStyle: "lable_style",
-          inputContainer: "block_container",
+          inputContainer: "inlineRadio_container",
           defaultValue: defaultValue || "",
           radiostyle: "inlineRadio_container",
           radioTitleGap: "title_rowGap",
