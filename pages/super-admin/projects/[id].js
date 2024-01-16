@@ -1,6 +1,6 @@
 import React from "react";
-import CreateProjectLayout from "../../Layouts/createProjectLayout/CreateProjectLayout";
-import DashboardLayout from "../../Layouts/DashBoardLayout/DashboardLayout";
+import DashboardLayout from "../../../Layouts/DashBoardLayout/DashboardLayout";
+import CreateProjectLayout from "../../../Layouts/createProjectLayout/CreateProjectLayout";
 import {
   projectDetails,
   ProjectDetailsApi,
@@ -9,9 +9,8 @@ import {
   ProjectPrices,
   ProjectLocation,
   projectfeature,
-} from "../../JsonData/formFileds";
-
-export default function CreateProject() {
+} from "../../../JsonData/formFileds";
+export default function UpadteProjectPage() {
   return (
     <DashboardLayout>
       <CreateProjectLayout

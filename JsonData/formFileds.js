@@ -37,7 +37,7 @@ export const DeveloperDetailsApi = {
 export const projectDetails = [
   {
     id: 1,
-    name: "projectName",
+    name: "projectTitle",
     type: "text",
     placeholder: "Project Name",
     label: "Project Name",
@@ -52,9 +52,9 @@ export const projectDetails = [
     type: "textarea",
     placeholder: "Project Descreption",
     label: "Descreption ",
-    validation: {
-      required: "Project Descrepyion is required.",
-    },
+    // validation: {
+    //   required: "Project Descrepyion is required.",
+    // },
   },
 
   {
@@ -63,9 +63,9 @@ export const projectDetails = [
     type: "radio",
     label: "Project Status",
     options: ["Ready To Move", "under Constructor", "upcoming"],
-    validation: {
-      required: "Please select a business type.",
-    },
+    // validation: {
+    //   required: "Please select a business type.",
+    // },
   },
 
   {
@@ -74,9 +74,9 @@ export const projectDetails = [
     type: "checkbox",
     label: "project Units",
     options: ["2 BHK", "3 BHk", "4 BHK"],
-    validation: {
-      required: "Please select at least one Project Unit type.",
-    },
+    // validation: {
+    //   required: "Please select at least one Project Unit type.",
+    // },
   },
 
   {
@@ -85,9 +85,9 @@ export const projectDetails = [
     type: "text",
     label: "unit price",
     placeholder: "Price",
-    validation: {
-      required: "Please select at least one Project Unit type.",
-    },
+    // validation: {
+    //   required: "Please select at least one Project Unit type.",
+    // },
   },
 
   {
@@ -96,9 +96,9 @@ export const projectDetails = [
     type: "text",
     label: "Baise price",
     placeholder: "Basis Price",
-    validation: {
-      required: "Please select at least one Project Unit type.",
-    },
+    // validation: {
+    //   required: "Please select at least one Project Unit type.",
+    // },
   },
   {
     id: 7,
@@ -107,9 +107,9 @@ export const projectDetails = [
     label: "City",
     placeholder: "city",
     options: ["Gurgaon", "pune", "kolkata"],
-    validation: {
-      required: "Please select at least one Project Unit type.",
-    },
+    // validation: {
+    //   required: "Please select at least one Project Unit type.",
+    // },
   },
 
   {
@@ -119,9 +119,9 @@ export const projectDetails = [
     placeholder: "location ",
     label: "Location", // Changed 'lable' to 'label'
     options: ["sector 5", "Dwarka Express", "Golf couse Roard"],
-    validation: {
-      required: "location  is required.",
-    },
+    // validation: {
+    //   required: "location  is required.",
+    // },
   },
   {
     id: 9,
@@ -129,9 +129,9 @@ export const projectDetails = [
     type: "text",
     placeholder: "Project Area",
     label: "Project Area",
-    validation: {
-      required: "Project Area is required.",
-    },
+    // validation: {
+    //   required: "Project Area is required.",
+    // },
   },
 
   {
@@ -140,9 +140,9 @@ export const projectDetails = [
     type: "text",
     placeholder: "No of Floors",
     label: "No of Floors ",
-    validation: {
-      required: "No of Floors is required.",
-    },
+    // validation: {
+    //   required: "No of Floors is required.",
+    // },
   },
   {
     id: 11,
@@ -150,9 +150,9 @@ export const projectDetails = [
     type: "text",
     placeholder: "No of Units",
     label: "No of Units ",
-    validation: {
-      required: "No of Units is required.",
-    },
+    // validation: {
+    //   required: "No of Units is required.",
+    // },
   },
   {
     id: 12,
@@ -161,9 +161,9 @@ export const projectDetails = [
     placeholder: "Builder ",
     label: "Builder/Developer", // Changed 'lable' to 'label'
     options: ["Godrej", "GLS", "DLF"],
-    validation: {
-      required: "Builder Name is required.",
-    },
+    // validation: {
+    //   required: "Builder Name is required.",
+    // },
   },
   {
     id: 13,
@@ -171,9 +171,9 @@ export const projectDetails = [
     type: "text",
     placeholder: "RERA NO",
     label: "RERA NO ",
-    validation: {
-      required: "RERA NO is required.",
-    },
+    // validation: {
+    //   required: "RERA NO is required.",
+    // },
   },
 ];
 

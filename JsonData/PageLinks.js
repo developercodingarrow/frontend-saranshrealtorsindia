@@ -9,7 +9,7 @@ export const asidebarOptions = [
   {
     name: "ADD PROJECT",
     iconComponent: AiOutlineDashboard, // Use the imported component
-    link: "/super-admin/create-project",
+    link: "/super-admin/projects/create-project",
   },
   {
     name: "CITY PAGE",

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./css/createPtojectLayout.module.css";
 import FormCard from "../../Utils/cards/FormCard";
+import { ProjectContext } from "../../ContextApi/ProjectContextApi";
 
 export default function CreateProjectLayout(props) {
+  const { handelnewProject } = useContext(ProjectContext);
   const {
     pageTitle,
     ProjectDetailsApi,
@@ -12,11 +14,10 @@ export default function CreateProjectLayout(props) {
     ProjectPricesFiled,
     ProjectLocationFiled,
     projectfeatureFiled,
+    handelProjectSubmit,
   } = props;
 
-  const handelfomSubmit = (data) => {
-    alert(JSON.stringify(data));
-  };
+ 
 
   return (
     <>
@@ -30,7 +31,7 @@ export default function CreateProjectLayout(props) {
               customeInputs={projectDetailsFormFiled}
               apiData={ProjectDetailsApi}
               actionType="submit"
-              handelfomSubmit={handelfomSubmit}
+              handelfomSubmit={handelProjectSubmit}
             />
           </div>
           <div className={styles.right_Side}></div>
