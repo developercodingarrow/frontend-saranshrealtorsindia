@@ -31,7 +31,6 @@ export const CreateDeveloeprFileds = [
 
 export const DeveloperDetailsApi = {
   id: 1,
-  //   cityNameName: "Gurgaon",
 };
 
 export const projectDetails = [
@@ -62,7 +61,7 @@ export const projectDetails = [
     name: "projectStatus",
     type: "radio",
     label: "Project Status",
-    options: ["Ready To Move", "under Constructor", "upcoming"],
+    options: ["Ready To Move", "under Constructor", "Upcoming Project"],
     // validation: {
     //   required: "Please select a business type.",
     // },
@@ -70,10 +69,10 @@ export const projectDetails = [
 
   {
     id: 4,
-    name: "projectUnits",
+    name: "typesofUnits",
     type: "checkbox",
     label: "project Units",
-    options: ["2 BHK", "3 BHk", "4 BHK"],
+    options: ["2 BHK", "3 BHK", "4 BHK"],
     // validation: {
     //   required: "Please select at least one Project Unit type.",
     // },
@@ -92,7 +91,18 @@ export const projectDetails = [
 
   {
     id: 6,
-    name: "baiseprice",
+    name: "pricePrefix",
+    type: "text",
+    label: "price Prefix",
+    placeholder: "price Prefix",
+    // validation: {
+    //   required: "Please select at least one Project Unit type.",
+    // },
+  },
+
+  {
+    id: 6,
+    name: "basicPrice",
     type: "text",
     label: "Baise price",
     placeholder: "Basis Price",
@@ -125,7 +135,7 @@ export const projectDetails = [
   },
   {
     id: 9,
-    name: "ProjectArea",
+    name: "projectArea",
     type: "text",
     placeholder: "Project Area",
     label: "Project Area",
@@ -136,7 +146,7 @@ export const projectDetails = [
 
   {
     id: 10,
-    name: "NoofFloors",
+    name: "floors",
     type: "text",
     placeholder: "No of Floors",
     label: "No of Floors ",
@@ -146,7 +156,7 @@ export const projectDetails = [
   },
   {
     id: 11,
-    name: "NoofUnits",
+    name: "unitsNo",
     type: "text",
     placeholder: "No of Units",
     label: "No of Units ",
@@ -160,14 +170,14 @@ export const projectDetails = [
     type: "select",
     placeholder: "Builder ",
     label: "Builder/Developer", // Changed 'lable' to 'label'
-    options: ["Godrej", "GLS", "DLF"],
+    options: ["Godrej", "GLS", "DLF", "Pareena"],
     // validation: {
     //   required: "Builder Name is required.",
     // },
   },
   {
     id: 13,
-    name: "RERANO",
+    name: "reraNo",
     type: "text",
     placeholder: "RERA NO",
     label: "RERA NO ",

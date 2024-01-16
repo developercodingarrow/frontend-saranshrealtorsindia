@@ -22,3 +22,15 @@ export const genericDataAndSlugHandler = (sendDataFunction) => {
     }
   };
 };
+
+// GENERIC HANDLER FOR SEND DATA AND OPTIONAL UrlToken
+export const genericGetByIDHandler = (sendDataFunction) => {
+  return async (id) => {
+    try {
+      const result = await sendDataFunction(id);
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

@@ -18,6 +18,7 @@ export default function CreateProject() {
   const { handelnewProject } = useContext(ProjectContext);
   const handelfomSubmit = async (data) => {
     try {
+      console.log(data);
       const res = await handelnewProject(data);
       console.log(res.data);
       router.push(`/super-admin/projects/${res.data.result._id}`);

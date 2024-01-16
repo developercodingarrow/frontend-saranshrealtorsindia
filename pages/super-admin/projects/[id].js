@@ -1,6 +1,5 @@
 import React from "react";
 import DashboardLayout from "../../../Layouts/DashBoardLayout/DashboardLayout";
-import CreateProjectLayout from "../../../Layouts/createProjectLayout/CreateProjectLayout";
 import {
   projectDetails,
   ProjectDetailsApi,
@@ -10,11 +9,13 @@ import {
   ProjectLocation,
   projectfeature,
 } from "../../../JsonData/formFileds";
+import UpdateProject from "../../../Layouts/createProjectLayout/UpdateProject";
+
 export default function UpadteProjectPage() {
   return (
     <DashboardLayout>
-      <CreateProjectLayout
-        pageTitle="CREATE PROJECT"
+      <UpdateProject
+        pageTitle="UPDATE PROJECT"
         projectDetailsFormFiled={projectDetails}
         ProjectDetailsApi={ProjectDetailsApi}
         ProjectStatusFiled={ProjectStatus}
