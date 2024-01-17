@@ -17,9 +17,12 @@ import {
   IoMdArrowDropleft,
   IoIosArrowBack,
   IoIosArrowForward,
+  IoIosCheckmark,
+  IoMdCheckmark,
 } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
+import { GoUpload } from "react-icons/go";
 
 export {
   IoIosArrowBack,
@@ -44,5 +47,8 @@ export {
   IoMdArrowDropleft,
   CiEdit,
   BiSolidCloudUpload,
+  GoUpload,
+  IoIosCheckmark,
+  IoMdCheckmark,
   // Add more icons as needed
 };

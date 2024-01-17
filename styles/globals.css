@@ -19,6 +19,8 @@ html {
   --body-bg: #f9f9f9;
   --ts-white: #ffffff;
   --ts-gray: #7c7c7c;
+  --ts-muted: #afafaf;
+  --ts-separator: #dddddd;
   --ts-text-color: #212529;
   --ts-1px-border: 1px solid #ced4da;
   --ts-read-input-bg: #dddddd80;

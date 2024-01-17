@@ -3,11 +3,24 @@ import { useRouter } from "next/router";
 import styles from "./css/createPtojectLayout.module.css";
 import FormCard from "../../Utils/cards/FormCard";
 import { ProjectContext } from "../../ContextApi/ProjectContextApi";
+import SingleImageUplaod from "../../Utils/ImagesElements/Single-image-upload/SingleImageUplaod";
+import {
+  handelUploadThumblin,
+  handelUploadProjectCoverImages,
+  handelDeleteCoverImage,
+} from "../../Utils/ImagesElements/imageHandlers";
+import ImageGallery from "../../Utils/ImagesElements/image-gallery/ImageGallery";
 
 export default function UpdateProject(props) {
   const router = useRouter();
   const { id } = router.query;
-  const { loading, handelGetProject, projectData } = useContext(ProjectContext);
+  const {
+    loading,
+    setloading,
+    handelGetProject,
+    projectData,
+    projectCoverImages,
+  } = useContext(ProjectContext);
   const {
     pageTitle,
     ProjectDetailsApi,
@@ -25,6 +38,7 @@ export default function UpdateProject(props) {
   }, [id]);
 
   console.log("Project Data:", projectData);
+  console.log(id);
 
   return (
     <>
@@ -41,7 +55,26 @@ export default function UpdateProject(props) {
                 handelfomSubmit={handelProjectSubmit}
               />
             </div>
-            <div className={styles.right_Side}></div>
+            <div className={styles.right_Side}>
+              <div>
+                <SingleImageUplaod
+                  title="Upload Thumblin"
+                  handelfomSubmit={handelUploadThumblin}
+                  dataFor={id}
+                />
+              </div>
+              <div>
+                <ImageGallery
+                  title="Upload Cover Images"
+                  handelfomSubmit={handelUploadProjectCoverImages}
+                  dataFor={id}
+                  apiImages={projectCoverImages}
+                  deletAction={handelDeleteCoverImage}
+                  loadingAction={loading}
+                  setloading={setloading}
+                />
+              </div>
+            </div>
           </div>
         )}
       </div>

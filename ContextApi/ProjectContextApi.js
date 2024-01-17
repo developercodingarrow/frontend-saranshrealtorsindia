@@ -17,6 +17,7 @@ import {
 export default function ProjectContextApiProvider({ children }) {
   const [loading, setloading] = useState(false);
   const [projectData, setProjectData] = useState({});
+  const [projectCoverImages, setProjectCoverImages] = useState([]);
 
   const handelnewProject = genericDataHandler(createNewProject);
   // const handelGetProjectByID = genericGetByIDHandler(getProjectByID);
@@ -29,8 +30,11 @@ export default function ProjectContextApiProvider({ children }) {
 
       if (res.data.status === "success") {
         setloading(false);
+        console.log(project);
         // Now you can set the project data state
         const unitsData = project.typesofUnits.map((unit) => unit);
+        // Extract ProjectCoverImage data
+        const projectCoverImagesData = project.ProjectCoverImage || [];
 
         setProjectData({
           projectTitle: project.projectTitle || "",
@@ -51,6 +55,9 @@ export default function ProjectContextApiProvider({ children }) {
           projectArea: project.projectArea || "",
           basicPrice: project.basicPrice || "",
         });
+
+        // Set the ProjectCoverImage data state
+        setProjectCoverImages(projectCoverImagesData);
       }
     } catch (error) {
       console.log(error);
@@ -65,6 +72,7 @@ export default function ProjectContextApiProvider({ children }) {
         handelnewProject,
         handelGetProject,
         projectData,
+        projectCoverImages,
       }}
     >
       {children}
