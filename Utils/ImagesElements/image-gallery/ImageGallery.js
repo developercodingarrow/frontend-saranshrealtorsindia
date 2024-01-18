@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import styles from "./css/imageGallery.module.css";
 import Image from "next/image";
 import { MdDelete, GoUpload, IoMdCheckmark } from "../../ApplicationIcon";
-import sampleImage from "../../../public/project-cover-images/Project-CoverImage-1705395790574-Floor Plan -1 Pareena Coban.png";
 import { useImageGalleryUpload } from "../../../custome-hooks/useImageGalleryUpload";
 
 export default function ImageGallery(props) {
@@ -10,6 +9,7 @@ export default function ImageGallery(props) {
     title,
     handelfomSubmit,
     dataFor,
+    imageFor,
     apiImages,
     deletAction,
     setloading,
@@ -34,11 +34,7 @@ export default function ImageGallery(props) {
   const handelUplaod = async () => {
     try {
       setloading(true);
-      const res = await handelfomSubmit(
-        selectedImages,
-        "ProjectCoverImage",
-        dataFor
-      );
+      const res = await handelfomSubmit(selectedImages, imageFor, dataFor);
       setloading(false);
       console.log(res);
     } catch (error) {
@@ -75,7 +71,7 @@ export default function ImageGallery(props) {
                 <div className={styles.uploadImage_container}>
                   <div className={styles.uploadImage_body}>
                     <Image
-                      src={`/project-cover-images/${image.url}`}
+                      src={`/project-images/${image.url}`}
                       alt="Uploaded"
                       width={350}
                       height={300}

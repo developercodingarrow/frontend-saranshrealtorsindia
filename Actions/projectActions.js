@@ -32,12 +32,37 @@ export const ProjectUploadCoverImages = async (formData, id) => {
   return ImageAPIAction(method, url, formData);
 };
 
+export const ProjectFloorPlanImages = async (formData, id) => {
+  console.log(id);
+  const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/update-project-floor-plan-images/${id}`;
+  const method = "patch";
+  return ImageAPIAction(method, url, formData);
+};
+
 export const deleteProjectCoverImages = async (id, projectId) => {
   console.log(id);
   const data = {
-    id: id,
+    imageId: id,
   };
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/delete-cover-image/${projectId}`;
+  const method = "DELETE";
+  return performAPIAction(method, url, data);
+};
+
+export const deleteProjectFloorPlanImages = async (id, projectId) => {
+  console.log(id);
+  const data = {
+    imageId: id,
+  };
+  const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/delete-cover-image/${projectId}`;
+  const method = "DELETE";
+  return performAPIAction(method, url, data);
+};
+
+export const deleteProjectThumblinImages = async (id, projectId) => {
+  console.log(id);
+  const data = {};
+  const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/delete-project-thumblin/${projectId}`;
   const method = "DELETE";
   return performAPIAction(method, url, data);
 };

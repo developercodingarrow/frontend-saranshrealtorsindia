@@ -6,7 +6,15 @@ import { MdDelete, GoUpload, IoMdCheckmark } from "../../ApplicationIcon";
 import ActionBtn from "../../Elements/buttonsElements/ActionBtn";
 
 export default function SingleImageUplaod(props) {
-  const { title, handelfomSubmit, dataFor } = props;
+  const {
+    title,
+    handelfomSubmit,
+    dataFor,
+    singleImage,
+    deleteAction,
+    loading,
+    setloading,
+  } = props;
 
   const testhandel = () => {
     alert("ok");
@@ -36,17 +44,34 @@ export default function SingleImageUplaod(props) {
 
   const handelthumblinUpload = async () => {
     try {
+      setloading(true);
       const res = await handelfomSubmit(
         originalFile,
         "ProjectThumblin",
         dataFor
       );
       console.log(res);
+      setloading(false);
       // alert("uploaded");
     } catch (error) {
+      setloading(false);
       console.log(error);
     }
   };
+
+  const handelDelete = async () => {
+    try {
+      setloading(true);
+      const res = await deleteAction("", dataFor);
+      console.log(res);
+      setloading(false);
+    } catch (error) {
+      setloading(false);
+      console.log(error);
+    }
+  };
+
+  console.log(singleImage);
 
   return (
     <div className={styles.card_wrapper}>
@@ -56,11 +81,45 @@ export default function SingleImageUplaod(props) {
 
       <div className={styles.card}>
         <div className={styles.card_body}>
-          {!image ? (
+          {singleImage && (
+            <div className={styles.uploadImage_container}>
+              <div className={styles.uploadImage_body}>
+                <Image
+                  src={`/project-thumblin/${singleImage.url}`}
+                  alt="Uploaded"
+                  width={350}
+                  height={300}
+                  className={styles.thumblinStyle}
+                />
+                <div className={styles.right_IconBox}>
+                  {" "}
+                  <IoMdCheckmark />{" "}
+                </div>
+              </div>
+              <div className={styles.uploadImage_footer}>
+                <div className={styles.uploadImage_FooterDetails}>
+                  <p className={styles.Uplaoded_imageName}>{imageName}</p>
+                  <p className={styles.uploed_imageSize}>
+                    {" "}
+                    {singleImage.altText} <span>Api</span>
+                  </p>
+                </div>
+                <div className={styles.image_actionBox}>
+                  <div className={styles.image_actionBtn}>
+                    <MdDelete onClick={handelDelete} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {!singleImage && !image && (
             <div className={styles.dropBox} onClick={handleClick}>
               <p>Drop File</p>
             </div>
-          ) : (
+          )}
+
+          {image && (
             <div className={styles.uploadImage_container}>
               <div className={styles.uploadImage_body}>
                 <Image

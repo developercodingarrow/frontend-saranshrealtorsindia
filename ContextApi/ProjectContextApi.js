@@ -17,7 +17,9 @@ import {
 export default function ProjectContextApiProvider({ children }) {
   const [loading, setloading] = useState(false);
   const [projectData, setProjectData] = useState({});
+  const [ProjectThumblin, setProjectThumblin] = useState({});
   const [projectCoverImages, setProjectCoverImages] = useState([]);
+  const [peojectFloorPlanImages, setpeojectFloorPlanImages] = useState([]);
 
   const handelnewProject = genericDataHandler(createNewProject);
   // const handelGetProjectByID = genericGetByIDHandler(getProjectByID);
@@ -35,6 +37,7 @@ export default function ProjectContextApiProvider({ children }) {
         const unitsData = project.typesofUnits.map((unit) => unit);
         // Extract ProjectCoverImage data
         const projectCoverImagesData = project.ProjectCoverImage || [];
+        const projectfloorPlanImagesData = project.floorPlanImages || [];
 
         setProjectData({
           projectTitle: project.projectTitle || "",
@@ -58,6 +61,8 @@ export default function ProjectContextApiProvider({ children }) {
 
         // Set the ProjectCoverImage data state
         setProjectCoverImages(projectCoverImagesData);
+        setpeojectFloorPlanImages(projectfloorPlanImagesData);
+        setProjectThumblin(project.ProjectThumblin);
       }
     } catch (error) {
       console.log(error);
@@ -73,6 +78,8 @@ export default function ProjectContextApiProvider({ children }) {
         handelGetProject,
         projectData,
         projectCoverImages,
+        peojectFloorPlanImages,
+        ProjectThumblin,
       }}
     >
       {children}

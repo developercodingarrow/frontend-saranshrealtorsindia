@@ -8,6 +8,9 @@ import {
   handelUploadThumblin,
   handelUploadProjectCoverImages,
   handelDeleteCoverImage,
+  handelUploadFloorPlanImages,
+  handelDeleteFloorImage,
+  handelDeleteThumblinImage,
 } from "../../Utils/ImagesElements/imageHandlers";
 import ImageGallery from "../../Utils/ImagesElements/image-gallery/ImageGallery";
 
@@ -20,6 +23,8 @@ export default function UpdateProject(props) {
     handelGetProject,
     projectData,
     projectCoverImages,
+    peojectFloorPlanImages,
+    ProjectThumblin,
   } = useContext(ProjectContext);
   const {
     pageTitle,
@@ -61,6 +66,10 @@ export default function UpdateProject(props) {
                   title="Upload Thumblin"
                   handelfomSubmit={handelUploadThumblin}
                   dataFor={id}
+                  singleImage={ProjectThumblin}
+                  deleteAction={handelDeleteThumblinImage}
+                  loading={loading}
+                  setloading={setloading}
                 />
               </div>
               <div>
@@ -72,6 +81,20 @@ export default function UpdateProject(props) {
                   deletAction={handelDeleteCoverImage}
                   loadingAction={loading}
                   setloading={setloading}
+                  imageFor="ProjectCoverImage"
+                />
+              </div>
+
+              <div>
+                <ImageGallery
+                  title="Upload Floor Plan"
+                  handelfomSubmit={handelUploadFloorPlanImages}
+                  dataFor={id}
+                  apiImages={peojectFloorPlanImages}
+                  deletAction={handelDeleteFloorImage}
+                  loadingAction={loading}
+                  setloading={setloading}
+                  imageFor="floorPlanImages"
                 />
               </div>
             </div>
