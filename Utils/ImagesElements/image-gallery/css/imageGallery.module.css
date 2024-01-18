@@ -42,13 +42,25 @@
   padding: 10px;
 }
 
+.upload_dropBox_wrapper {
+  width: 100%;
+  display: flex;
+  column-gap: 5px;
+  row-gap: 5px;
+}
+
 .dropBox {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 200px;
+  height: 50px;
+  width: 70%;
   flex-grow: 1;
   border: 2px dashed #dcdcdc;
+}
+
+.uploadBtn_wrapper {
+  width: 30%;
 }
 
 /* Hide file input */

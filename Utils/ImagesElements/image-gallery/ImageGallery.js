@@ -3,6 +3,7 @@ import styles from "./css/imageGallery.module.css";
 import Image from "next/image";
 import { MdDelete, GoUpload, IoMdCheckmark } from "../../ApplicationIcon";
 import { useImageGalleryUpload } from "../../../custome-hooks/useImageGalleryUpload";
+import ClickBtn from "../../Elements/buttonsElements/ClickBtn";
 
 export default function ImageGallery(props) {
   const {
@@ -140,11 +141,13 @@ export default function ImageGallery(props) {
                 </div>
               );
             })}
-            <div className={styles.dropBox} onClick={handleClick}>
-              <p>Drop File</p>
-            </div>
-            <div>
-              <button onClick={handelUplaod}>Upload Image</button>
+            <div className={styles.upload_dropBox_wrapper}>
+              <div className={styles.dropBox} onClick={handleClick}>
+                <p>Drop File</p>
+              </div>
+              <div className={styles.uploadBtn_wrapper}>
+                <ClickBtn handelClick={handelUplaod} icon="upload" />
+              </div>
             </div>
           </div>
 

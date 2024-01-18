@@ -25,6 +25,8 @@ export default function UpdateProject(props) {
     projectCoverImages,
     peojectFloorPlanImages,
     ProjectThumblin,
+    actionLoading,
+    setactionLoading,
   } = useContext(ProjectContext);
   const {
     pageTitle,
@@ -40,7 +42,7 @@ export default function UpdateProject(props) {
 
   useEffect(() => {
     handelGetProject(id);
-  }, [id]);
+  }, [id, actionLoading]);
 
   console.log("Project Data:", projectData);
   console.log(id);
@@ -68,8 +70,8 @@ export default function UpdateProject(props) {
                   dataFor={id}
                   singleImage={ProjectThumblin}
                   deleteAction={handelDeleteThumblinImage}
-                  loading={loading}
-                  setloading={setloading}
+                  loading={actionLoading}
+                  setloading={setactionLoading}
                 />
               </div>
               <div>

@@ -16,6 +16,7 @@ import {
 
 export default function ProjectContextApiProvider({ children }) {
   const [loading, setloading] = useState(false);
+  const [actionLoading, setactionLoading] = useState(false);
   const [projectData, setProjectData] = useState({});
   const [ProjectThumblin, setProjectThumblin] = useState({});
   const [projectCoverImages, setProjectCoverImages] = useState([]);
@@ -80,6 +81,8 @@ export default function ProjectContextApiProvider({ children }) {
         projectCoverImages,
         peojectFloorPlanImages,
         ProjectThumblin,
+        actionLoading,
+        setactionLoading,
       }}
     >
       {children}

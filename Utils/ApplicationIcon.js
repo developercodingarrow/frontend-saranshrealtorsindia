@@ -11,7 +11,10 @@ import { HiMagnifyingGlass, HiOutlineBuildingOffice } from "react-icons/hi2";
 import { BiCategoryAlt, BiSolidCloudUpload } from "react-icons/bi";
 import { PiUserCirclePlusThin, PiUserCircleMinusThin } from "react-icons/pi";
 import { LuIndianRupee } from "react-icons/lu";
-import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import {
+  BsFillArrowRightCircleFill,
+  BsFillCloudUploadFill,
+} from "react-icons/bs";
 import {
   IoMdArrowDropright,
   IoMdArrowDropleft,
@@ -50,5 +53,6 @@ export {
   GoUpload,
   IoIosCheckmark,
   IoMdCheckmark,
+  BsFillCloudUploadFill,
   // Add more icons as needed
 };

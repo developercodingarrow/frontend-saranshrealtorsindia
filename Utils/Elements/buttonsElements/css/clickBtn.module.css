@@ -1,0 +1,14 @@
+.btnStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+  background-color: var(--ts-primary);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  column-gap: 10px;
+  row-gap: 10px;
+}
