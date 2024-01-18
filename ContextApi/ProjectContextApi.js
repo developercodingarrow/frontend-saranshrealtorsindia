@@ -7,10 +7,15 @@ import React, {
 } from "react";
 
 export const ProjectContext = createContext();
-import { createNewProject, getProjectByID } from "../Actions/projectActions";
+import {
+  createNewProject,
+  getProjectByID,
+  UpdateProjectDeatils,
+} from "../Actions/projectActions";
 
 import {
   genericDataHandler,
+  genericDataAndSlugHandler,
   genericGetByIDHandler,
 } from "../Utils/generichandler/generichandler";
 
@@ -23,7 +28,7 @@ export default function ProjectContextApiProvider({ children }) {
   const [peojectFloorPlanImages, setpeojectFloorPlanImages] = useState([]);
 
   const handelnewProject = genericDataHandler(createNewProject);
-  // const handelGetProjectByID = genericGetByIDHandler(getProjectByID);
+  const handelUpadteProject = genericDataAndSlugHandler(UpdateProjectDeatils);
 
   const handelGetProject = async (id) => {
     try {
@@ -83,6 +88,7 @@ export default function ProjectContextApiProvider({ children }) {
         ProjectThumblin,
         actionLoading,
         setactionLoading,
+        handelUpadteProject,
       }}
     >
       {children}

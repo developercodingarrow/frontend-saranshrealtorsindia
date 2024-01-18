@@ -66,3 +66,10 @@ export const deleteProjectThumblinImages = async (id, projectId) => {
   const method = "DELETE";
   return performAPIAction(method, url, data);
 };
+
+export const UpdateProjectDeatils = async (requestData, projectId) => {
+  console.log(requestData);
+  const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/update-project/${projectId}`;
+  const method = "patch";
+  return performAPIAction(method, url, requestData);
+};

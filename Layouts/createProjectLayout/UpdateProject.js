@@ -13,6 +13,7 @@ import {
   handelDeleteThumblinImage,
 } from "../../Utils/ImagesElements/imageHandlers";
 import ImageGallery from "../../Utils/ImagesElements/image-gallery/ImageGallery";
+import TextEditorReactQuill from "../../Utils/textEditor/TextEditorReactQuill";
 
 export default function UpdateProject(props) {
   const router = useRouter();
@@ -27,6 +28,7 @@ export default function UpdateProject(props) {
     ProjectThumblin,
     actionLoading,
     setactionLoading,
+    handelUpadteProject,
   } = useContext(ProjectContext);
   const {
     pageTitle,
@@ -61,7 +63,15 @@ export default function UpdateProject(props) {
                 actionType="submit"
                 handelfomSubmit={handelProjectSubmit}
               />
+
+              <div>
+                <TextEditorReactQuill
+                  handeSubmit={handelUpadteProject}
+                  dataFor={id}
+                />
+              </div>
             </div>
+
             <div className={styles.right_Side}>
               <div>
                 <SingleImageUplaod

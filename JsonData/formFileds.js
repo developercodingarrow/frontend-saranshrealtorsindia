@@ -46,17 +46,6 @@ export const projectDetails = [
   },
 
   {
-    id: 2,
-    name: "projectDescreption",
-    type: "textarea",
-    placeholder: "Project Descreption",
-    label: "Descreption ",
-    // validation: {
-    //   required: "Project Descrepyion is required.",
-    // },
-  },
-
-  {
     id: 3,
     name: "projectStatus",
     type: "radio",
