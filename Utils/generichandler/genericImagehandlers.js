@@ -3,7 +3,7 @@ export const genericSingleImageHandler = (uploadFunction) => {
   return async (seletedImage, imageFor, id) => {
     try {
       const formData = new FormData();
-      formData.append("ProjectThumblin", seletedImage);
+      formData.append(`${imageFor}`, seletedImage);
       const result = await uploadFunction(formData, id);
       console.log(result);
       return result;

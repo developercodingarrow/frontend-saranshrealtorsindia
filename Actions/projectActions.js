@@ -12,7 +12,6 @@ export const createNewProject = async (requestData) => {
   return performAPIAction(method, url, requestData);
 };
 
-// API FOR OTP VERIFICATION
 export const getProjectByID = async (id) => {
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/get-single-project/${id}`;
   return performGetAPIAction(url);

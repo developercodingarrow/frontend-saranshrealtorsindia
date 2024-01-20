@@ -308,3 +308,21 @@ export const projectfeature = [
     },
   },
 ];
+
+export const blogtitle = [
+  {
+    id: 1,
+    name: "blogTitle",
+    type: "text",
+    placeholder: "Blog Title",
+    label: "Blog Title", // Changed 'lable' to 'label'
+    validation: {
+      required: "Blog Title is required.",
+    },
+  },
+];
+
+export const BlogDetailsApi = {
+  id: 1,
+  //   cityNameName: "Gurgaon",
+};

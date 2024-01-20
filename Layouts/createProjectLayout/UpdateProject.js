@@ -68,6 +68,7 @@ export default function UpdateProject(props) {
                 <TextEditorReactQuill
                   handeSubmit={handelUpadteProject}
                   dataFor={id}
+                  updateFiled="projectDescription"
                 />
               </div>
             </div>
@@ -79,9 +80,11 @@ export default function UpdateProject(props) {
                   handelfomSubmit={handelUploadThumblin}
                   dataFor={id}
                   singleImage={ProjectThumblin}
+                  folderPath="project-thumblin"
                   deleteAction={handelDeleteThumblinImage}
                   loading={actionLoading}
                   setloading={setactionLoading}
+                  updateFiled="ProjectThumblin"
                 />
               </div>
               <div>

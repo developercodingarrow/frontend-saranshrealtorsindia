@@ -11,9 +11,11 @@ export default function SingleImageUplaod(props) {
     handelfomSubmit,
     dataFor,
     singleImage,
+    folderPath,
     deleteAction,
     loading,
     setloading,
+    updateFiled,
   } = props;
 
   const testhandel = () => {
@@ -45,11 +47,7 @@ export default function SingleImageUplaod(props) {
   const handelthumblinUpload = async () => {
     try {
       setloading(true);
-      const res = await handelfomSubmit(
-        originalFile,
-        "ProjectThumblin",
-        dataFor
-      );
+      const res = await handelfomSubmit(originalFile, updateFiled, dataFor);
       console.log(res);
       setloading(false);
       // alert("uploaded");
@@ -81,38 +79,6 @@ export default function SingleImageUplaod(props) {
 
       <div className={styles.card}>
         <div className={styles.card_body}>
-          {/* {singleImage && (
-            <div className={styles.uploadImage_container}>
-              <div className={styles.uploadImage_body}>
-                <Image
-                  src={`/project-thumblin/${singleImage.url}`}
-                  alt="Uploaded"
-                  width={350}
-                  height={300}
-                  className={styles.thumblinStyle}
-                />
-                <div className={styles.right_IconBox}>
-                  {" "}
-                  <IoMdCheckmark />{" "}
-                </div>
-              </div>
-              <div className={styles.uploadImage_footer}>
-                <div className={styles.uploadImage_FooterDetails}>
-                  <p className={styles.Uplaoded_imageName}>{imageName}</p>
-                  <p className={styles.uploed_imageSize}>
-                    {" "}
-                    {singleImage.altText} <span>Api</span>
-                  </p>
-                </div>
-                <div className={styles.image_actionBox}>
-                  <div className={styles.image_actionBtn}>
-                    <MdDelete onClick={handelDelete} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          )} */}
-
           {loading ? (
             <div className={styles.loadingContainer}>
               {/* Loading state */}
@@ -124,7 +90,7 @@ export default function SingleImageUplaod(props) {
                 <div className={styles.uploadImage_container}>
                   <div className={styles.uploadImage_body}>
                     <Image
-                      src={`/project-thumblin/${singleImage.url}`}
+                      src={`/${folderPath}/${singleImage.url}`}
                       alt="Uploaded"
                       width={350}
                       height={300}

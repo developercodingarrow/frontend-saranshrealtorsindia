@@ -1,0 +1,16 @@
+.pageTitle {
+  margin-bottom: 50px;
+}
+.componentWarper {
+  display: flex;
+  column-gap: 50px;
+  row-gap: 50px;
+}
+
+.left_Side {
+  width: 60%;
+}
+
+.right_Side {
+  width: 30%;
+}

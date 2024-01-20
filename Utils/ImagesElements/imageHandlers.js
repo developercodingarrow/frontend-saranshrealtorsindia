@@ -12,6 +12,13 @@ import {
   deleteProjectThumblinImages,
 } from "../../Actions/projectActions";
 
+import {
+  blogUploadThumblin,
+  deleteBlogThumblinImages,
+  deleteBlogCoverImages,
+  blogUploadCover,
+} from "../../Actions/blogActions";
+
 export const handelUploadThumblin = genericSingleImageHandler(
   ProjectUploadThumblin
 );
@@ -35,3 +42,17 @@ export const handelDeleteFloorImage = genericDataHandler(
 export const handelDeleteThumblinImage = genericDataHandler(
   deleteProjectThumblinImages
 );
+
+// Blog
+export const handelDeleteBlogThumblinImage = genericDataHandler(
+  deleteBlogThumblinImages
+);
+
+export const handelDeleteBlogCoverImage = genericDataHandler(
+  deleteBlogCoverImages
+);
+
+export const handelUploadBlogThumblin =
+  genericSingleImageHandler(blogUploadThumblin);
+
+export const handelUploadBlogCover = genericSingleImageHandler(blogUploadCover);

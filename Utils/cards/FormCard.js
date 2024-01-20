@@ -21,6 +21,17 @@ export default function FormCard(props) {
     setValue,
     renderInput,
   } = useCustomForm(apiData);
+
+  const handelsubmitForm = async (data) => {
+    try {
+      console.log(data);
+      const res = await handelfomSubmit(data);
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className={styles.card_wrapper}>
@@ -30,7 +41,7 @@ export default function FormCard(props) {
         {customeInputs ? (
           <div className={styles.card}>
             <div className={styles.card_body}>
-              <form onSubmit={handleSubmit(handelfomSubmit)}>
+              <form onSubmit={handleSubmit(handelsubmitForm)}>
                 <div className={styles.card_input_wrapper}>
                   {customeInputs.map((input) => renderInput(input))}
                 </div>

@@ -10,7 +10,7 @@ import {
 import SubmitBtn from "../Elements/buttonsElements/SubmitBtn";
 
 export default function TextEditorReactQuill(props) {
-  const { handeSubmit, dataFor } = props;
+  const { handeSubmit, dataFor, updateFiled } = props;
   const [editorValue, seteditorValue] = useState("");
   const handelEditorOnChange = (e) => {
     seteditorValue(e);
@@ -19,10 +19,7 @@ export default function TextEditorReactQuill(props) {
   const handelSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await handeSubmit(
-        { projectDescription: editorValue },
-        dataFor
-      );
+      const res = await handeSubmit({ [updateFiled]: editorValue }, dataFor);
       console.log(res);
     } catch (error) {
       console.log(error);

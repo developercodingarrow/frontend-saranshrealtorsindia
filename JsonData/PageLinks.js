@@ -12,6 +12,11 @@ export const asidebarOptions = [
     link: "/super-admin/projects/create-project",
   },
   {
+    name: "BLOG",
+    iconComponent: AiOutlineDashboard, // Use the imported component
+    link: "/super-admin/blog",
+  },
+  {
     name: "CITY PAGE",
     iconComponent: AiOutlineDashboard, // Use the imported component
     link: "/super-admin/cities",
