@@ -322,6 +322,19 @@ export const blogtitle = [
   },
 ];
 
+export const metaescription = [
+  {
+    id: 1,
+    name: "metaDescription",
+    type: "textarea",
+    placeholder: "Meta Description",
+    label: "Meta Description", // Changed 'lable' to 'label'
+    validation: {
+      required: "Meta Description is required.",
+    },
+  },
+];
+
 export const BlogDetailsApi = {
   id: 1,
   //   cityNameName: "Gurgaon",

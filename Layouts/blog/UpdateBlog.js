@@ -2,7 +2,11 @@ import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import { BlogContext } from "../../ContextApi/BlogContextApi";
 import styles from "./css/updateBlog.module.css";
-import { blogtitle, BlogDetailsApi } from "../../JsonData/formFileds";
+import {
+  blogtitle,
+  BlogDetailsApi,
+  metaescription,
+} from "../../JsonData/formFileds";
 import FormCard from "../../Utils/cards/FormCard";
 import TextEditorReactQuill from "../../Utils/textEditor/TextEditorReactQuill";
 import SingleImageUplaod from "../../Utils/ImagesElements/Single-image-upload/SingleImageUplaod";
@@ -12,6 +16,7 @@ import {
   handelUploadBlogCover,
   handelDeleteBlogCoverImage,
 } from "../../Utils/ImagesElements/imageHandlers";
+import ChipInput from "../../Utils/Elements/inputs-elements/ChipInput";
 
 export default function UpdateBlog(props) {
   const router = useRouter();
@@ -61,6 +66,26 @@ export default function UpdateBlog(props) {
                 handeSubmit={handelUpadteBlog}
                 dataFor={id}
                 updateFiled="blogDescreption"
+              />
+            </div>
+
+            <div>
+              <ChipInput
+                title="Keywords"
+                handeSubmit={handelUpadteBlog}
+                dataFor={id}
+                updateFiled="keywords"
+              />
+            </div>
+
+            <div>
+              <FormCard
+                title="Meta Decreption"
+                customeInputs={metaescription}
+                apiData={BlogDetailsApi}
+                actionType="submit"
+                handelfomSubmit={handelUpadteBlog}
+                dataFor={id}
               />
             </div>
           </div>
