@@ -21,9 +21,8 @@ export default function CitiesPage() {
         tableColumn={cityDataColoum}
         tableData={CitysampleData}
         SuperAdminColum={SuperAdminColum}
-      >
-        <p>Table</p>
-      </TwoCloumTableForm>
+        sideForm={true}
+      />
     </DashboardLayout>
   );
 }

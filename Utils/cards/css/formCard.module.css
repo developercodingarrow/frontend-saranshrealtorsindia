@@ -3,7 +3,7 @@
 
 .card_titleBox {
   padding: 0px 5px;
-  margin-bottom: 10px;
+  margin-bottom: var(--ts-20-px);
   font-family: "Nunito Sans", sans-serif;
   font-weight: 400;
   font-size: 1em;

@@ -6,8 +6,6 @@ import sampleImage from "../../../public/web-static-images/Book your dream home 
 export default function TableImage(props) {
   const { imageData, folderPath } = props;
 
-  console.log(imageData);
-  console.log(folderPath);
   return (
     <div className={style.image_wrapper}>
       <Image

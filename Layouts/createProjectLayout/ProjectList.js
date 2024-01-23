@@ -6,6 +6,9 @@ import DynamicTable from "../../Utils/Table/DynimicTable";
 import { FillterContext } from "../../ContextApi/FillterContext";
 import Model from "../../Utils/model/Model";
 import { AppContext } from "../../ContextApi/AppContextApi";
+import PageHeader from "../DashBoardLayout/PageHeader";
+import TableTitle from "../DashBoardLayout/TableTitle";
+import FillterBar from "../DashBoardLayout/FillterBar";
 export default function ProjectList(props) {
   const router = useRouter();
   const { isModalOpen, setIsModalOpen, handleOpenModal, handleCloseModal } =
@@ -50,16 +53,17 @@ export default function ProjectList(props) {
       />
       {tableData ? (
         <div className={styles.mainContainer}>
-          <div className={styles.pageTitle}>{pageTitle}</div>
-          <button onClick={handelNewProjectCreate}>Add New Project</button>
+          <PageHeader
+            pageTitle="Products"
+            handelCreate={handelNewProjectCreate}
+            btnText="Create Project"
+          />
           <div className={styles.componentWrapper}>
             <div className={styles.tablePart}>
               <div className={styles.card_wrapper}>
-                <div className={styles.card_titleBox}>
-                  <p>Blog List</p>
-                </div>
+                <TableTitle tableTitle="PROJECT LIST" />
+                <FillterBar />
                 <div className={styles.card}>
-                  <div className={styles.fillterContainer}>table fillter</div>
                   <div className={styles.tableContainer}>
                     <div>
                       {tableData && (

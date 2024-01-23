@@ -4,7 +4,6 @@ html {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
 }
 
 * {
@@ -22,15 +21,18 @@ html {
   --ts-muted: #afafaf;
   --ts-separator: #dddddd;
   --ts-text-color: #212529;
+  --ts-heading-color: #4e4e4e;
   --ts-1px-border: 1px solid #ced4da;
   --ts-read-input-bg: #dddddd80;
   --ts-10-border-radius: 10px;
   --layout-side-padding: 7%;
-  --ts-font-family: "Roboto", sans-serif;
+  --ts-font-family: "Nunito Sans", sans-serif;
   --ts-footer-dekstop-bg: #202730;
   --ts-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03) !important;
   --ts-gap-20: 20px;
   --ts-20-px: 20px;
+  --ts-font-weight-300: 300;
+  --ts-heading-font-size: 26px;
   --ts--fullwidth-btn-font-size: 14px;
   --ts-fullwidth-btn-padding: 10px 18px;
   --mui-table-container-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2);
@@ -39,6 +41,7 @@ html {
 
 body {
   background-color: var(--body-bg);
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .error_Msg {

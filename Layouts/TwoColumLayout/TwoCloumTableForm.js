@@ -4,6 +4,10 @@ import { FillterContext } from "../../ContextApi/FillterContext";
 import DynamicTable from "../../Utils/Table/DynimicTable";
 import useUserRoleColumns from "../../custome-hooks/useUserRoleColumns";
 import FormCard from "../../Utils/cards/FormCard";
+import PageHeader from "../DashBoardLayout/PageHeader";
+import TableTitle from "../DashBoardLayout/TableTitle";
+import FillterBar from "../DashBoardLayout/FillterBar";
+import TableWrapper from "../DashBoardLayout/TableWrapper";
 
 export default function TwoCloumTableForm(props) {
   const {
@@ -16,6 +20,7 @@ export default function TwoCloumTableForm(props) {
     tableColumn,
     tableData,
     SuperAdminColum,
+    sideForm,
   } = props;
 
   const userRole = "super-admin";
@@ -31,35 +36,34 @@ export default function TwoCloumTableForm(props) {
   return (
     <>
       <div className={styles.mainContainer}>
-        <div className={styles.pageTitle}>{pageTitle}</div>
+        <PageHeader pageTitle="Products" />
         <div className={styles.componentWrapper}>
-          <div className={styles.tablePart}>
+          <div className={sideForm ? styles.tablePart : styles.fullTable}>
             <div className={styles.card_wrapper}>
-              <div className={styles.card_titleBox}>
-                <p>{tableTitle}</p>
-              </div>
-              <div className={styles.card}>
-                <div className={styles.fillterContainer}>table fillter</div>
-                <div className={styles.tableContainer}>
-                  <DynamicTable
-                    visibalRows={visibalRows}
-                    tableData={tableData}
-                    tableColumns={tableColumns}
-                    handelViewAction={handelView}
-                    handelbtnAction={handelView}
-                  />
-                </div>
-              </div>
+              <TableTitle tableTitle={tableTitle} />
+              <FillterBar data={tableData} />
+              <TableWrapper>
+                <DynamicTable
+                  visibalRows={visibalRows}
+                  tableData={tableData}
+                  tableColumns={tableColumns}
+                  handelViewAction={handelView}
+                  handelbtnAction={handelView}
+                  folderPath="blog-images"
+                />
+              </TableWrapper>
             </div>
           </div>
-          <div className={styles.formPart}>
-            <FormCard
-              title={formTitle}
-              customeInputs={formFields}
-              apiData={apiData}
-              actionType={forAction}
-            />
-          </div>
+          {sideForm && (
+            <div className={styles.formPart}>
+              {/* <FormCard
+                title={formTitle}
+                customeInputs={formFields}
+                apiData={apiData}
+                actionType={forAction}
+              /> */}
+            </div>
+          )}
         </div>
       </div>
     </>

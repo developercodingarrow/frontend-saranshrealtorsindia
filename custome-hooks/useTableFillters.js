@@ -6,7 +6,7 @@ import {
   handleRowsPerPageChange,
 } from "../Utils/logical-function/paginationFunctions";
 import { sortByDate } from "../Utils/logical-function/sortingFunctions";
-import { filterByUsername } from "../Utils/logical-function/filteringFunctions";
+import { filterByBlogTitle } from "../Utils/logical-function/filteringFunctions";
 import { filterByDateRange } from "../Utils/logical-function/dateRangeFilter";
 import { FillterContext } from "../ContextApi/FillterContext";
 
@@ -19,7 +19,6 @@ export default function useTableFillters(initialRows, initialRowsPerPage = 5) {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
 
-  console.log("run useTable filter");
   // Direct To to page Number
   const setPage = (pageNumber) => {
     goToPage(pageNumber, setcurrentPage);
@@ -48,12 +47,13 @@ export default function useTableFillters(initialRows, initialRowsPerPage = 5) {
   // Function to sort data by date
   const sortDataByDate = (order) => {
     const sortedData = sortByDate(initialRows, order);
+    console.log(sortedData);
     updateVisibleRows(sortedData);
   };
 
   // Function to filter data by username
   const filterDataByUsername = (searchTerm, field) => {
-    const filteredData = filterByUsername(initialRows, searchTerm, field);
+    const filteredData = filterByBlogTitle(initialRows, searchTerm, field);
     updateVisibleRows(filteredData);
   };
 

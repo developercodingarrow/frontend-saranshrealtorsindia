@@ -1,0 +1,6 @@
+.mainContainer {
+  display: flex;
+  border: 1px solid var(--ts-muted);
+  margin-bottom: var(--ts-20-px);
+  padding: 10px;
+}

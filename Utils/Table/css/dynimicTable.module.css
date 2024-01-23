@@ -4,14 +4,14 @@
   background-color: #fff;
   max-width: 100%;
   box-shadow: var(--mui-table-container-shadow);
+  height: auto;
 }
 
 .table_wrapper {
   overflow-x: auto;
   overflow-y: auto;
-  max-height: 400px;
+  max-height: 500px;
   margin-bottom: 20px;
-  min-height: 100px;
 }
 
 .table {
@@ -21,7 +21,6 @@
 }
 
 .tableHeader {
-  /* border: 1px solid red; */
   position: sticky;
   top: 0;
   z-index: 1;
@@ -38,13 +37,12 @@
 }
 
 .table_body {
+  min-height: 200px;
 }
 
-/* Adjust padding for both th and td */
 .table th,
 .table td {
   padding: 8px;
-  /* border: 1px solid green; */
   text-align: center;
 }
 

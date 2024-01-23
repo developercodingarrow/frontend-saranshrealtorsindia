@@ -1,7 +1,3 @@
-.pageTitle {
-  margin-bottom: 20px;
-}
-
 .componentWrapper {
   display: flex;
   column-gap: 50px;
@@ -9,20 +5,16 @@
 }
 
 .tablePart {
-  width: 60%;
+  width: 70%;
+}
+
+.fullTable {
+  width: 100%;
 }
 
 .formPart {
   width: 30%;
-}
-
-.card_titleBox {
-  padding: 0px 5px;
-  margin-bottom: 20px;
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 400;
-  font-size: 1em;
-  color: #ed6789;
+  margin-top: 100px;
 }
 
 .card {
@@ -31,9 +23,9 @@
   border-radius: 16px;
   border: initial;
   margin-bottom: 20px;
+  border: 1px solid red;
 }
 
-.fillterContainer,
 .tableContainer {
   padding: 32px;
 }
