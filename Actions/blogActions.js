@@ -22,6 +22,16 @@ export const allBlog = async () => {
   return performGetAPIAction(url);
 };
 
+export const deleteBlog = async (requestData) => {
+  const data = {
+    id: requestData,
+  };
+  const url =
+    "http://localhost:8000/api/v1/saranshrealtorsindia/blog/delete-blog";
+  const method = "DELETE";
+  return performAPIAction(method, url, data);
+};
+
 export const updateBlog = async (requestData, projectId) => {
   console.log(requestData);
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/blog/update-blog/${projectId}`;

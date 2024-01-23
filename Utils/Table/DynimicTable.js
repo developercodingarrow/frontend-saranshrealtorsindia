@@ -10,19 +10,20 @@ export default function DynamicTable(props) {
     tableData,
     tableColumns,
     handleCheckboxChange,
-    handelbtnAction,
+    handelDeleteAction,
     handelSwitch,
     handelViewAction,
+    handelEditAction,
     visibalRows,
     folderPath,
   } = props;
 
   const handlers = {
     checkbox: handleCheckboxChange,
-    delete: handelbtnAction,
+    delete: handelDeleteAction,
     switch: handelSwitch,
     view: handelViewAction,
-    update: handelViewAction,
+    update: handelEditAction,
     singleImage: folderPath,
 
     // Add more handlers as needed based on component types
@@ -154,7 +155,7 @@ const renderCellContent = (indexNo, data, id, slug, componentType, handler) => {
               label="Edit"
               onClick={handler}
               btnDesign={"button"}
-              itemId={slug}
+              itemId={id}
               buttonPadding="buttonPadding"
             />
           </>

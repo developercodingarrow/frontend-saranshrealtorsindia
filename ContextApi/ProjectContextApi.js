@@ -96,6 +96,10 @@ export default function ProjectContextApiProvider({ children }) {
     genericPagePushHandler(router, "/super-admin/projects", passValue);
   };
 
+  const handelEdit = (passValue) => {
+    genericPagePushHandler(router, "/super-admin/projects", passValue);
+  };
+
   return (
     <ProjectContext.Provider
       value={{
@@ -113,6 +117,7 @@ export default function ProjectContextApiProvider({ children }) {
         handelAllProjects,
         allProject,
         handelView,
+        handelEdit,
         handelDeleteProject,
       }}
     >

@@ -204,6 +204,8 @@ export const blogDataColoum = [
   { label: "Date", key: "createdAt", component: "date" },
   { label: "Title", key: "blogTitle", component: "text" },
   { label: "View", key: "slug", component: "view" },
+  { label: "Edit", key: "slug", component: "update" },
+  { label: "Delete", key: "slug", component: "delete" },
 ];
 
 export const blogData = [

@@ -13,12 +13,14 @@ import {
   getBlogByID,
   allBlog,
   deleteBlogThumblinImages,
+  deleteBlog,
 } from "../Actions/blogActions";
 
 import {
   genericDataHandler,
   genericDataAndSlugHandler,
   genericGetHandler,
+  genericPagePushHandler,
 } from "../Utils/generichandler/generichandler";
 
 export default function BlogContextApiProvider({ children }) {
@@ -30,6 +32,7 @@ export default function BlogContextApiProvider({ children }) {
 
   const handelnewBlog = genericDataHandler(createNewBlog);
   const handelUpadteBlog = genericDataAndSlugHandler(updateBlog);
+  const handelDeleteBlog = genericDataHandler(deleteBlog);
 
   const handelAllBlogs = async () => {
     try {
@@ -50,6 +53,14 @@ export default function BlogContextApiProvider({ children }) {
     }
   };
 
+  const handelView = (passValue) => {
+    genericPagePushHandler(router, "/super-admin/blog", passValue);
+  };
+
+  const handelEdit = (passValue) => {
+    genericPagePushHandler(router, "/super-admin/blog", passValue);
+  };
+
   return (
     <BlogContext.Provider
       value={{
@@ -64,6 +75,9 @@ export default function BlogContextApiProvider({ children }) {
         setactionLoading,
         allblogs,
         handelAllBlogs,
+        handelView,
+        handelEdit,
+        handelDeleteBlog,
       }}
     >
       {children}

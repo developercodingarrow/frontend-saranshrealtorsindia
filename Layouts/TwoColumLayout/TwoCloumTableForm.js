@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./css/TwoColumTableForm.module.css";
 import { FillterContext } from "../../ContextApi/FillterContext";
+import { AppContext } from "../../ContextApi/AppContextApi";
 import DynamicTable from "../../Utils/Table/DynimicTable";
 import useUserRoleColumns from "../../custome-hooks/useUserRoleColumns";
 import FormCard from "../../Utils/cards/FormCard";
@@ -8,6 +9,7 @@ import PageHeader from "../DashBoardLayout/PageHeader";
 import TableTitle from "../DashBoardLayout/TableTitle";
 import FillterBar from "../DashBoardLayout/FillterBar";
 import TableWrapper from "../DashBoardLayout/TableWrapper";
+import Model from "../../Utils/model/Model";
 
 export default function TwoCloumTableForm(props) {
   const {
@@ -22,7 +24,15 @@ export default function TwoCloumTableForm(props) {
     SuperAdminColum,
     sideForm,
     folderPath,
+    viewAction,
+    editAction,
+    modelYesAct,
+    createNewBtn,
+    createNew
   } = props;
+
+  const { isModalOpen, setIsModalOpen, handleOpenModal, handleCloseModal } =
+    useContext(AppContext);
 
   const userRole = "super-admin";
   const { visibalRows, setvisibalRows } = useContext(FillterContext);
@@ -32,12 +42,21 @@ export default function TwoCloumTableForm(props) {
     admin: [],
   });
 
-  const handelView = () => {};
-
   return (
     <>
+      <Model
+        title="Your Modal Title"
+        description="Your modal description goes here."
+        onYesClick={modelYesAct}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
       <div className={styles.mainContainer}>
-        <PageHeader pageTitle="Products" />
+        <PageHeader
+          pageTitle="Products"
+          btnText={createNewBtn}
+          handelCreate={createNew}
+        />
         <div className={styles.componentWrapper}>
           <div className={sideForm ? styles.tablePart : styles.fullTable}>
             <div className={styles.card_wrapper}>
@@ -48,8 +67,9 @@ export default function TwoCloumTableForm(props) {
                   visibalRows={visibalRows}
                   tableData={tableData}
                   tableColumns={tableColumns}
-                  handelViewAction={handelView}
-                  handelbtnAction={handelView}
+                  handelViewAction={viewAction}
+                  handelEditAction={editAction}
+                  handelDeleteAction={handleOpenModal}
                   folderPath={folderPath}
                 />
               </TableWrapper>
