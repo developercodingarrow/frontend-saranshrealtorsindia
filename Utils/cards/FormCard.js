@@ -12,6 +12,7 @@ export default function FormCard(props) {
     actionType,
     handelfomSubmit,
     dataFor,
+    dynamicData,
   } = props;
 
   const {
@@ -44,7 +45,9 @@ export default function FormCard(props) {
             <div className={styles.card_body}>
               <form onSubmit={handleSubmit(handelsubmitForm)}>
                 <div className={styles.card_input_wrapper}>
-                  {customeInputs.map((input) => renderInput(input))}
+                  {customeInputs.map((input) =>
+                    renderInput(input, dynamicData)
+                  )}
                 </div>
 
                 <div className={styles.card_btnBox}>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import DashboardLayout from "../../Layouts/DashBoardLayout/DashboardLayout";
 import TwoCloumTableForm from "../../Layouts/TwoColumLayout/TwoCloumTableForm";
 import {
@@ -10,8 +10,10 @@ import {
   developersampleData,
   SuperAdminColum,
 } from "../../JsonData/TableData";
+import { BuilderContext } from "../../ContextApi/BuilderContextApi";
 
 export default function DeveloperPage() {
+  const { allBuilders } = useContext(BuilderContext);
   return (
     <DashboardLayout>
       <TwoCloumTableForm
@@ -22,7 +24,7 @@ export default function DeveloperPage() {
         apiData={DeveloperDetailsApi}
         forAction="submit"
         tableColumn={developerDataColoum}
-        tableData={developersampleData}
+        tableData={allBuilders}
         SuperAdminColum={SuperAdminColum}
         sideForm={true}
       >

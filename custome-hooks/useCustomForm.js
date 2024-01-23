@@ -10,7 +10,8 @@ export function useCustomForm(apiData) {
     mode: "all",
   });
 
-  const renderInput = (input) => {
+  const renderInput = (input, dynamicData) => {
+    console.log(dynamicData);
     let InputComponent, specificProps;
     let defaultValue = apiData[input.name];
     switch (input.type) {
@@ -42,6 +43,15 @@ export function useCustomForm(apiData) {
         InputComponent = SelectElement;
         specificProps = {
           selectOptions: input.options || [],
+          inputLabel: input.label,
+          lableStyle: "lable_style",
+          inputContainer: "block_container",
+        };
+        break;
+      case "apiSelectList":
+        InputComponent = SelectElement;
+        specificProps = {
+          selectOptions: dynamicData.map((item) => item[input.name]) || [],
           inputLabel: input.label,
           lableStyle: "lable_style",
           inputContainer: "block_container",

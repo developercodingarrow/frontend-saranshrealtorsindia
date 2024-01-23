@@ -46,7 +46,7 @@ export const projectDetails = [
   },
 
   {
-    id: 3,
+    id: 2,
     name: "projectStatus",
     type: "radio",
     label: "Project Status",
@@ -57,7 +57,7 @@ export const projectDetails = [
   },
 
   {
-    id: 4,
+    id: 3,
     name: "typesofUnits",
     type: "checkbox",
     label: "project Units",
@@ -68,93 +68,7 @@ export const projectDetails = [
   },
 
   {
-    id: 5,
-    name: "price",
-    type: "text",
-    label: "unit price",
-    placeholder: "Price",
-    // validation: {
-    //   required: "Please select at least one Project Unit type.",
-    // },
-  },
-
-  {
-    id: 6,
-    name: "pricePrefix",
-    type: "text",
-    label: "price Prefix",
-    placeholder: "price Prefix",
-    // validation: {
-    //   required: "Please select at least one Project Unit type.",
-    // },
-  },
-
-  {
-    id: 6,
-    name: "basicPrice",
-    type: "text",
-    label: "Baise price",
-    placeholder: "Basis Price",
-    // validation: {
-    //   required: "Please select at least one Project Unit type.",
-    // },
-  },
-  {
-    id: 7,
-    name: "city",
-    type: "select",
-    label: "City",
-    placeholder: "city",
-    options: ["Gurgaon", "pune", "kolkata"],
-    // validation: {
-    //   required: "Please select at least one Project Unit type.",
-    // },
-  },
-
-  {
     id: 8,
-    name: "location", // Changed 'Name' to 'name'
-    type: "select",
-    placeholder: "location ",
-    label: "Location", // Changed 'lable' to 'label'
-    options: ["sector 5", "Dwarka Express", "Golf couse Roard"],
-    // validation: {
-    //   required: "location  is required.",
-    // },
-  },
-  {
-    id: 9,
-    name: "projectArea",
-    type: "text",
-    placeholder: "Project Area",
-    label: "Project Area",
-    // validation: {
-    //   required: "Project Area is required.",
-    // },
-  },
-
-  {
-    id: 10,
-    name: "floors",
-    type: "text",
-    placeholder: "No of Floors",
-    label: "No of Floors ",
-    // validation: {
-    //   required: "No of Floors is required.",
-    // },
-  },
-  {
-    id: 11,
-    name: "unitsNo",
-    type: "text",
-    placeholder: "No of Units",
-    label: "No of Units ",
-    // validation: {
-    //   required: "No of Units is required.",
-    // },
-  },
-  {
-    id: 12,
     name: "builder",
     type: "select",
     placeholder: "Builder ",
@@ -165,7 +79,7 @@ export const projectDetails = [
     // },
   },
   {
-    id: 13,
+    id: 9,
     name: "reraNo",
     type: "text",
     placeholder: "RERA NO",
@@ -211,20 +125,31 @@ export const ProjectPrices = [
     type: "text",
     label: "unit price",
     placeholder: "Price",
-    validation: {
-      required: "Please select at least one Project Unit type.",
-    },
+    // validation: {
+    //   required: "Please select at least one Project Unit type.",
+    // },
   },
 
   {
-    id: 1,
-    name: "baiseprice",
+    id: 2,
+    name: "pricePrefix",
+    type: "text",
+    label: "price Prefix",
+    placeholder: "price Prefix",
+    // validation: {
+    //   required: "Please select at least one Project Unit type.",
+    // },
+  },
+
+  {
+    id: 3,
+    name: "basicPrice",
     type: "text",
     label: "Baise price",
     placeholder: "Basis Price",
-    validation: {
-      required: "Please select at least one Project Unit type.",
-    },
+    // validation: {
+    //   required: "Please select at least one Project Unit type.",
+    // },
   },
 ];
 
@@ -232,38 +157,24 @@ export const ProjectLocation = [
   {
     id: 1,
     name: "city",
-    type: "select",
+    type: "apiSelectList",
     label: "City",
-    placeholder: "city",
-    options: ["Gurgaon", "pune", "kolkata"],
     validation: {
       required: "Please select at least one Project Unit type.",
     },
   },
-
-  {
-    id: 3,
-    name: "location", // Changed 'Name' to 'name'
-    type: "select",
-    placeholder: "location ",
-    label: "Location", // Changed 'lable' to 'label'
-    options: ["sector 5", "Dwarka Express", "Golf couse Roard"],
-    validation: {
-      required: "location  is required.",
-    },
-  },
 ];
 
-export const projectfeature = [
+export const projectArea = [
   {
     id: 1,
     name: "ProjectArea",
     type: "text",
     placeholder: "Project Area",
     label: "Project Area",
-    validation: {
-      required: "Project Area is required.",
-    },
+    // validation: {
+    //   required: "Project Area is required.",
+    // },
   },
 
   {
@@ -272,9 +183,9 @@ export const projectfeature = [
     type: "text",
     placeholder: "No of Floors",
     label: "No of Floors ",
-    validation: {
-      required: "No of Floors is required.",
-    },
+    // validation: {
+    //   required: "No of Floors is required.",
+    // },
   },
   {
     id: 3,
@@ -282,30 +193,9 @@ export const projectfeature = [
     type: "text",
     placeholder: "No of Units",
     label: "No of Units ",
-    validation: {
-      required: "No of Units is required.",
-    },
-  },
-  {
-    id: 4,
-    name: "builder",
-    type: "select",
-    placeholder: "Builder ",
-    label: "Builder/Developer", // Changed 'lable' to 'label'
-    options: ["Godrej", "GLS", "DLF"],
-    validation: {
-      required: "Builder Name is required.",
-    },
-  },
-  {
-    id: 5,
-    name: "RERANO",
-    type: "text",
-    placeholder: "RERA NO",
-    label: "RERA NO ",
-    validation: {
-      required: "RERA NO is required.",
-    },
+    // validation: {
+    //   required: "No of Units is required.",
+    // },
   },
 ];
 

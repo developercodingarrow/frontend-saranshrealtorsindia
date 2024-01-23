@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import styles from "./css/createPtojectLayout.module.css";
 import FormCard from "../../Utils/cards/FormCard";
 import { ProjectContext } from "../../ContextApi/ProjectContextApi";
+import { CityContext } from "../../ContextApi/CityContextApi";
 import SingleImageUplaod from "../../Utils/ImagesElements/Single-image-upload/SingleImageUplaod";
 import {
   handelUploadThumblin,
@@ -18,6 +19,7 @@ import TextEditorReactQuill from "../../Utils/textEditor/TextEditorReactQuill";
 export default function UpdateProject(props) {
   const router = useRouter();
   const { id } = router.query;
+  const { allCites } = useContext(CityContext);
   const {
     loading,
     setloading,
@@ -38,7 +40,7 @@ export default function UpdateProject(props) {
     ProjectUnitsTypeFiled,
     ProjectPricesFiled,
     ProjectLocationFiled,
-    projectfeatureFiled,
+    projectprojectAreaFiled,
     handelProjectSubmit,
   } = props;
 
@@ -56,14 +58,50 @@ export default function UpdateProject(props) {
         {!loading && Object.keys(projectData).length > 0 && (
           <div className={styles.componentWarper}>
             <div className={styles.left_Side}>
-              <FormCard
-                title="Project Details"
-                customeInputs={projectDetailsFormFiled}
-                apiData={projectData}
-                actionType="submit"
-                handelfomSubmit={handelProjectSubmit}
-                dataFor={id}
-              />
+              <div>
+                <FormCard
+                  title="Project Details"
+                  customeInputs={projectDetailsFormFiled}
+                  apiData={projectData}
+                  actionType="submit"
+                  handelfomSubmit={handelProjectSubmit}
+                  dataFor={id}
+                />
+              </div>
+
+              <div>
+                <FormCard
+                  title="Project AREA Details"
+                  customeInputs={projectprojectAreaFiled}
+                  apiData={projectData}
+                  actionType="submit"
+                  handelfomSubmit={handelProjectSubmit}
+                  dataFor={id}
+                />
+              </div>
+
+              <div>
+                <FormCard
+                  title="Project Price Details"
+                  customeInputs={ProjectPricesFiled}
+                  apiData={projectData}
+                  actionType="submit"
+                  handelfomSubmit={handelProjectSubmit}
+                  dataFor={id}
+                />
+              </div>
+
+              <div>
+                <FormCard
+                  title="Select City"
+                  customeInputs={ProjectLocationFiled}
+                  apiData={projectData}
+                  actionType="submit"
+                  handelfomSubmit={handelProjectSubmit}
+                  dataFor={id}
+                  dynamicData={allCites}
+                />
+              </div>
 
               <div>
                 <TextEditorReactQuill

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import DashboardLayout from "../../Layouts/DashBoardLayout/DashboardLayout";
 import TwoCloumTableForm from "../../Layouts/TwoColumLayout/TwoCloumTableForm";
 import { CreatecitysFileds, CityDetailsApi } from "../../JsonData/formFileds";
@@ -7,8 +7,10 @@ import {
   CitysampleData,
   SuperAdminColum,
 } from "../../JsonData/TableData";
+import { CityContext } from "../../ContextApi/CityContextApi";
 
 export default function CitiesPage() {
+  const { allCites } = useContext(CityContext);
   return (
     <DashboardLayout>
       <TwoCloumTableForm
@@ -19,7 +21,7 @@ export default function CitiesPage() {
         apiData={CityDetailsApi}
         forAction="submit"
         tableColumn={cityDataColoum}
-        tableData={CitysampleData}
+        tableData={allCites}
         SuperAdminColum={SuperAdminColum}
         sideForm={true}
       />

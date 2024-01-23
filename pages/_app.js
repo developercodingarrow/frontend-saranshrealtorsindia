@@ -1,6 +1,8 @@
 import AppContextAppiProvide from "../ContextApi/AppContextApi";
 import AuthContextApiProvider from "../ContextApi/AuthContextApi";
 import BlogContextApiProvider from "../ContextApi/BlogContextApi";
+import BuilderContextAppiProvide from "../ContextApi/BuilderContextApi";
+import CityContextAppiProvide from "../ContextApi/CityContextApi";
 import FillterContextAppiProvide from "../ContextApi/FillterContext";
 import ProjectContextApiProvider from "../ContextApi/ProjectContextApi";
 import UserDashBoardContextApi from "../ContextApi/UserDashBoardContextApi";
@@ -15,7 +17,11 @@ export default function App({ Component, pageProps }) {
             <ProjectContextApiProvider>
               <BlogContextApiProvider>
                 <AppContextAppiProvide>
-                  <Component {...pageProps} />;
+                  <CityContextAppiProvide>
+                    <BuilderContextAppiProvide>
+                      <Component {...pageProps} />;
+                    </BuilderContextAppiProvide>
+                  </CityContextAppiProvide>
                 </AppContextAppiProvide>
               </BlogContextApiProvider>
             </ProjectContextApiProvider>

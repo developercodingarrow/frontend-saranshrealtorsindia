@@ -28,7 +28,7 @@ export default function TwoCloumTableForm(props) {
     editAction,
     modelYesAct,
     createNewBtn,
-    createNew
+    createNew,
   } = props;
 
   const { isModalOpen, setIsModalOpen, handleOpenModal, handleCloseModal } =

@@ -1,8 +1,7 @@
 export const cityDataColoum = [
   { label: "S No", key: "_id", component: "number" },
-  { label: "Date", key: "date", component: "text" },
+  { label: "Date", key: "updatedAt", component: "date" },
   { label: "City Name", key: "cityName", component: "text" },
-  { label: "View", key: "slug", component: "view" },
 ];
 
 export const SuperAdminColum = [
@@ -160,9 +159,8 @@ export const CitysampleData = [
 
 export const developerDataColoum = [
   { label: "S No", key: "_id", component: "number" },
-  { label: "Date", key: "date", component: "text" },
-  { label: "Developer Name", key: "developerName", component: "text" },
-  { label: "View", key: "slug", component: "view" },
+  { label: "Date", key: "updatedAt", component: "date" },
+  { label: "Developer Name", key: "builderName", component: "text" },
 ];
 
 export const developersampleData = [

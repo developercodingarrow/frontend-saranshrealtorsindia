@@ -7,7 +7,7 @@ import {
   ProjectUnitsType,
   ProjectPrices,
   ProjectLocation,
-  projectfeature,
+  projectArea,
 } from "../../../JsonData/formFileds";
 import UpdateProject from "../../../Layouts/createProjectLayout/UpdateProject";
 import { ProjectContext } from "../../../ContextApi/ProjectContextApi";
@@ -23,7 +23,7 @@ export default function UpadteProjectPage() {
         ProjectUnitsTypeFiled={ProjectUnitsType}
         ProjectPricesFiled={ProjectPrices}
         ProjectLocationFiled={ProjectLocation}
-        projectfeatureFiled={projectfeature}
+        projectprojectAreaFiled={projectArea}
         handelProjectSubmit={handelUpadteProject}
       />
     </DashboardLayout>
