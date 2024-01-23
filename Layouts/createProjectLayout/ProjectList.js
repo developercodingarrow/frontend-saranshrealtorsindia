@@ -13,9 +13,12 @@ export default function ProjectList(props) {
   const router = useRouter();
   const { isModalOpen, setIsModalOpen, handleOpenModal, handleCloseModal } =
     useContext(AppContext);
+
   const { handelnewProject, handelView, handelDeleteProject } =
     useContext(ProjectContext);
+
   const { visibalRows, setvisibalRows } = useContext(FillterContext);
+
   const {
     pageTitle,
     tableTitle,
@@ -62,7 +65,7 @@ export default function ProjectList(props) {
             <div className={styles.tablePart}>
               <div className={styles.card_wrapper}>
                 <TableTitle tableTitle="PROJECT LIST" />
-                <FillterBar />
+                <FillterBar data={tableData} />
                 <div className={styles.card}>
                   <div className={styles.tableContainer}>
                     <div>

@@ -4,6 +4,7 @@ import DashboardLayout from "../../../Layouts/DashBoardLayout/DashboardLayout";
 import { ProjectContext } from "../../../ContextApi/ProjectContextApi";
 import ProjectList from "../../../Layouts/createProjectLayout/ProjectList";
 import { projectDataColoum } from "../../../JsonData/TableData";
+import TwoCloumTableForm from "../../../Layouts/TwoColumLayout/TwoCloumTableForm";
 
 export default function ProjectsList() {
   const { handelAllProjects, allProject } = useContext(ProjectContext);
@@ -18,7 +19,15 @@ export default function ProjectsList() {
 
   return (
     <DashboardLayout>
-      <ProjectList tableData={allProject} tableColumn={projectDataColoum} />
+      {/* <ProjectList tableData={allProject} tableColumn={projectDataColoum} /> */}
+      <TwoCloumTableForm
+        pageTitle="Product"
+        tableTitle="Product List"
+        tableData={allProject}
+        tableColumn={projectDataColoum}
+        sideForm={false}
+        folderPath="project-thumblin"
+      />
     </DashboardLayout>
   );
 }

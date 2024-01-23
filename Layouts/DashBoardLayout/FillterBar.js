@@ -25,15 +25,17 @@ export default function FillterBar(props) {
   };
   return (
     <div className={styles.mainContainer}>
-      <div>
-        <TableSearch
-          handelsearchBy={filterDataByUsername}
-          searchFiled={"blogTitle"}
-          placholder="Search product"
-        />
-      </div>
-      <div>
-        <SortData handelSelectSort={sortDataByDate} />
+      <div className={styles.filler_leftSide}>
+        <div>
+          <TableSearch
+            handelsearchBy={filterDataByUsername}
+            searchFiled={"blogTitle"}
+            placholder="Search product"
+          />
+        </div>
+        <div>
+          <SortData handelSelectSort={sortDataByDate} />
+        </div>
       </div>
       <div>
         <DateRange

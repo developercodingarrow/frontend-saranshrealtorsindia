@@ -22,6 +22,7 @@ export default function BlogListPage() {
         tableData={allblogs}
         tableColumn={blogDataColoum}
         sideForm={false}
+        folderPath="blog-images"
       />
     </DashboardLayout>
   );

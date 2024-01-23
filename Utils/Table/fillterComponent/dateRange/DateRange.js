@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./css/dateRange.module.css";
+import ClickBtn from "../../../Elements/buttonsElements/ClickBtn";
 
 export default function DateRange(props) {
   const {
@@ -16,17 +17,20 @@ export default function DateRange(props) {
         placeholder="Start Date"
         value={startDateValue}
         onChange={handelStartDate}
-        className={styles.input}
+        className={styles.dateinput}
       />
       <input
         type="date"
         placeholder="End Date"
         value={endDateValue}
         onChange={handelEndDate}
-        className={styles.input}
+        className={styles.dateinput}
       />
 
-      <button onClick={handelBtn}> apply</button>
+      <button onClick={handelBtn} className={styles.btnStyle}>
+        {" "}
+        apply
+      </button>
     </div>
   );
 }

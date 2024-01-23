@@ -24,6 +24,7 @@ export default function DeveloperPage() {
         tableColumn={developerDataColoum}
         tableData={developersampleData}
         SuperAdminColum={SuperAdminColum}
+        sideForm={true}
       >
         <p>Table</p>
       </TwoCloumTableForm>

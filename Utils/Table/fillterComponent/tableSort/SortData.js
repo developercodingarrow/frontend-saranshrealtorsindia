@@ -4,7 +4,7 @@ import styles from "./css/sortdata.module.css";
 export default function SortData(props) {
   const { handelSelectSort } = props;
   return (
-    <div>
+    <div className={styles.main_Wrapper}>
       <select
         onChange={(e) => handelSelectSort(e.target.value)}
         className={styles.selectButton}

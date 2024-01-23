@@ -3,7 +3,7 @@ import styles from "./css/clickBtn.module.css";
 import { BsFillCloudUploadFill } from "../../ApplicationIcon";
 
 export default function ClickBtn(props) {
-  const { handelClick, btnText, icon } = props;
+  const { handelClick, btnText, icon, btnDesign, buttonPadding } = props;
 
   let IconComponent = null;
 
@@ -15,8 +15,10 @@ export default function ClickBtn(props) {
     IconComponent = <BsFillCloudUploadFill />;
   }
 
+  const buttonClasses = `${styles[btnDesign]} ${styles[buttonPadding]}`;
+
   return (
-    <button onClick={handelClick} className={styles.btnStyle}>
+    <button onClick={handelClick} className={buttonClasses}>
       {IconComponent && <span>{IconComponent}</span>}
       {btnText && <span>{btnText}</span>}
     </button>

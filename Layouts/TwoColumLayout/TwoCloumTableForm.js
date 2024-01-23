@@ -21,6 +21,7 @@ export default function TwoCloumTableForm(props) {
     tableData,
     SuperAdminColum,
     sideForm,
+    folderPath,
   } = props;
 
   const userRole = "super-admin";
@@ -49,19 +50,19 @@ export default function TwoCloumTableForm(props) {
                   tableColumns={tableColumns}
                   handelViewAction={handelView}
                   handelbtnAction={handelView}
-                  folderPath="blog-images"
+                  folderPath={folderPath}
                 />
               </TableWrapper>
             </div>
           </div>
           {sideForm && (
             <div className={styles.formPart}>
-              {/* <FormCard
+              <FormCard
                 title={formTitle}
                 customeInputs={formFields}
                 apiData={apiData}
                 actionType={forAction}
-              /> */}
+              />
             </div>
           )}
         </div>

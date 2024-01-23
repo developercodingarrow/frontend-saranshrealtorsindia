@@ -1,6 +1,16 @@
 .mainContainer {
   display: flex;
-  border: 1px solid var(--ts-muted);
   margin-bottom: var(--ts-20-px);
   padding: 10px;
+  column-gap: 20px;
+  row-gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filler_leftSide {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  align-items: center;
 }
