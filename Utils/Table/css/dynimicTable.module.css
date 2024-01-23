@@ -2,7 +2,6 @@
 
 .table_container {
   background-color: #fff;
-  overflow: auto;
   max-width: 100%;
   box-shadow: var(--mui-table-container-shadow);
 }
@@ -12,11 +11,13 @@
   overflow-y: auto;
   max-height: 400px;
   margin-bottom: 20px;
+  min-height: 100px;
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
+  min-height: 300px;
 }
 
 .tableHeader {

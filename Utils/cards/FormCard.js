@@ -11,6 +11,7 @@ export default function FormCard(props) {
     apiData,
     actionType,
     handelfomSubmit,
+    dataFor,
   } = props;
 
   const {
@@ -25,7 +26,7 @@ export default function FormCard(props) {
   const handelsubmitForm = async (data) => {
     try {
       console.log(data);
-      const res = await handelfomSubmit(data);
+      const res = await handelfomSubmit(data, dataFor);
       console.log(res);
     } catch (error) {
       console.log(error);

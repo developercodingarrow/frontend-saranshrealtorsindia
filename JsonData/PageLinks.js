@@ -7,9 +7,9 @@ export const asidebarOptions = [
     link: "/super-admin",
   },
   {
-    name: "ADD PROJECT",
+    name: "PROJECT",
     iconComponent: AiOutlineDashboard, // Use the imported component
-    link: "/super-admin/projects/create-project",
+    link: "/super-admin/projects",
   },
   {
     name: "BLOG",
@@ -27,6 +27,8 @@ export const asidebarOptions = [
     link: "/super-admin/developer",
   },
 ];
+
+// projects
 
 export const asidefooterLink = [
   {

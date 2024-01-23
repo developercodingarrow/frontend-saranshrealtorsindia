@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import DashboardLayout from "../../../Layouts/DashBoardLayout/DashboardLayout";
 import {
   projectDetails,
@@ -10,8 +10,9 @@ import {
   projectfeature,
 } from "../../../JsonData/formFileds";
 import UpdateProject from "../../../Layouts/createProjectLayout/UpdateProject";
-
+import { ProjectContext } from "../../../ContextApi/ProjectContextApi";
 export default function UpadteProjectPage() {
+  const { handelUpadteProject } = useContext(ProjectContext);
   return (
     <DashboardLayout>
       <UpdateProject
@@ -23,6 +24,7 @@ export default function UpadteProjectPage() {
         ProjectPricesFiled={ProjectPrices}
         ProjectLocationFiled={ProjectLocation}
         projectfeatureFiled={projectfeature}
+        handelProjectSubmit={handelUpadteProject}
       />
     </DashboardLayout>
   );

@@ -3,6 +3,7 @@ import styles from "./css/dynimicTable.module.css";
 import { formatDate } from "../logical-function/formatDate";
 import useTableFillters from "../../custome-hooks/useTableFillters";
 import ActionBtn from "../Elements/buttonsElements/ActionBtn";
+import TableImage from "../Elements/TableImage/TableImage";
 
 export default function DynamicTable(props) {
   const {
@@ -13,6 +14,7 @@ export default function DynamicTable(props) {
     handelSwitch,
     handelViewAction,
     visibalRows,
+    folderPath,
   } = props;
 
   const handlers = {
@@ -20,6 +22,9 @@ export default function DynamicTable(props) {
     delete: handelbtnAction,
     switch: handelSwitch,
     view: handelViewAction,
+    update: handelViewAction,
+    singleImage: folderPath,
+
     // Add more handlers as needed based on component types
   };
 
@@ -30,13 +35,19 @@ export default function DynamicTable(props) {
     endIndex,
     rowsPerPage,
     currentPage,
+    toggle,
+    settoggle,
     handleRowsPerPageChangeWrapper,
     updateVisibleRows,
   } = useTableFillters(tableData);
 
   useEffect(() => {
-    updateVisibleRows();
-  }, [currentPage, rowsPerPage]);
+    // Check if the hook is initialized before calling updateVisibleRows
+    if (visibalRows) {
+      settoggle(!toggle);
+      updateVisibleRows();
+    }
+  }, [currentPage, rowsPerPage, totalRows]);
 
   return (
     <div className={styles.table_container}>
@@ -115,7 +126,7 @@ const renderCellContent = (indexNo, data, id, slug, componentType, handler) => {
       if (handler) {
         return (
           <>
-            <p>Switch Btn</p>
+            <p>{slug}</p>
           </>
         );
       }
@@ -139,7 +150,13 @@ const renderCellContent = (indexNo, data, id, slug, componentType, handler) => {
       if (handler) {
         return (
           <>
-            <p>UPDATE BUTTON</p>
+            <ActionBtn
+              label="Edit"
+              onClick={handler}
+              btnDesign={"button"}
+              itemId={slug}
+              buttonPadding="buttonPadding"
+            />
           </>
         );
       }
@@ -155,6 +172,15 @@ const renderCellContent = (indexNo, data, id, slug, componentType, handler) => {
               itemId={slug}
               buttonPadding="buttonPadding"
             />
+          </>
+        );
+      }
+
+    case "singleImage":
+      if (handler) {
+        return (
+          <>
+            <TableImage imageData={data} folderPath={handler} />
           </>
         );
       }

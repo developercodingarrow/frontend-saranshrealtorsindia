@@ -10,7 +10,8 @@ import { filterByUsername } from "../Utils/logical-function/filteringFunctions";
 import { filterByDateRange } from "../Utils/logical-function/dateRangeFilter";
 import { FillterContext } from "../ContextApi/FillterContext";
 
-export default function useTableFillters(initialRows, initialRowsPerPage = 3) {
+export default function useTableFillters(initialRows, initialRowsPerPage = 5) {
+  const [toggle, settoggle] = useState(true);
   const { visibalRows, setvisibalRows } = useContext(FillterContext);
   const totalRows = initialRows.length;
   const [rowsPerPage, setrowsPerPage] = useState(initialRowsPerPage);
@@ -18,6 +19,7 @@ export default function useTableFillters(initialRows, initialRowsPerPage = 3) {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
 
+  console.log("run useTable filter");
   // Direct To to page Number
   const setPage = (pageNumber) => {
     goToPage(pageNumber, setcurrentPage);
@@ -104,5 +106,7 @@ export default function useTableFillters(initialRows, initialRowsPerPage = 3) {
     endDate,
     handleStartDateChange,
     handleEndDateChange,
+    toggle,
+    settoggle,
   };
 }

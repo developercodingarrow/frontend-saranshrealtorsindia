@@ -62,6 +62,7 @@ export default function UpdateProject(props) {
                 apiData={projectData}
                 actionType="submit"
                 handelfomSubmit={handelProjectSubmit}
+                dataFor={id}
               />
 
               <div>
@@ -69,6 +70,7 @@ export default function UpdateProject(props) {
                   handeSubmit={handelUpadteProject}
                   dataFor={id}
                   updateFiled="projectDescription"
+                  defultvalue={projectData.projectDescription}
                 />
               </div>
             </div>

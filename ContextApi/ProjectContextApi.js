@@ -5,23 +5,29 @@ import React, {
   useRef,
   useEffect,
 } from "react";
+import { useRouter } from "next/router";
 
 export const ProjectContext = createContext();
 import {
   createNewProject,
   getProjectByID,
   UpdateProjectDeatils,
+  getAllProjetcs,
+  deleteProject,
 } from "../Actions/projectActions";
 
 import {
   genericDataHandler,
   genericDataAndSlugHandler,
   genericGetByIDHandler,
+  genericPagePushHandler,
 } from "../Utils/generichandler/generichandler";
 
 export default function ProjectContextApiProvider({ children }) {
+  const router = useRouter();
   const [loading, setloading] = useState(false);
   const [actionLoading, setactionLoading] = useState(false);
+  const [allProject, setallProject] = useState([]);
   const [projectData, setProjectData] = useState({});
   const [ProjectThumblin, setProjectThumblin] = useState({});
   const [projectCoverImages, setProjectCoverImages] = useState([]);
@@ -29,6 +35,16 @@ export default function ProjectContextApiProvider({ children }) {
 
   const handelnewProject = genericDataHandler(createNewProject);
   const handelUpadteProject = genericDataAndSlugHandler(UpdateProjectDeatils);
+  const handelDeleteProject = genericDataHandler(deleteProject);
+  const handelAllProjects = async () => {
+    try {
+      const res = await getAllProjetcs();
+      console.log(res);
+      setallProject(res.data.result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handelGetProject = async (id) => {
     try {
@@ -38,7 +54,6 @@ export default function ProjectContextApiProvider({ children }) {
 
       if (res.data.status === "success") {
         setloading(false);
-        console.log(project);
         // Now you can set the project data state
         const unitsData = project.typesofUnits.map((unit) => unit);
         // Extract ProjectCoverImage data
@@ -63,6 +78,7 @@ export default function ProjectContextApiProvider({ children }) {
           floors: project.floors || "",
           projectArea: project.projectArea || "",
           basicPrice: project.basicPrice || "",
+          projectDescription: project.projectDescription,
         });
 
         // Set the ProjectCoverImage data state
@@ -73,6 +89,11 @@ export default function ProjectContextApiProvider({ children }) {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  // Example usage for view action
+  const handelView = (passValue) => {
+    genericPagePushHandler(router, "/super-admin/projects", passValue);
   };
 
   return (
@@ -89,6 +110,10 @@ export default function ProjectContextApiProvider({ children }) {
         actionLoading,
         setactionLoading,
         handelUpadteProject,
+        handelAllProjects,
+        allProject,
+        handelView,
+        handelDeleteProject,
       }}
     >
       {children}

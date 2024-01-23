@@ -10,8 +10,8 @@ import {
 import SubmitBtn from "../Elements/buttonsElements/SubmitBtn";
 
 export default function TextEditorReactQuill(props) {
-  const { handeSubmit, dataFor, updateFiled } = props;
-  const [editorValue, seteditorValue] = useState("");
+  const { handeSubmit, dataFor, updateFiled, defultvalue } = props;
+  const [editorValue, seteditorValue] = useState(defultvalue);
   const handelEditorOnChange = (e) => {
     seteditorValue(e);
   };

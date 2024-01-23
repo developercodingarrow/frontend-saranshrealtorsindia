@@ -1,12 +1,17 @@
-import React, { useContext } from "react";
-import styles from "./css/blogList.module.css";
+import React, { useContext, useState } from "react";
+import styles from "./css/projectList.module.css";
 import { useRouter } from "next/router";
-import { BlogContext } from "../../ContextApi/BlogContextApi";
+import { ProjectContext } from "../../ContextApi/ProjectContextApi";
 import DynamicTable from "../../Utils/Table/DynimicTable";
 import { FillterContext } from "../../ContextApi/FillterContext";
-import DynamicTableCopy from "../../Utils/Table/DynimicTable copy";
-
-export default function BlogList(props) {
+import Model from "../../Utils/model/Model";
+import { AppContext } from "../../ContextApi/AppContextApi";
+export default function ProjectList(props) {
+  const router = useRouter();
+  const { isModalOpen, setIsModalOpen, handleOpenModal, handleCloseModal } =
+    useContext(AppContext);
+  const { handelnewProject, handelView, handelDeleteProject } =
+    useContext(ProjectContext);
   const { visibalRows, setvisibalRows } = useContext(FillterContext);
   const {
     pageTitle,
@@ -20,30 +25,33 @@ export default function BlogList(props) {
     SuperAdminColum,
   } = props;
 
-  const router = useRouter();
-  const { handelnewBlog } = useContext(BlogContext);
-
-  const handelNewBlogCreate = async () => {
+  const handelNewProjectCreate = async () => {
     try {
-      const res = await handelnewBlog({});
+      const res = await handelnewProject({});
       console.log(res);
       if (res.data.status === "success") {
-        router.push(`/super-admin/blog/${res.data.result._id}`);
+        router.push(`/super-admin/projects/${res.data.result._id}`);
       }
     } catch (error) {
       console.log(error);
     }
   };
 
-  const handelView = () => {};
-
   console.log(tableData);
+
   return (
     <>
+      <Model
+        title="Your Modal Title"
+        description="Your modal description goes here."
+        onYesClick={handelDeleteProject}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
       {tableData ? (
         <div className={styles.mainContainer}>
           <div className={styles.pageTitle}>{pageTitle}</div>
-          <button onClick={handelNewBlogCreate}>Add New Blog</button>
+          <button onClick={handelNewProjectCreate}>Add New Project</button>
           <div className={styles.componentWrapper}>
             <div className={styles.tablePart}>
               <div className={styles.card_wrapper}>
@@ -60,8 +68,8 @@ export default function BlogList(props) {
                           tableData={tableData}
                           tableColumns={tableColumn}
                           handelViewAction={handelView}
-                          handelbtnAction={handelView}
-                          folderPath="blog-images"
+                          handelbtnAction={handleOpenModal}
+                          folderPath="project-thumblin"
                         />
                       )}
                     </div>

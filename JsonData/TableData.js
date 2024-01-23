@@ -97,3 +97,84 @@ export const developersampleData = [
     date: "2023-12-24",
   },
 ];
+
+export const blogDataColoum = [
+  { label: "S No", key: "_id", component: "number" },
+  { label: "Image", key: "BlogThumblin", component: "singleImage" },
+  { label: "Date", key: "createdAt", component: "date" },
+  { label: "Title", key: "blogTitle", component: "text" },
+  { label: "View", key: "slug", component: "view" },
+];
+
+export const blogData = [
+  {
+    _id: "1",
+    blogTitle: "this is first blog title vjhvhvjhk  vhjvhj vhjvhj ",
+    createdAt: "2024-01-18T22:32:04.705Z",
+    developerName: "Godrej",
+    slug: "this-is-first-blog-title",
+    BlogThumblin: {
+      url: "blog-images-1705755426093-blog-2.png",
+      altText: "blog-2.png",
+    },
+    BlogCoverImage: {
+      url: "blog-cover-1705755441015-Book your dream home on Naurangpur Road-Godrej 101 Luxury Flats in Gurgaon.png",
+      altText:
+        "Book your dream home on Naurangpur Road-Godrej 101 Luxury Flats in Gurgaon.png",
+    },
+    blogTags: ["Tag 1", "Tag 2", "Tag 5"],
+    blogCategories: [
+      {
+        category: "Sports News",
+        _id: "65a9b393806ef6ecc6e9f4eb",
+        slug: "sports-news",
+      },
+      {
+        category: "Technology Updates",
+        _id: "65a9b393806ef6ecc6e9f4ec",
+        slug: "technology-updates",
+      },
+    ],
+    keywords: "keywords from front end, test keywords, again, test, ok",
+  },
+  {
+    _id: "1",
+    blogTitle: "this is first blog title",
+    createdAt: "2024-01-18T22:32:04.705Z",
+    developerName: "Godrej",
+    slug: "this-is-first-blog-title",
+    BlogThumblin: {
+      url: "blog-images-1705755426093-blog-2.png",
+      altText: "blog-2.png",
+    },
+    BlogCoverImage: {
+      url: "blog-cover-1705755441015-Book your dream home on Naurangpur Road-Godrej 101 Luxury Flats in Gurgaon.png",
+      altText:
+        "Book your dream home on Naurangpur Road-Godrej 101 Luxury Flats in Gurgaon.png",
+    },
+    blogTags: ["Tag 1", "Tag 2", "Tag 5"],
+    blogCategories: [
+      {
+        category: "Sports News",
+        _id: "65a9b393806ef6ecc6e9f4eb",
+        slug: "sports-news",
+      },
+      {
+        category: "Technology Updates",
+        _id: "65a9b393806ef6ecc6e9f4ec",
+        slug: "technology-updates",
+      },
+    ],
+    keywords: "keywords from front end, test keywords, again, test, ok",
+  },
+];
+
+export const projectDataColoum = [
+  { label: "S No", key: "_id", component: "number" },
+  { label: "Image", key: "ProjectThumblin", component: "singleImage" },
+  { label: "Date", key: "createdAt", component: "date" },
+  { label: "Title", key: "projectTitle", component: "text" },
+  { label: "View", key: "_id", component: "view" },
+  { label: "Edit", key: "slug", component: "update" },
+  { label: "Delete", key: "slug", component: "delete" },
+];

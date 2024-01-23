@@ -1,3 +1,4 @@
+import AppContextAppiProvide from "../ContextApi/AppContextApi";
 import AuthContextApiProvider from "../ContextApi/AuthContextApi";
 import BlogContextApiProvider from "../ContextApi/BlogContextApi";
 import FillterContextAppiProvide from "../ContextApi/FillterContext";
@@ -13,7 +14,9 @@ export default function App({ Component, pageProps }) {
           <FillterContextAppiProvide>
             <ProjectContextApiProvider>
               <BlogContextApiProvider>
-                <Component {...pageProps} />;
+                <AppContextAppiProvide>
+                  <Component {...pageProps} />;
+                </AppContextAppiProvide>
               </BlogContextApiProvider>
             </ProjectContextApiProvider>
           </FillterContextAppiProvide>

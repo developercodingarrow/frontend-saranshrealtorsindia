@@ -34,3 +34,8 @@ export const genericGetByIDHandler = (sendDataFunction) => {
     }
   };
 };
+
+export const genericPagePushHandler = (router, baseRoute, passValue) => {
+  alert(passValue);
+  router.push(`${baseRoute}/${passValue}`);
+};
