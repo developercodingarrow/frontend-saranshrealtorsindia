@@ -13,4 +13,25 @@
   width: 40%;
   justify-content: space-between;
   align-items: center;
+  column-gap: 10px;
+  row-gap: 50px;
+}
+
+.filler_rightSide {
+}
+
+@media screen and (max-width: 992px) {
+  .mainContainer {
+    flex-direction: column;
+  }
+  .filler_leftSide {
+    width: 100%;
+    align-items: center;
+    justify-content: start;
+    column-gap: 10px;
+  }
+
+  .filler_rightSide {
+    width: 100%;
+  }
 }

@@ -17,7 +17,13 @@
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
-  color: gray;
+  color: var(--ts-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.options_Tab:hover {
+  background-color: var(--ts-primary);
+  color: var(--ts-white);
 }
 
 .option_Tab_iconBox {

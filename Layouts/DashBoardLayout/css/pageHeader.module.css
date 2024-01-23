@@ -31,3 +31,13 @@
   background-color: var(--ts-primary);
   color: var(--ts-white);
 }
+
+@media screen and (max-width: 992px) {
+  .main_Container {
+    padding: 10px 0px;
+    margin-bottom: 10px;
+  }
+
+  .btnStyle {
+  }
+}

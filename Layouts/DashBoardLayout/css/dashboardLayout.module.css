@@ -2,6 +2,7 @@
   width: 100%;
   min-height: 900px;
   padding: 0px;
+  font-family: var(--ts-font-family);
 }
 
 .inner_container {
@@ -51,6 +52,8 @@
   padding-right: 5%;
   font-size: 18px;
   cursor: pointer;
+  color: var(--ts-primary);
+  font-weight: 500;
 }
 
 .option_wraper {
@@ -95,6 +98,15 @@
   position: fixed;
   top: 0px;
   display: flex;
+  align-items: center;
+}
+
+.navBarTitleBox {
+  color: var(--ts-white);
+  font-family: var(--ts-font-family);
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: capitalize;
 }
 
 .close_navBar_Container {
@@ -104,6 +116,7 @@
   position: fixed;
   top: 0px;
   display: flex;
+  align-items: center;
 }
 
 .navToogle_Box {
@@ -112,6 +125,7 @@
   justify-content: center;
   width: 3%;
   margin-right: 1.5%;
+  color: var(--ts-white);
 }
 
 .dynimic_content_Container {
@@ -127,6 +141,10 @@
 }
 
 @media screen and (max-width: 992px) {
+  .main_container {
+    width: 100%;
+  }
+
   .aside_Drawer {
     position: fixed;
     width: 35%;
@@ -169,7 +187,7 @@
 
   .navBar_Container {
     width: 100%;
-    background-color: antiquewhite;
+    background-color: var(--ts-primary);
     height: 50px;
     position: fixed;
     top: 0px;
@@ -179,12 +197,18 @@
 
   .close_navBar_Container {
     width: 100%;
-    background-color: antiquewhite;
+    background-color: var(--ts-primary);
     height: 50px;
     position: fixed;
     top: 0px;
     display: flex;
     padding-left: 10px;
+  }
+
+  .dynimic_content_Container {
+    padding-left: 2%;
+    padding-top: 2%;
+    padding-right: 2%;
   }
 }
 

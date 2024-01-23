@@ -11,19 +11,7 @@ import {
 export default function SuperAdminDashBoardPage() {
   return (
     <DashboardLayout>
-      <TwoCloumTableForm
-        pageTitle="City Page"
-        tableTitle="City List"
-        formTitle="CREATE CITY"
-        formFields={CreatecitysFileds}
-        apiData={CityDetailsApi}
-        forAction="submit"
-        tableColumn={cityDataColoum}
-        tableData={CitysampleData}
-        SuperAdminColum={SuperAdminColum}
-      >
-        <p>Table</p>
-      </TwoCloumTableForm>
+      <p>Table</p>
     </DashboardLayout>
   );
 }

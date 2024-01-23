@@ -77,3 +77,15 @@
   display: flex;
   column-gap: 10px;
 }
+
+@media screen and (max-width: 992px) {
+  .table_container {
+    /* border: 1px solid red; */
+  }
+
+  .table th {
+    font-weight: 300;
+    font-family: var(--bs-font-family);
+    font-size: 12px;
+  }
+}

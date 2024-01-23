@@ -37,7 +37,7 @@ export default function FillterBar(props) {
           <SortData handelSelectSort={sortDataByDate} />
         </div>
       </div>
-      <div>
+      <div className={styles.filler_rightSide}>
         <DateRange
           startDateValue={startDate}
           endDateValue={endDate}

@@ -39,3 +39,16 @@
   color: var(--ts-white);
   cursor: pointer;
 }
+
+@media screen and (max-width: 992px) {
+  .dateinput {
+    font-size: 10px;
+    min-height: 20px;
+  }
+
+  .btnStyle {
+    padding: 3px 7px;
+    border-radius: 3px;
+    font-size: 10px;
+  }
+}

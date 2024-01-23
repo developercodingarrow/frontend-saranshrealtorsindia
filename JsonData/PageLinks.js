@@ -1,4 +1,10 @@
-import { AiOutlineDashboard } from "../Utils/ApplicationIcon";
+import {
+  AiOutlineDashboard,
+  MdOutlineHomeWork,
+  FaMagnifyingGlassLocation,
+  FaPersonShelter,
+  IoNewspaperOutline,
+} from "../Utils/ApplicationIcon";
 
 export const asidebarOptions = [
   {
@@ -8,22 +14,22 @@ export const asidebarOptions = [
   },
   {
     name: "PROJECT",
-    iconComponent: AiOutlineDashboard, // Use the imported component
+    iconComponent: MdOutlineHomeWork, // Use the imported component
     link: "/super-admin/projects",
   },
   {
     name: "BLOG",
-    iconComponent: AiOutlineDashboard, // Use the imported component
+    iconComponent: IoNewspaperOutline, // Use the imported component
     link: "/super-admin/blog",
   },
   {
     name: "CITY PAGE",
-    iconComponent: AiOutlineDashboard, // Use the imported component
+    iconComponent: FaMagnifyingGlassLocation, // Use the imported component
     link: "/super-admin/cities",
   },
   {
     name: "DEVELOPER",
-    iconComponent: AiOutlineDashboard, // Use the imported component
+    iconComponent: FaPersonShelter, // Use the imported component
     link: "/super-admin/developer",
   },
 ];

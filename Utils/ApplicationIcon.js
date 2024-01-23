@@ -4,8 +4,13 @@ import {
   AiOutlineClose,
   AiOutlineDashboard,
 } from "react-icons/ai";
-import { FaXTwitter, FaBars } from "react-icons/fa6";
-import { MdProductionQuantityLimits } from "react-icons/md";
+import {
+  FaXTwitter,
+  FaBars,
+  FaMagnifyingGlassLocation,
+  FaPersonShelter,
+} from "react-icons/fa6";
+import { MdProductionQuantityLimits, MdOutlineHomeWork } from "react-icons/md";
 import { TiArrowUnsorted } from "react-icons/ti";
 import { HiMagnifyingGlass, HiOutlineBuildingOffice } from "react-icons/hi2";
 import { BiCategoryAlt, BiSolidCloudUpload } from "react-icons/bi";
@@ -26,6 +31,7 @@ import {
 import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import { GoUpload } from "react-icons/go";
+import { IoNewspaperOutline } from "react-icons/io5";
 
 export {
   IoIosArrowBack,
@@ -54,5 +60,9 @@ export {
   IoIosCheckmark,
   IoMdCheckmark,
   BsFillCloudUploadFill,
+  MdOutlineHomeWork,
+  FaMagnifyingGlassLocation,
+  FaPersonShelter,
+  IoNewspaperOutline,
   // Add more icons as needed
 };

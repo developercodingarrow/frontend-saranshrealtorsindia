@@ -34,8 +34,8 @@ export default function DashboardLayout({ children }) {
               <div className={styles.navToogle_Box}>
                 <FaBars onClick={handelOpenSideBarDrawer} />
               </div>
-              <div>
-                <p>Navbar</p>
+              <div className={styles.navBarTitleBox}>
+                <h3>Saransh Realtors</h3>
               </div>
             </div>
             <div className={styles.dynimic_content_Container}>{children}</div>
