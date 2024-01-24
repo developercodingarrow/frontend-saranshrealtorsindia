@@ -8,6 +8,7 @@ import {
   MdOutlineMessage,
   IoNewspaperOutline,
 } from "../../Utils/ApplicationIcon";
+import MobileFillterDrawer from "./MobileFillterDrawer";
 
 export default function ProjectListingLayout({ children }) {
   const [showSideBar, setShowSideBar] = useState(false);
@@ -42,7 +43,10 @@ export default function ProjectListingLayout({ children }) {
             showSideBar ? styles.showSideBar : ""
           }`}
         >
-          sidebar
+          <div className={styles.dekstop_fillterBarUi}>dekstop</div>
+          <div className={styles.mobile_fillterBarUi}>
+            <MobileFillterDrawer />
+          </div>
         </div>
 
         <div className={styles.projectListing_Container}>Listing Cotent</div>

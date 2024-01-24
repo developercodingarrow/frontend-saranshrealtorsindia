@@ -1,0 +1,30 @@
+/* ButtonCheckBox.module.css */
+
+.checkBox {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.checkBoxInner {
+  color: black;
+}
+
+.checkBoxValue {
+  color: #ccc; /* Default color when unchecked */
+}
+
+.checked {
+  background-color: #ed6789;
+}
+
+.checked .checkBoxValue {
+  color: #fff;
+}

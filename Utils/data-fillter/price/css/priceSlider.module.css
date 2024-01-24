@@ -1,0 +1,33 @@
+/* PriceSlider.module.css */
+
+.priceSlider {
+  margin-top: 20px;
+  position: relative;
+}
+
+.title {
+  margin-bottom: 10px;
+  color: #4e4e4e;
+}
+
+.slider {
+  width: 100%;
+  background-color: var(--ts-muted);
+  appearance: none;
+  height: 3px;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #ed6789;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -5px;
+  transition: background-color 0.3s;
+}

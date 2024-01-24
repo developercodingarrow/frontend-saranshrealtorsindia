@@ -32,11 +32,16 @@ import {
   IoIosCheckmark,
   IoMdCheckmark,
   IoIosCall,
+  IoIosCloseCircle,
 } from "react-icons/io";
 import { MdDelete, MdOutlineMessage } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import { GoUpload } from "react-icons/go";
-import { IoNewspaperOutline, IoCallOutline } from "react-icons/io5";
+import {
+  IoNewspaperOutline,
+  IoCallOutline,
+  IoLocationOutline,
+} from "react-icons/io5";
 import { FcHome } from "react-icons/fc";
 
 export {
@@ -74,5 +79,7 @@ export {
   HiOutlineBuildingOffice2,
   IoCallOutline,
   MdOutlineMessage,
+  IoIosCloseCircle,
+  IoLocationOutline,
   // Add more icons as needed
 };
