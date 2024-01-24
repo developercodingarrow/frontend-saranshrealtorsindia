@@ -1,0 +1,91 @@
+import React, { useState } from "react";
+import styles from "./css/projectListingLayout.module.css";
+import Link from "next/link";
+import {
+  FcHome,
+  HiOutlineBuildingOffice2,
+  IoCallOutline,
+  MdOutlineMessage,
+  IoNewspaperOutline,
+} from "../../Utils/ApplicationIcon";
+
+export default function ProjectListingLayout({ children }) {
+  const [showSideBar, setShowSideBar] = useState(false);
+  const [showAppDrawer, setshowAppDrawer] = useState(true);
+
+  const toggleSideBar = () => {
+    setShowSideBar(!showSideBar);
+  };
+
+  const toggleAppDrawer = () => {
+    setshowAppDrawer(!showAppDrawer);
+  };
+  return (
+    <div className={styles.main_container}>
+      <div
+        className={`${styles.app_drawer} ${
+          showAppDrawer ? styles.Hide_app_drawer : ""
+        }`}
+      >
+        App Drawer
+      </div>
+      <div className={styles.navBar_container} onClick={toggleAppDrawer}>
+        {" "}
+        Dekstop NavBar{" "}
+      </div>
+      <div className={styles.fillter_TopBar} onClick={toggleSideBar}>
+        Mobile Search Bar{" "}
+      </div>
+      <div className={styles.listing_container}>
+        <div
+          className={`${styles.sideBarFillter_Container} ${
+            showSideBar ? styles.showSideBar : ""
+          }`}
+        >
+          sidebar
+        </div>
+
+        <div className={styles.projectListing_Container}>Listing Cotent</div>
+      </div>
+      <div className={styles.footer_container}>
+        <div className={styles.dekstop_footer}>Dekstop Footer</div>
+        <div className={styles.mobile_footer}>
+          <Link href="/property" className={styles.footerTab_link}>
+            <span className={styles.footerTab_icon}>
+              <FcHome />
+            </span>
+            <span className={styles.footerTab_text}>Home </span>
+          </Link>
+
+          <Link href="/property" className={styles.footerTab_link}>
+            <span className={styles.footerTab_icon}>
+              <HiOutlineBuildingOffice2 />
+            </span>
+            <span className={styles.footerTab_text}>Projects </span>
+          </Link>
+
+          <Link href="/property" className={styles.footerTab_link}>
+            <span className={styles.footerTab_icon}>
+              <MdOutlineMessage />
+            </span>
+            <span className={styles.footerTab_text}>Enquery </span>
+          </Link>
+
+          <Link href="/property" className={styles.footerTab_link}>
+            <span className={styles.footerTab_icon}>
+              <IoNewspaperOutline />
+            </span>
+            <span className={styles.footerTab_text}>Blogs</span>
+          </Link>
+
+          <Link href="/property" className={styles.footerTab_link}>
+            <span className={styles.footerTab_icon}>
+              <IoCallOutline />
+            </span>
+            <span className={styles.footerTab_text}>Call </span>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -29,3 +29,19 @@
 .tableContainer {
   padding: 32px;
 }
+
+@media screen and (max-width: 992px) {
+  .componentWrapper {
+    flex-direction: column;
+    flex-direction: column-reverse;
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+  .tablePart {
+    width: 100%;
+  }
+
+  .formPart {
+    width: 100%;
+  }
+}

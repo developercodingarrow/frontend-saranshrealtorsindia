@@ -172,7 +172,7 @@
   .content_side {
     position: relative;
     left: 0%; /* calculation */
-    width: 100%;
+    width: 100vw;
     min-height: 800px;
     background-color: gainsboro;
   }
@@ -180,13 +180,13 @@
   .close_content_side {
     position: relative;
     left: 0%; /* calculation */
-    width: 100%;
+    width: 100vw;
     min-height: 800px;
     background-color: gainsboro;
   }
 
   .navBar_Container {
-    width: 100%;
+    width: 100vw;
     background-color: var(--ts-primary);
     height: 50px;
     position: fixed;
@@ -196,7 +196,7 @@
   }
 
   .close_navBar_Container {
-    width: 100%;
+    width: 100vw;
     background-color: var(--ts-primary);
     height: 50px;
     position: fixed;
@@ -209,6 +209,8 @@
     padding-left: 2%;
     padding-top: 2%;
     padding-right: 2%;
+    /* border: 5px solid red; */
+    width: 100vw;
   }
 }
 
