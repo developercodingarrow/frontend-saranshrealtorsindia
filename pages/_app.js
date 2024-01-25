@@ -6,6 +6,7 @@ import CityContextAppiProvide from "../ContextApi/CityContextApi";
 import FillterContextAppiProvide from "../ContextApi/FillterContext";
 import ProjectContextApiProvider from "../ContextApi/ProjectContextApi";
 import UserDashBoardContextApi from "../ContextApi/UserDashBoardContextApi";
+import ListingContextAppiProvide from "../ContextApi/userinterface/ListingContextApi";
 import "../styles/globals.css";
 
 export default function App({ Component, pageProps }) {
@@ -19,7 +20,9 @@ export default function App({ Component, pageProps }) {
                 <AppContextAppiProvide>
                   <CityContextAppiProvide>
                     <BuilderContextAppiProvide>
-                      <Component {...pageProps} />;
+                      <ListingContextAppiProvide>
+                        <Component {...pageProps} />;
+                      </ListingContextAppiProvide>
                     </BuilderContextAppiProvide>
                   </CityContextAppiProvide>
                 </AppContextAppiProvide>

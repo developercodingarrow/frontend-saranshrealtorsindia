@@ -1,7 +1,3 @@
-.mainConatiner {
-  font-family: var(--ts-font-family);
-}
-
 .fillterDrawer_header {
   display: flex;
   justify-content: space-between;
@@ -33,43 +29,20 @@
 
 .headerRight_side {
   color: var(--ts-primary);
-}
-
-.fillterTab_container {
-  display: flex;
-  border: var(--ts-1px-border);
-}
-
-.tab_wrapper {
-  width: 40%;
-}
-
-.tab_option {
-  border: var(--ts-1px-border);
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.tab_iconBox {
-  font-size: 30px;
-  color: var(--ts-gray);
-}
-
-.tabTextBox {
-  font-family: var(--ts-font-family);
   font-size: 18px;
+  cursor: pointer;
 }
 
-.arrowBox {
+.dekstop_header_title {
+  font-size: 16px;
+  font-family: var(--ts-font-family);
   display: flex;
-  justify-content: center;
   align-items: center;
-  color: var(--ts-gray);
-  font-size: 20px;
+  justify-content: center;
 }
 
-.render_optionBox {
-  padding: 20px;
-  width: 60%;
+.dekstop_headerRight_side {
+  color: var(--ts-primary);
+  font-size: 16px;
+  cursor: pointer;
 }

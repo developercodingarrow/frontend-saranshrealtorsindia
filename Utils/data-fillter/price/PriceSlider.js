@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import styles from "./css/priceSlider.module.css";
 
-export default function PriceSlider() {
+export default function PriceSlider(props) {
+  const { handleSliderChange, normalizedPrice } = props;
   const [actualPrice, setActualPrice] = useState(0); // Change this to your actual price
-  const [normalizedPrice, setNormalizedPrice] = useState(0);
-
-  const handleSliderChange = (e) => {
-    const newNormalizedPrice = Math.round(parseFloat(e.target.value));
-    setNormalizedPrice(newNormalizedPrice);
-  };
 
   const getSliderLineStyle = () => {
     const normalizedPercentage = (normalizedPrice / 100) * actualPrice;

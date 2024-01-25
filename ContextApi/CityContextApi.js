@@ -25,8 +25,6 @@ export default function CityContextAppiProvide({ children }) {
     }
   };
 
-  console.log(allCites);
-
   return (
     <CityContext.Provider value={{ allCites, setallCites }}>
       {children}

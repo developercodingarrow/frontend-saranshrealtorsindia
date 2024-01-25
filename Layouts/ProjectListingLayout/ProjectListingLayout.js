@@ -9,6 +9,7 @@ import {
   IoNewspaperOutline,
 } from "../../Utils/ApplicationIcon";
 import MobileFillterDrawer from "./MobileFillterDrawer";
+import DekstopFillterDrawer from "./DekstopFillterDrawer";
 
 export default function ProjectListingLayout({ children }) {
   const [showSideBar, setShowSideBar] = useState(false);
@@ -43,7 +44,9 @@ export default function ProjectListingLayout({ children }) {
             showSideBar ? styles.showSideBar : ""
           }`}
         >
-          <div className={styles.dekstop_fillterBarUi}>dekstop</div>
+          <div className={styles.dekstop_fillterBarUi}>
+            <DekstopFillterDrawer />
+          </div>
           <div className={styles.mobile_fillterBarUi}>
             <MobileFillterDrawer />
           </div>

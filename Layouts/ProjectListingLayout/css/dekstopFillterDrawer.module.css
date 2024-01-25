@@ -1,0 +1,17 @@
+.main_container {
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03) !important;
+}
+
+.fillter_container {
+  border: 1px solid gray;
+}
+
+.fillter_title {
+  font-size: 16px;
+  font-weight: 500px;
+  padding: 5px;
+}
+.fiilter_option_wrapper {
+  border: 1px solid red;
+}
