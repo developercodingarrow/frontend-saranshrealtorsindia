@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import styles from "./css/checkBoxFillter.module.css";
 
 export default function CheckBoxFillter(props) {
-  const { label, options, checkedItems, onCheckboxChange } = props;
+  const { label, options, checkedItems, onCheckboxChange, titel } = props;
 
   return (
     <div className={styles.main_Container}>
       <div className={styles.block_customeChecBox_warper}>
-        {label && (
+        {titel && (
           <div className={styles.title_box}>
-            <p>Select Check Box</p>
+            <p>{titel}</p>
           </div>
         )}
 

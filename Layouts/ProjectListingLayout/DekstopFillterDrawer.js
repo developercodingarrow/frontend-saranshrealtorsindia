@@ -9,7 +9,6 @@ import CheckBoxFillter from "../../Utils/data-fillter/checkBox/CheckBoxFillter";
 export default function DekstopFillterDrawer() {
   const {
     checkedItems,
-    handleCheckboxChange,
     handleCityChange,
     selectedCities,
     handleBuilderSelection,
@@ -25,53 +24,34 @@ export default function DekstopFillterDrawer() {
       case "minPriceRange":
         return (
           <div>
-            <div>Price Title</div>
-            <div>
-              <PriceSlider
-                handleSliderChange={handleSliderChange}
-                normalizedPrice={normalizedPrice}
-              />
-            </div>
-          </div>
-        );
-      case "projectStatusCheckBox":
-        return (
-          <div>
-            <div>Project status</div>
-            <div>
-              <CheckBoxFillter
-                options={data.options}
-                checkedItems={checkedItems}
-                onCheckboxChange={handleCheckboxChange}
-              />
-            </div>
+            <PriceSlider
+              handleSliderChange={handleSliderChange}
+              normalizedPrice={normalizedPrice}
+              titel="Choose Your Price"
+            />
           </div>
         );
       case "cityCheckBox":
         return (
           <div>
-            <div>City</div>
-            <div>
-              <CheckBoxFillter
-                options={data.options}
-                checkedItems={checkedItems}
-                onCheckboxChange={handleCheckboxChange}
-              />
-            </div>
+            <CheckBoxFillter
+              options={data.options}
+              checkedItems={selectedCities}
+              onCheckboxChange={handleCityChange}
+              titel="Select Your City"
+            />
           </div>
         );
 
       case "builderCheckBox":
         return (
           <div>
-            <div>Builder</div>
-            <div>
-              <CheckBoxFillter
-                options={data.options}
-                checkedItems={selectedBuilders}
-                onCheckboxChange={handleBuilderSelection}
-              />
-            </div>
+            <CheckBoxFillter
+              options={data.options}
+              checkedItems={selectedBuilders}
+              onCheckboxChange={handleBuilderSelection}
+              titel="Select Your Builder"
+            />
           </div>
         );
 

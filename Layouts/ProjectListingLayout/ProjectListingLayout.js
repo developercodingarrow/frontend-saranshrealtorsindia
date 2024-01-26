@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./css/projectListingLayout.module.css";
 import Link from "next/link";
 import {
@@ -10,18 +10,15 @@ import {
 } from "../../Utils/ApplicationIcon";
 import MobileFillterDrawer from "./MobileFillterDrawer";
 import DekstopFillterDrawer from "./DekstopFillterDrawer";
-
+import { AppContext } from "../../ContextApi/AppContextApi";
 export default function ProjectListingLayout({ children }) {
-  const [showSideBar, setShowSideBar] = useState(false);
-  const [showAppDrawer, setshowAppDrawer] = useState(true);
+  const {
+    showSideBar,
+    showAppDrawer,
+    toggleSideBar,
+    toggleAppDrawer,
+  } = useContext(AppContext);
 
-  const toggleSideBar = () => {
-    setShowSideBar(!showSideBar);
-  };
-
-  const toggleAppDrawer = () => {
-    setshowAppDrawer(!showAppDrawer);
-  };
   return (
     <div className={styles.main_container}>
       <div

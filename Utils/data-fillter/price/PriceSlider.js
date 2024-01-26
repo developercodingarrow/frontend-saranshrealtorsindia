@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./css/priceSlider.module.css";
 
 export default function PriceSlider(props) {
-  const { handleSliderChange, normalizedPrice } = props;
+  const { handleSliderChange, normalizedPrice, titel } = props;
   const [actualPrice, setActualPrice] = useState(0); // Change this to your actual price
 
   const getSliderLineStyle = () => {
@@ -13,18 +13,24 @@ export default function PriceSlider(props) {
   };
 
   return (
-    <div className={styles.priceSlider}>
-      <p className={styles.title}>Choose Your Price</p>
-      <div>{normalizedPrice}</div>
-      <input
-        type="range"
-        min="1000000"
-        max="1000000000"
-        value={normalizedPrice}
-        onChange={handleSliderChange}
-        className={styles.slider}
-        style={getSliderLineStyle()}
-      />
+    <div className={styles.priceSliderContainer}>
+      <div>
+        <p className={styles.title}>{titel}</p>
+      </div>
+      <div className={styles.price_sliderWrapper}>
+        <div>{normalizedPrice}</div>
+        <div>
+          <input
+            type="range"
+            min="1000000"
+            max="1000000000"
+            value={normalizedPrice}
+            onChange={handleSliderChange}
+            className={styles.slider}
+            style={getSliderLineStyle()}
+          />
+        </div>
+      </div>
     </div>
   );
 }

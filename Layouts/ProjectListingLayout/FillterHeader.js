@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import styles from "./css/fillterDrawerHeader.module.css";
 import { IoIosCloseCircle } from "../../Utils/ApplicationIcon";
-
+import { AppContext } from "../../ContextApi/AppContextApi";
 export default function FillterHeader(props) {
   const { headercloseIconBox, headertitleBox, headerRightSide, resethandle } =
     props;
+  const { toggleSideBar } = useContext(AppContext);
   return (
     <div className={styles.fillterDrawer_header}>
       <div className={styles.headerLeft_side}>
         {headercloseIconBox && (
           <span className={styles[headercloseIconBox]}>
-            <IoIosCloseCircle />
+            <IoIosCloseCircle onClick={toggleSideBar} />
           </span>
         )}
         <span className={styles[headertitleBox]}>

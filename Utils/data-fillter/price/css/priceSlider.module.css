@@ -1,13 +1,23 @@
 /* PriceSlider.module.css */
 
-.priceSlider {
-  margin-top: 20px;
+.priceSliderContainer {
+  padding: 10px 0px;
   position: relative;
+  box-shadow: var(--ts-box-shadow);
 }
 
 .title {
   margin-bottom: 10px;
   color: #4e4e4e;
+  border: 1px solid var(--ts-separator);
+  font-size: 18px;
+  padding: 5px;
+  font-family: var(--ts-font-family);
+  box-shadow: var(--ts-box-shadow);
+}
+
+.price_sliderWrapper {
+  padding: 5px;
 }
 
 .slider {

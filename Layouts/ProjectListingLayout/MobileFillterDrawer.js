@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./css/mobileFillterDrawer.module.css";
 import {
   IoIosCloseCircle,
@@ -51,6 +51,7 @@ export default function MobileFillterDrawer() {
             options={options}
             checkedItems={checkedItems}
             onCheckboxChange={handleCheckboxChange}
+            titel="Select Your City"
           />
         );
       case "cityCheckBox":
@@ -60,6 +61,7 @@ export default function MobileFillterDrawer() {
             options={options}
             checkedItems={selectedCities}
             onCheckboxChange={handleCityChange}
+            titel="Select Your City"
           />
         );
 
@@ -70,6 +72,7 @@ export default function MobileFillterDrawer() {
             options={options}
             checkedItems={selectedBuilders}
             onCheckboxChange={handleBuilderSelection}
+            titel="Select Your builder"
           />
         );
       case "searchTerm":
@@ -94,20 +97,6 @@ export default function MobileFillterDrawer() {
   };
   return (
     <div className={styles.mainConatiner}>
-      {/* <div className={styles.fillterDrawer_header}>
-        <div className={styles.headerLeft_side}>
-          <span className={styles.header_closeIconBox}>
-            <IoIosCloseCircle />
-          </span>
-          <span className={styles.header_title}>
-            <h3>Fillter </h3>
-          </span>{" "}
-        </div>
-        <div className={styles.headerRight_side}>
-          <span>Reset All</span>
-        </div>
-      </div> */}
-
       <FillterHeader
         headercloseIconBox="header_closeIconBox"
         headertitleBox="header_title"
