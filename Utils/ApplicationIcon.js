@@ -50,6 +50,7 @@ import {
   IoCallOutline,
   IoLocationOutline,
   IoArrowRedoOutline,
+  IoGameControllerOutline,
 } from "react-icons/io5";
 import { FcHome } from "react-icons/fc";
 import { TbSofa } from "react-icons/tb";
@@ -104,5 +105,6 @@ export {
   IoArrowRedoOutline,
   CiSearch,
   IoMdFunnel,
+  IoGameControllerOutline,
   // Add more icons as needed
 };

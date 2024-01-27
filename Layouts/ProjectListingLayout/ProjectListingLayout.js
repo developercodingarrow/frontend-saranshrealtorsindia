@@ -7,46 +7,29 @@ import {
   IoCallOutline,
   MdOutlineMessage,
   IoNewspaperOutline,
-  FaBars,
-  IoMdFunnel,
 } from "../../Utils/ApplicationIcon";
 import MobileFillterDrawer from "./MobileFillterDrawer";
 import DekstopFillterDrawer from "./DekstopFillterDrawer";
 import { AppContext } from "../../ContextApi/AppContextApi";
 import ListingCard from "../../Utils/cards/listing-card/ListingCard";
 import ListingSearch from "../../Utils/data-fillter/searchInputs/listing-search/ListingSearch";
-import logo from "../../public/web-static-images/saransh logo.png";
+
 import Image from "next/image";
+import { ListingContext } from "../../ContextApi/userinterface/ListingContextApi";
+import ListingNavBar from "./ListingNavBar";
+import AppDrawer from "../appLayout/AppDrawer";
 export default function ProjectListingLayout({ children }) {
   const { showSideBar, showAppDrawer, toggleSideBar, toggleAppDrawer } =
     useContext(AppContext);
+  const { allListing } = useContext(ListingContext);
 
   return (
     <div className={styles.main_container}>
-      <div
-        className={`${styles.app_drawer} ${
-          showAppDrawer ? styles.Hide_app_drawer : ""
-        }`}
-      >
-        App Drawer
-      </div>
-      <div className={styles.navBar_container}>
-        <div className={styles.desktop_navBarContainer}>Dekstop NavBar</div>
-        <div className={styles.mobile_navbarContainer}>
-          <div onClick={toggleAppDrawer}>
-            {" "}
-            <FaBars />{" "}
-          </div>
-          <div>
-            {" "}
-            <Image src={logo} width={100} height={40} />{" "}
-          </div>
-          <div className={styles.fillter_iconBox}>
-            {" "}
-            <IoMdFunnel onClick={toggleSideBar} />
-          </div>
-        </div>
-      </div>
+      <AppDrawer />
+      <ListingNavBar
+        toggleAppDrawer={toggleAppDrawer}
+        toggleSideBar={toggleSideBar}
+      />
       <div className={styles.fillter_TopBar}>
         <ListingSearch />
       </div>
@@ -65,7 +48,7 @@ export default function ProjectListingLayout({ children }) {
         </div>
 
         <div className={styles.projectListing_Container}>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => {
+          {allListing?.map((el, i) => {
             return (
               <>
                 <ListingCard />

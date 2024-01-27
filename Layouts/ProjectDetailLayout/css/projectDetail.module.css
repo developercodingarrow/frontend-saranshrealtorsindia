@@ -1,0 +1,156 @@
+.main_container {
+  width: 100%;
+  position: relative;
+  min-height: 900px;
+}
+
+.detail_topContainer {
+  position: relative;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 100px;
+  margin-bottom: 50px;
+}
+
+.project_titleBar {
+  box-shadow: var(--ts-box-shadow);
+  border: 1px solid var(--ts-separator);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.formImage_Container {
+  display: flex;
+  margin-bottom: 20px;
+}
+.carousel_container {
+  width: 60%;
+}
+
+.CarouselStyle {
+  width: 100%;
+  height: 400px;
+}
+
+.form_Container {
+  width: 40%;
+}
+
+.content_Container {
+  display: flex;
+  padding: 0px 100px;
+}
+
+.information_container {
+  width: 60%;
+}
+
+.side_bar_container {
+  width: 40%;
+}
+
+.project_detailsContainer {
+  box-shadow: var(--ts-box-shadow);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid var(--ts-separator);
+}
+
+.section_Heading {
+  padding: 10px;
+  border-bottom: 1px solid var(--ts-separator);
+}
+
+.project_detail_wrapper {
+  display: flex;
+  column-gap: 20px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project_deatilBox {
+  width: 30%;
+  padding: 5px;
+  border-bottom: 1px solid var(--ts-separator);
+}
+
+.project_descreptionWrapper {
+  padding: 10px;
+  line-height: 1.5;
+  font-family: var(--ts-font-family);
+}
+
+.amnites_Container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 20px;
+  padding: 10px;
+}
+
+.aminitesBox {
+  display: flex;
+  column-gap: 10px;
+  padding: 10px;
+  flex-grow: 1;
+}
+
+.aminites_IconBox {
+  font-size: 22px;
+}
+
+@media screen and (max-width: 992px) {
+  .project_detail_wrapper {
+    display: block;
+  }
+
+  .project_deatilBox {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+  }
+
+  .project_fileds {
+    width: 50%;
+  }
+
+  .project_data {
+    flex-grow: 1;
+  }
+
+  .detail_topContainer {
+    flex-direction: column-reverse;
+    padding: 0px;
+  }
+
+  .project_titleBar {
+    margin-top: 0px;
+  }
+
+  .carousel_container {
+    width: 100%;
+  }
+
+  .CarouselStyle {
+    width: 100%;
+    height: 200px;
+  }
+  .form_Container {
+    display: none;
+  }
+
+  .information_container {
+    width: 100%;
+  }
+
+  .side_bar_container {
+    display: none;
+  }
+
+  .content_Container {
+    padding: 0px;
+  }
+}
