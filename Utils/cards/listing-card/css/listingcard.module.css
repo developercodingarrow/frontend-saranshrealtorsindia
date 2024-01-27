@@ -5,6 +5,7 @@
   background-color: var(--ts-white);
   margin-bottom: 20px;
   border-radius: 10px;
+  width: 100%;
 }
 
 .card_detailsWrapper {
@@ -135,6 +136,16 @@
   height: 132px;
   flex-shrink: 1;
   padding: 10px;
+}
+
+@media screen and (max-width: 1290px) {
+  .baise_deatils {
+    display: block;
+  }
+
+  .baise_UnitBox {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 992px) {

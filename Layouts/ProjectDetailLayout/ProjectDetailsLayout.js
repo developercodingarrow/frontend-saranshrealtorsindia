@@ -6,6 +6,7 @@ import ListingNavBar from "../ProjectListingLayout/ListingNavBar";
 import Carousel from "react-gallery-carousel";
 import "react-gallery-carousel/dist/index.css";
 import { IoGameControllerOutline } from "../../Utils/ApplicationIcon";
+import EnquireForm from "../../Utils/cards/EnquireForm";
 export default function ProjectDetailsLayout() {
   const { showSideBar, showAppDrawer, toggleSideBar, toggleAppDrawer } =
     useContext(AppContext);
@@ -31,13 +32,11 @@ export default function ProjectDetailsLayout() {
         </div>
         <div className={styles.formImage_Container}>
           <div className={styles.carousel_container}>
-            <Carousel
-              images={images}
-              className={styles.CarouselStyle}
-              // style={{ height: 400, width: 800 }}
-            />
+            <Carousel images={images} className={styles.CarouselStyle} />
           </div>
-          <div className={styles.form_Container}>form</div>
+          <div className={styles.form_Container}>
+            <EnquireForm />
+          </div>
         </div>
       </div>
 
@@ -113,10 +112,28 @@ export default function ProjectDetailsLayout() {
                       {" "}
                       <IoGameControllerOutline />{" "}
                     </div>
-                    <div>24 x 7 Security</div>
+                    <div>24 x 7</div>
                   </div>
                 );
               })}
+            </div>
+          </div>
+
+          <div className={styles.project_detailsContainer}>
+            <div className={styles.section_Heading}>
+              <h3>Floor Plan</h3>
+            </div>
+            <div className={styles.projectExra_ImageBox}>
+              <Carousel images={images} className={styles.CarouselStyle} />
+            </div>
+          </div>
+
+          <div className={styles.project_detailsContainer}>
+            <div className={styles.section_Heading}>
+              <h3>Lay Outs</h3>
+            </div>
+            <div className={styles.projectExra_ImageBox}>
+              <Carousel images={images} className={styles.CarouselStyle} />
             </div>
           </div>
         </div>

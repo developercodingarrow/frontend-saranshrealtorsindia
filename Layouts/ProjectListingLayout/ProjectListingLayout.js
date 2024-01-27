@@ -18,6 +18,7 @@ import Image from "next/image";
 import { ListingContext } from "../../ContextApi/userinterface/ListingContextApi";
 import ListingNavBar from "./ListingNavBar";
 import AppDrawer from "../appLayout/AppDrawer";
+import EnquireForm from "../../Utils/cards/EnquireForm";
 export default function ProjectListingLayout({ children }) {
   const { showSideBar, showAppDrawer, toggleSideBar, toggleAppDrawer } =
     useContext(AppContext);
@@ -56,7 +57,9 @@ export default function ProjectListingLayout({ children }) {
             );
           })}
         </div>
-        <div className={styles.listing_rightSide}>enquery form side</div>
+        <div className={styles.listing_rightSide}>
+          <EnquireForm />
+        </div>
       </div>
       <div className={styles.footer_container}>
         <div className={styles.dekstop_footer}>Dekstop Footer</div>

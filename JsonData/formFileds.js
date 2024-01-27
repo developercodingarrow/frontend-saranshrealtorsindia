@@ -229,3 +229,50 @@ export const BlogDetailsApi = {
   id: 1,
   //   cityNameName: "Gurgaon",
 };
+
+export const dummyapi = {
+  id: 1,
+  //   cityNameName: "Gurgaon",
+};
+
+export const enquireyFormFiled = [
+  {
+    id: 1,
+    name: "name",
+    type: "text",
+    placeholder: "Enter Your Name",
+    lable: "Name",
+    validation: {
+      required: "Name is required.",
+    },
+  },
+  {
+    id: 2,
+    name: "email",
+    type: "text",
+    placeholder: "Enter Your E-mail",
+    lable: "E-mail",
+    validation: {
+      required: "E-mail is required.",
+    },
+  },
+
+  {
+    id: 3,
+    name: "number",
+    type: "text",
+    placeholder: "Enter Your Mobile Number",
+    lable: "Mobile Number",
+    validation: {
+      required: "Mobile Number is required.",
+    },
+  },
+
+  {
+    id: 3,
+    name: "message",
+    type: "textarea",
+    placeholder: "Message",
+    lable: "Message",
+  },
+];

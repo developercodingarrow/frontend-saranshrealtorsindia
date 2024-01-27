@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./css/projectListingLayout.module.css";
+import styles from "./css/listedNavBar.module.css";
 import {
   FcHome,
   HiOutlineBuildingOffice2,

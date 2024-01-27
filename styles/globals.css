@@ -27,6 +27,7 @@ html {
   --ts-read-input-bg: #dddddd80;
   --ts-10-border-radius: 10px;
   --layout-side-padding: 7%;
+  --layout-side-pixelpading: 0px 100px;
   --ts-font-family: "Nunito Sans", sans-serif;
   --ts-footer-dekstop-bg: #202730;
   --ts-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03) !important;
