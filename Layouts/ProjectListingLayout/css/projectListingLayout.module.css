@@ -59,10 +59,18 @@
 }
 
 .projectListing_Container {
-  width: calc(100% - 150px);
+  width: calc(100% - 500px);
   position: relative;
   left: 250px;
   min-height: 1200px;
+  padding: 20px;
+}
+
+.listing_rightSide {
+  border: 1px solid blue;
+  position: relative;
+  left: 250px;
+  width: 250px;
 }
 
 .footer_container {
@@ -80,6 +88,9 @@
 }
 
 @media screen and (max-width: 992px) {
+  .listing_rightSide {
+    display: none;
+  }
   .main_container {
   }
 
@@ -124,6 +135,7 @@
   .projectListing_Container {
     width: 100%;
     left: 0px;
+    padding: 5px;
   }
 
   .sideBarFillter_Container {

@@ -18,12 +18,19 @@ import {
   HiOutlineBuildingOffice2,
 } from "react-icons/hi2";
 import { BiCategoryAlt, BiSolidCloudUpload } from "react-icons/bi";
-import { PiUserCirclePlusThin, PiUserCircleMinusThin } from "react-icons/pi";
+import {
+  PiUserCirclePlusThin,
+  PiUserCircleMinusThin,
+  PiWhatsappLogoThin,
+} from "react-icons/pi";
 import { LuIndianRupee } from "react-icons/lu";
 import {
   BsFillArrowRightCircleFill,
   BsFillCloudUploadFill,
+  BsBuildingCheck,
+  BsTextarea,
 } from "react-icons/bs";
+
 import {
   IoMdArrowDropright,
   IoMdArrowDropleft,
@@ -34,16 +41,19 @@ import {
   IoIosCall,
   IoIosCloseCircle,
 } from "react-icons/io";
-import { MdDelete, MdOutlineMessage } from "react-icons/md";
-import { CiEdit } from "react-icons/ci";
+import { MdDelete, MdOutlineMessage, MdVerifiedUser } from "react-icons/md";
+import { CiEdit, CiLocationOn } from "react-icons/ci";
 import { GoUpload } from "react-icons/go";
 import {
   IoNewspaperOutline,
   IoCallOutline,
   IoLocationOutline,
+  IoArrowRedoOutline,
 } from "react-icons/io5";
 import { FcHome } from "react-icons/fc";
-
+import { TbSofa } from "react-icons/tb";
+import { FcCallback } from "react-icons/fc";
+import { VscMail } from "react-icons/vsc";
 export {
   IoIosArrowBack,
   IoIosArrowForward,
@@ -81,5 +91,14 @@ export {
   MdOutlineMessage,
   IoIosCloseCircle,
   IoLocationOutline,
+  BsBuildingCheck,
+  CiLocationOn,
+  TbSofa,
+  BsTextarea,
+  MdVerifiedUser,
+  PiWhatsappLogoThin,
+  FcCallback,
+  VscMail,
+  IoArrowRedoOutline,
   // Add more icons as needed
 };

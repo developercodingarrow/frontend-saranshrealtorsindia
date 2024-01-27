@@ -11,13 +11,10 @@ import {
 import MobileFillterDrawer from "./MobileFillterDrawer";
 import DekstopFillterDrawer from "./DekstopFillterDrawer";
 import { AppContext } from "../../ContextApi/AppContextApi";
+import ListingCard from "../../Utils/cards/listing-card/ListingCard";
 export default function ProjectListingLayout({ children }) {
-  const {
-    showSideBar,
-    showAppDrawer,
-    toggleSideBar,
-    toggleAppDrawer,
-  } = useContext(AppContext);
+  const { showSideBar, showAppDrawer, toggleSideBar, toggleAppDrawer } =
+    useContext(AppContext);
 
   return (
     <div className={styles.main_container}>
@@ -49,7 +46,16 @@ export default function ProjectListingLayout({ children }) {
           </div>
         </div>
 
-        <div className={styles.projectListing_Container}>Listing Cotent</div>
+        <div className={styles.projectListing_Container}>
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => {
+            return (
+              <>
+                <ListingCard />
+              </>
+            );
+          })}
+        </div>
+        <div className={styles.listing_rightSide}>enquery form side</div>
       </div>
       <div className={styles.footer_container}>
         <div className={styles.dekstop_footer}>Dekstop Footer</div>
