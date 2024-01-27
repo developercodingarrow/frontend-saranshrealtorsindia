@@ -7,11 +7,16 @@ import {
   IoCallOutline,
   MdOutlineMessage,
   IoNewspaperOutline,
+  FaBars,
+  IoMdFunnel,
 } from "../../Utils/ApplicationIcon";
 import MobileFillterDrawer from "./MobileFillterDrawer";
 import DekstopFillterDrawer from "./DekstopFillterDrawer";
 import { AppContext } from "../../ContextApi/AppContextApi";
 import ListingCard from "../../Utils/cards/listing-card/ListingCard";
+import ListingSearch from "../../Utils/data-fillter/searchInputs/listing-search/ListingSearch";
+import logo from "../../public/web-static-images/saransh logo.png";
+import Image from "next/image";
 export default function ProjectListingLayout({ children }) {
   const { showSideBar, showAppDrawer, toggleSideBar, toggleAppDrawer } =
     useContext(AppContext);
@@ -25,12 +30,25 @@ export default function ProjectListingLayout({ children }) {
       >
         App Drawer
       </div>
-      <div className={styles.navBar_container} onClick={toggleAppDrawer}>
-        {" "}
-        Dekstop NavBar{" "}
+      <div className={styles.navBar_container}>
+        <div className={styles.desktop_navBarContainer}>Dekstop NavBar</div>
+        <div className={styles.mobile_navbarContainer}>
+          <div onClick={toggleAppDrawer}>
+            {" "}
+            <FaBars />{" "}
+          </div>
+          <div>
+            {" "}
+            <Image src={logo} width={100} height={40} />{" "}
+          </div>
+          <div className={styles.fillter_iconBox}>
+            {" "}
+            <IoMdFunnel onClick={toggleSideBar} />
+          </div>
+        </div>
       </div>
-      <div className={styles.fillter_TopBar} onClick={toggleSideBar}>
-        Mobile Search Bar{" "}
+      <div className={styles.fillter_TopBar}>
+        <ListingSearch />
       </div>
       <div className={styles.listing_container}>
         <div

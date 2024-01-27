@@ -40,9 +40,10 @@ import {
   IoMdCheckmark,
   IoIosCall,
   IoIosCloseCircle,
+  IoMdFunnel,
 } from "react-icons/io";
 import { MdDelete, MdOutlineMessage, MdVerifiedUser } from "react-icons/md";
-import { CiEdit, CiLocationOn } from "react-icons/ci";
+import { CiEdit, CiLocationOn, CiSearch } from "react-icons/ci";
 import { GoUpload } from "react-icons/go";
 import {
   IoNewspaperOutline,
@@ -54,6 +55,7 @@ import { FcHome } from "react-icons/fc";
 import { TbSofa } from "react-icons/tb";
 import { FcCallback } from "react-icons/fc";
 import { VscMail } from "react-icons/vsc";
+
 export {
   IoIosArrowBack,
   IoIosArrowForward,
@@ -100,5 +102,7 @@ export {
   FcCallback,
   VscMail,
   IoArrowRedoOutline,
+  CiSearch,
+  IoMdFunnel,
   // Add more icons as needed
 };
