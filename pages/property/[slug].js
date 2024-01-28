@@ -4,7 +4,7 @@ import ProjectDetailsLayout from "../../Layouts/ProjectDetailLayout/ProjectDetai
 export default function PropertyDetailPage() {
   return (
     <ProjectDetailsLayout>
-      <p>Property Detail page</p>
+      {/* <p>Property Detail page</p> */}
     </ProjectDetailsLayout>
   );
 }

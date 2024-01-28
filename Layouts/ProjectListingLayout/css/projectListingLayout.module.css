@@ -69,6 +69,8 @@
 
 .dekstop_footer {
   display: block;
+  margin-top: 300px;
+  margin-left: 350px;
 }
 
 .mobile_footer {

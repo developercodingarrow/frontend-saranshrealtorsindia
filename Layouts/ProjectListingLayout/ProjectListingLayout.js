@@ -19,6 +19,7 @@ import { ListingContext } from "../../ContextApi/userinterface/ListingContextApi
 import ListingNavBar from "./ListingNavBar";
 import AppDrawer from "../appLayout/AppDrawer";
 import EnquireForm from "../../Utils/cards/EnquireForm";
+import DekstopFooter from "../appLayout/DekstopFooter";
 export default function ProjectListingLayout({ children }) {
   const { showSideBar, showAppDrawer, toggleSideBar, toggleAppDrawer } =
     useContext(AppContext);
@@ -62,7 +63,9 @@ export default function ProjectListingLayout({ children }) {
         </div>
       </div>
       <div className={styles.footer_container}>
-        <div className={styles.dekstop_footer}>Dekstop Footer</div>
+        <div className={styles.dekstop_footer}>
+          <DekstopFooter />
+        </div>
         <div className={styles.mobile_footer}>
           <Link href="/property" className={styles.footerTab_link}>
             <span className={styles.footerTab_icon}>

@@ -9,6 +9,7 @@ import {
   FaBars,
   FaMagnifyingGlassLocation,
   FaPersonShelter,
+  FaFacebook,
 } from "react-icons/fa6";
 import { MdProductionQuantityLimits, MdOutlineHomeWork } from "react-icons/md";
 import { TiArrowUnsorted } from "react-icons/ti";
@@ -106,5 +107,7 @@ export {
   CiSearch,
   IoMdFunnel,
   IoGameControllerOutline,
+  IoIosCall,
+  FaFacebook,
   // Add more icons as needed
 };

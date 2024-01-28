@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import styles from "./css/projectDetail.module.css";
+import Image from "next/image";
 import AppDrawer from "../appLayout/AppDrawer";
 import { AppContext } from "../../ContextApi/AppContextApi";
 import ListingNavBar from "../ProjectListingLayout/ListingNavBar";
@@ -7,6 +8,14 @@ import Carousel from "react-gallery-carousel";
 import "react-gallery-carousel/dist/index.css";
 import { IoGameControllerOutline } from "../../Utils/ApplicationIcon";
 import EnquireForm from "../../Utils/cards/EnquireForm";
+import {
+  IoIosCall,
+  IoIosArrowBack,
+  IoCallOutline,
+  MdOutlineMessage,
+} from "../../Utils/ApplicationIcon";
+import sampleImage from "../../public/web-static-images/sampleImage.png";
+import DekstopFooter from "../appLayout/DekstopFooter";
 export default function ProjectDetailsLayout() {
   const { showSideBar, showAppDrawer, toggleSideBar, toggleAppDrawer } =
     useContext(AppContext);
@@ -138,7 +147,60 @@ export default function ProjectDetailsLayout() {
           </div>
         </div>
 
-        <div className={styles.side_bar_container}>side bar content</div>
+        <div className={styles.side_bar_container}>
+          <div className={styles.quickLink_bar}>
+            <div className={styles.QuickLink_titleBox}>feature project</div>
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9.1].map(() => {
+              return (
+                <div className={styles.feature_cardContainer}>
+                  <div className={styles.featureImage_wrapper}>
+                    <Image
+                      src={sampleImage}
+                      width={100}
+                      height={100}
+                      className={styles.featureImage_style}
+                    />
+                  </div>
+                  <div className={styles.project_title}>
+                    <p>4 BHK 3976 Sq-ft Flat For Sale Sector 22, Gurgaon</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.projectDetail_footerContainer}>
+        <div className={styles.dekstop_projectDetailFooter_Wrapper}>
+          <DekstopFooter />
+        </div>
+        <div className={styles.mobile_projectDetailFooter_Wrapper}>
+          <div className={styles.footer_iconBox}>
+            <div className={styles.iconBox}>
+              <IoIosArrowBack />
+            </div>
+            <p className={styles.footer_text}>Back</p>
+          </div>
+          <div className={styles.footer_iconBox}>
+            <div className={styles.iconBox}>
+              <IoIosCall />
+            </div>
+            <p className={styles.footer_text}>Whatsapp</p>
+          </div>
+          <div className={styles.footer_iconBox}>
+            <div className={styles.iconBox}>
+              <MdOutlineMessage />
+            </div>
+            <p className={styles.footer_text}>Enquey</p>
+          </div>
+          <div className={styles.footer_iconBox}>
+            <div className={styles.iconBox}>
+              <IoCallOutline />
+            </div>
+            <p className={styles.footer_text}>Call</p>
+          </div>
+        </div>
       </div>
     </div>
   );
