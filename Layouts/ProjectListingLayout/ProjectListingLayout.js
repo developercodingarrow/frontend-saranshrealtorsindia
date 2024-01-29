@@ -20,6 +20,8 @@ import ListingNavBar from "./ListingNavBar";
 import AppDrawer from "../appLayout/AppDrawer";
 import EnquireForm from "../../Utils/cards/EnquireForm";
 import DekstopFooter from "../appLayout/DekstopFooter";
+import MobileFooter from "../appLayout/MobileFooter";
+
 export default function ProjectListingLayout({ children }) {
   const { showSideBar, showAppDrawer, toggleSideBar, toggleAppDrawer } =
     useContext(AppContext);
@@ -66,41 +68,8 @@ export default function ProjectListingLayout({ children }) {
         <div className={styles.dekstop_footer}>
           <DekstopFooter />
         </div>
-        <div className={styles.mobile_footer}>
-          <Link href="/property" className={styles.footerTab_link}>
-            <span className={styles.footerTab_icon}>
-              <FcHome />
-            </span>
-            <span className={styles.footerTab_text}>Home </span>
-          </Link>
-
-          <Link href="/property" className={styles.footerTab_link}>
-            <span className={styles.footerTab_icon}>
-              <HiOutlineBuildingOffice2 />
-            </span>
-            <span className={styles.footerTab_text}>Projects </span>
-          </Link>
-
-          <Link href="/property" className={styles.footerTab_link}>
-            <span className={styles.footerTab_icon}>
-              <MdOutlineMessage />
-            </span>
-            <span className={styles.footerTab_text}>Enquery </span>
-          </Link>
-
-          <Link href="/property" className={styles.footerTab_link}>
-            <span className={styles.footerTab_icon}>
-              <IoNewspaperOutline />
-            </span>
-            <span className={styles.footerTab_text}>Blogs</span>
-          </Link>
-
-          <Link href="/property" className={styles.footerTab_link}>
-            <span className={styles.footerTab_icon}>
-              <IoCallOutline />
-            </span>
-            <span className={styles.footerTab_text}>Call </span>
-          </Link>
+        <div className={styles.mobile_footerWrapper}>
+          <MobileFooter />
         </div>
       </div>
     </div>

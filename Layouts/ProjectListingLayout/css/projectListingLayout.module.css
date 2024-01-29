@@ -73,7 +73,7 @@
   margin-left: 350px;
 }
 
-.mobile_footer {
+.mobile_footerWrapper {
   display: none;
 }
 
@@ -176,6 +176,9 @@
     justify-content: space-between;
     align-items: center;
     height: 100%;
+  }
+  .mobile_footerWrapper {
+    display: block;
   }
 
   .footerTab_link {
