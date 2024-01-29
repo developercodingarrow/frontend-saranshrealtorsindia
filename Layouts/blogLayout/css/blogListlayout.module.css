@@ -23,12 +23,22 @@
 
 .blog_cards_container {
   width: calc(100% - 350px);
-  border: 1px solid blue;
 }
 
 .Blog_sideBar {
-  border: 1px solid green;
   width: 300px;
+  margin-top: 70px;
+}
+
+.sideBarElement_box {
+  margin-bottom: 20px;
+}
+
+.sideBarElement_Wrapper {
+  background-color: var(--ts-white);
+  box-shadow: var(--ts-box-shadow);
+  border-radius: 10px;
+  
 }
 
 @media screen and (max-width: 992px) {

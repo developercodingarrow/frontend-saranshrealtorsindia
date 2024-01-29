@@ -57,6 +57,7 @@ import { FcHome } from "react-icons/fc";
 import { TbSofa } from "react-icons/tb";
 import { FcCallback } from "react-icons/fc";
 import { VscMail } from "react-icons/vsc";
+import { GiCarKey } from "react-icons/gi";
 
 export {
   IoIosArrowBack,
@@ -109,5 +110,6 @@ export {
   IoGameControllerOutline,
   IoIosCall,
   FaFacebook,
+  GiCarKey,
   // Add more icons as needed
 };

@@ -5,6 +5,7 @@ import { AppContext } from "../../ContextApi/AppContextApi";
 import ListingNavBar from "../ProjectListingLayout/ListingNavBar";
 import DekstopFooter from "../appLayout/DekstopFooter";
 import MobileFooter from "../appLayout/MobileFooter";
+import EnquireForm from "../../Utils/cards/EnquireForm";
 
 export default function BlogListLayout({ children }) {
   const { showSideBar, showAppDrawer, toggleSideBar, toggleAppDrawer } =
@@ -19,7 +20,23 @@ export default function BlogListLayout({ children }) {
 
       <div className={styles.pageBody_container}>
         <div className={styles.blog_cards_container}>{children}</div>
-        <div className={styles.Blog_sideBar}>Side bar</div>
+        <div className={styles.Blog_sideBar}>
+          <div className={styles.sideBarElement_box}>
+            <EnquireForm />
+          </div>
+          <div className={styles.sideBarElement_box}>
+            <div className={styles.sideBarElement_Wrapper}>
+              <div>Recent Blog</div>
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => {
+                return (
+                  <div>
+                    <div> Recen </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className={styles.footer_container}>
