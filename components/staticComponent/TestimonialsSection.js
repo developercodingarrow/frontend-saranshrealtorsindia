@@ -4,11 +4,15 @@ import { RiDoubleQuotesL } from "../../Utils/ApplicationIcon";
 export default function TestimonialsSection() {
   return (
     <div className={styles.main_container}>
-      <div className={styles.section_heading}>Testimonials</div>
+      <div className={styles.section_heading}>
+        <h3 className={"global_PageTitle"}> Testimonials </h3>
+      </div>
       <div className={styles.section_descreption}>
-        Listen to the voices of our satisfied customers - testimonials that
-        paint a vivid picture of our dedication and reliability, one happy story
-        at a time.
+        <p className={"global_contentStyle"}>
+          Listen to the voices of our satisfied customers - testimonials that
+          paint a vivid picture of our dedication and reliability, one happy
+          story at a time.
+        </p>
       </div>
 
       <div className={styles.testimonials_container}>
@@ -20,10 +24,12 @@ export default function TestimonialsSection() {
                 <RiDoubleQuotesL />{" "}
               </div>
               <div>
-                We just want to thank Saransh Realtors and their team for such
-                careful attention to our beautiful home. Very happy with the
-                services you delivered. Shall refer our friends and co-workers
-                to you. Many thanks{" "}
+                <p className={"global_contentStyle"}>
+                  We just want to thank Saransh Realtors and their team for such
+                  careful attention to our beautiful home. Very happy with the
+                  services you delivered. Shall refer our friends and co-workers
+                  to you. Many thanks{" "}
+                </p>
               </div>
               <div>
                 <span>by</span>{" "}

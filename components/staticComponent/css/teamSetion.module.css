@@ -1,5 +1,4 @@
 .main_container {
-  padding: 100px;
 }
 
 .section_headingBox {
@@ -45,10 +44,43 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  row-gap: 10px;
+  padding: 10px;
+  row-gap: 5px;
+  text-align: center;
+}
+
+.subHeading {
+  font-weight: 500;
+  font-family: var(--ts-font-family);
+  font-size: 16px;
 }
 
 .team_box:hover .team_profileBox {
   right: 0; /* Move to the right when .team_box is hovered */
+}
+
+@media screen and (max-width: 992px) {
+  .team_memberWrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  .team_box {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .team_profileBox {
+    position: absolute;
+    top: 0;
+    right: -400px;
+  }
+
+  .team_box:hover .team_profileBox {
+    right: 0; /* Move to the right when .team_box is hovered */
+  }
 }

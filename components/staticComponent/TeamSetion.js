@@ -7,10 +7,10 @@ export default function TeamSetion() {
   return (
     <div className={styles.main_container}>
       <div className={styles.section_headingBox}>
-        <h3>MANAGEMENT TEAM</h3>
+        <h3 className={"global_PageTitle"}> MANAGEMENT TEAM </h3>
       </div>
       <div className={styles.section_descreptionBox}>
-        <p>
+        <p className={"global_contentStyle"}>
           Saransh Realtors is a team of expert craftsmen and skilled
           professionals who are dedicated to building and renovating your home
           in a way that flows seamlessly. Saransh Realtors prides itself for
@@ -30,11 +30,11 @@ export default function TeamSetion() {
               />
               <div className={styles.team_profileBox}>
                 <div>
-                  <h5>Anjali Chutani</h5>
+                  <h5 className={styles.subHeading}>Anjali Chutani</h5>
                 </div>
-                <p>CEO</p>
+                <p className={styles.subHeading}>CEO</p>
                 <div>
-                  <p>
+                  <p className={"global_contentStyle"}>
                     Ravi Gupta, Saransh Realtors' CFO, leads with fiscal acumen,
                     driving sound financial management for stability and growth.
                   </p>

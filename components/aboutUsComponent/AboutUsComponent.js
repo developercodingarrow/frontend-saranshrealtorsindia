@@ -7,15 +7,17 @@ export default function AboutUsComponent() {
   return (
     <div>
       <div className={styles.contactUs_hero}>
-        <div className={styles.inner_container}>About us</div>
+        <div className={styles.inner_container}>
+          <h3 className={"global_PageTitle"}>About us </h3>
+        </div>
       </div>
       <div className={styles.abouUs_contentBox}>
         <div className={styles.about_contentHeading}>
-          <h3>WHAT DRIVES US</h3>
+          <h3 className={"global_PageTitle"}>WHAT DRIVES US</h3>
         </div>
         <div className={styles.abouts_contentWrapper}>
           <div className={styles.aboutLeft_Content}>
-            <p>
+            <p className={"global_contentStyle"}>
               We are a 21st century major brand in real estate sector. Founded
               by Mr Shashi Gupta in 2007, with a vision of achieving a topmost
               position in real estate industry, the group showcases an ardent
@@ -29,7 +31,7 @@ export default function AboutUsComponent() {
             </p>
           </div>
           <div className={styles.aboutRight_content}>
-            <p>
+            <p className={"global_contentStyle"}>
               {" "}
               project execution, and our customer-centric approach. We are known
               for our research and consultation qualities and our company is
