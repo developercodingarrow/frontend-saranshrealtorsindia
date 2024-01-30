@@ -1,0 +1,29 @@
+.main_container {
+}
+
+.section_heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section_descreption {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.testimonials_container {
+  display: flex;
+  column-gap: 50px;
+}
+
+.testimonials_Box {
+  background-color: #edf9ff;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.quoterName {
+  font-weight: 500;
+}
