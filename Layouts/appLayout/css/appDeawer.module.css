@@ -1,0 +1,97 @@
+.app_drawer {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .app_drawer {
+    display: block;
+    background-color: transparent;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0px;
+    z-index: 20;
+    width: 100%;
+    transition: left 0.5s ease;
+    cursor: pointer;
+  }
+
+  .appDrawer_innerContainer {
+    position: relative;
+    background-color: var(--ts-white);
+    box-shadow: var(--ts-box-shadow);
+    width: 200px;
+    height: 100%;
+  }
+
+  .appDrawer_header {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid var(--ts-separator);
+    margin-bottom: 10px;
+  }
+
+  .logoStyle {
+    width: 100%;
+    height: 100%;
+  }
+
+  .optionTab_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .top_options {
+  }
+
+  .bottom_options {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+  }
+
+  .tabs {
+    /* border: 1px solid var(--ts-separator); */
+    margin-bottom: 5px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .tabs:hover {
+    background-color: var(--ts-primary);
+    color: var(--ts-white);
+  }
+
+  .tabLinkStyle {
+    text-decoration: none;
+    color: var(--ts-text-color);
+    font-weight: 500;
+    font-family: var(--ts-font-family);
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+  }
+
+  .tabLinkStyle:hover {
+    color: var(--ts-white);
+  }
+
+  .Hide_app_drawer {
+    display: block;
+    border: 1px solid red;
+    background-color: transparent;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    z-index: 20;
+    width: 200px;
+    transition: left 0.5s ease;
+  }
+}
