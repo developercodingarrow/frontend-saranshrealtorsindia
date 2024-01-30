@@ -11,11 +11,14 @@ import {
   IoMdFunnel,
 } from "../../Utils/ApplicationIcon";
 import logo from "../../public/web-static-images/saransh logo.png";
+import DekstopNavbar from "../appLayout/DekstopNavbar";
 export default function ListingNavBar(props) {
   const { toggleAppDrawer, toggleSideBar } = props;
   return (
     <div className={styles.navBar_container}>
-      <div className={styles.desktop_navBarContainer}>Dekstop NavBar</div>
+      <div className={styles.desktop_navBarContainer}>
+        <DekstopNavbar />
+      </div>
       <div className={styles.mobile_navbarContainer}>
         <div onClick={toggleAppDrawer}>
           {" "}
