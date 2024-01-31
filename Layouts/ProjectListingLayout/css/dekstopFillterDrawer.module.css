@@ -1,6 +1,6 @@
 .main_container {
   width: 100%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03) !important;
+  padding: 10px;
 }
 
 .fillter_container {

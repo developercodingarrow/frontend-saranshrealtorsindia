@@ -57,7 +57,7 @@ export default function UpdateBlog(props) {
               customeInputs={blogtitle}
               apiData={BlogDetailsApi}
               actionType="submit"
-              handelfomSubmit={handelnewBlog}
+              handelfomSubmit={handelUpadteBlog}
               dataFor={id}
             />
 

@@ -15,7 +15,7 @@ export default function EnquireForm() {
   return (
     <div className={styles.main_container}>
       <div className={styles.form_heading}>
-        <p>Enquirey Now</p>
+        <p className={"global_subHeading"}>Enquirey Now</p>
       </div>
       <form>
         <div>{enquireyFormFiled.map((input) => renderInput(input))}</div>

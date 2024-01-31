@@ -18,13 +18,13 @@ import {
   HiOutlineBuildingOffice,
   HiOutlineBuildingOffice2,
 } from "react-icons/hi2";
-import { BiCategoryAlt, BiSolidCloudUpload } from "react-icons/bi";
+import { BiCategoryAlt, BiSolidCloudUpload, BiCctv } from "react-icons/bi";
 import {
   PiUserCirclePlusThin,
   PiUserCircleMinusThin,
   PiWhatsappLogoThin,
 } from "react-icons/pi";
-import { LuIndianRupee } from "react-icons/lu";
+import { LuIndianRupee, LuPartyPopper } from "react-icons/lu";
 import {
   BsFillArrowRightCircleFill,
   BsFillCloudUploadFill,
@@ -43,7 +43,12 @@ import {
   IoIosCloseCircle,
   IoMdFunnel,
 } from "react-icons/io";
-import { MdDelete, MdOutlineMessage, MdVerifiedUser } from "react-icons/md";
+import {
+  MdDelete,
+  MdOutlineMessage,
+  MdVerifiedUser,
+  MdOutlineSportsTennis,
+} from "react-icons/md";
 import { CiEdit, CiLocationOn, CiSearch } from "react-icons/ci";
 import { GoUpload } from "react-icons/go";
 import {
@@ -52,6 +57,7 @@ import {
   IoLocationOutline,
   IoArrowRedoOutline,
   IoGameControllerOutline,
+  IoBicycleSharp,
 } from "react-icons/io5";
 import { FcHome } from "react-icons/fc";
 import { TbSofa } from "react-icons/tb";
@@ -59,8 +65,14 @@ import { FcCallback } from "react-icons/fc";
 import { VscMail } from "react-icons/vsc";
 import { GiCarKey } from "react-icons/gi";
 import { RiDoubleQuotesL } from "react-icons/ri";
+import { ImPower } from "react-icons/im";
+import { CgGym, CgGames } from "react-icons/cg";
 
 export {
+  LuPartyPopper,
+  CgGames,
+  IoBicycleSharp,
+  CgGym,
   IoIosArrowBack,
   IoIosArrowForward,
   MdDelete,
@@ -113,5 +125,8 @@ export {
   FaFacebook,
   GiCarKey,
   RiDoubleQuotesL,
+  BiCctv,
+  MdOutlineSportsTennis,
+  ImPower,
   // Add more icons as needed
 };

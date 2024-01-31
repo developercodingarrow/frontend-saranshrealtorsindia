@@ -2,7 +2,6 @@
   display: flex;
   row-gap: var(--ts-gap-20);
   column-gap: var(--ts-gap-20);
-  box-shadow: var(--ts-box-shadow);
   width: 100%;
 }
 
@@ -48,12 +47,11 @@
 }
 
 .title_box {
-  color: #4e4e4e;
-  border: 1px solid var(--ts-separator);
-  font-size: 18px;
+  color: var(--ts-text-color);
+  font-size: 16px;
   padding: 5px;
   font-family: var(--ts-font-family);
-  box-shadow: var(--ts-box-shadow);
+  /* box-shadow: var(--ts-box-shadow); */
 }
 
 .checkBoxLable {

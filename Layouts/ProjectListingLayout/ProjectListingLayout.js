@@ -52,12 +52,8 @@ export default function ProjectListingLayout({ children }) {
         </div>
 
         <div className={styles.projectListing_Container}>
-          {allListing?.map((el, i) => {
-            return (
-              <>
-                <ListingCard />
-              </>
-            );
+          {allListing?.map((project, i) => {
+            return <ListingCard data={project} key={project._id} />;
           })}
         </div>
         <div className={styles.listing_rightSide}>

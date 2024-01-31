@@ -31,7 +31,6 @@
   height: 100%;
   position: fixed;
   background-color: var(--ts-white);
-  box-shadow: var(--ts-box-shadow);
 }
 
 .dekstop_fillterBarUi {

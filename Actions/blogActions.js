@@ -17,7 +17,17 @@ export const getBlogByID = async (projectId) => {
   return performGetAPIAction(url);
 };
 
+export const blogDetail = async (slug) => {
+  const url = `http://localhost:8000/api/v1/saranshrealtorsindia/blog/blog-detail/${slug}`;
+  return performGetAPIAction(url);
+};
+
 export const allBlog = async () => {
+  const url = `http://localhost:8000/api/v1/saranshrealtorsindia/blog/all-blogs`;
+  return performGetAPIAction(url);
+};
+
+export const uiAllBlog = async () => {
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/blog/all-blogs`;
   return performGetAPIAction(url);
 };

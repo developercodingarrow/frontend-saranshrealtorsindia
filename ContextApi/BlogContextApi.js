@@ -5,7 +5,7 @@ import React, {
   useRef,
   useEffect,
 } from "react";
-
+import { useRouter } from "next/router";
 export const BlogContext = createContext();
 import {
   createNewBlog,
@@ -24,6 +24,7 @@ import {
 } from "../Utils/generichandler/generichandler";
 
 export default function BlogContextApiProvider({ children }) {
+  const router = useRouter();
   const [loading, setloading] = useState(false);
   const [actionLoading, setactionLoading] = useState(false);
   const [allblogs, setallblogs] = useState([]);

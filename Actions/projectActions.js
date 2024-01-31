@@ -28,6 +28,11 @@ export const fillterdProjetcs = async (queryObj) => {
   return performGetAPIAction(url);
 };
 
+export const uiProjectByID = async (slug) => {
+  const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/get-project/${slug}`;
+  return performGetAPIAction(url);
+};
+
 export const deleteProject = async (requestData) => {
   const data = {
     id: requestData,

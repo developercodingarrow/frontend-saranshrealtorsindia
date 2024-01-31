@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./css/listingcard.module.css";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import sampleImage from "../../../public/web-static-images/sampleImage.png";
 
 import {
@@ -17,25 +18,35 @@ import {
 } from "../../ApplicationIcon";
 import ActionBtn from "../../Elements/buttonsElements/ActionBtn";
 
-export default function ListingCard() {
+export default function ListingCard(props) {
+  const router = useRouter();
+  const { data } = props;
+
+  console.log("cards component");
+  console.log(data);
+  const cardImage = data.ProjectThumblin;
+
+  const handelProjectDetail = (slug) => {
+    router.push(`/property/${slug}`);
+  };
   return (
     <div className={styles.card_container}>
       <div className={styles.card_detailsWrapper}>
         <div className={styles.cardImage_container}>
-          <Image
-            src={sampleImage}
-            width={250}
-            height={250}
-            alt="sample-image"
-            className={styles.image_Style}
-          />
+          {cardImage && (
+            <Image
+              src={`/project-thumblin/${data.ProjectThumblin.url}`}
+              width={250}
+              height={250}
+              alt={data.ProjectThumblin.altText}
+              className={styles.image_Style}
+            />
+          )}
         </div>
         <div className={styles.details_Container}>
           <div className={styles.titleBox}>
             <span className={styles.title_detail}>
-              <p>
-                3 BHK Flat In Brisk Lumbini Sec 109 Gurugaon For Sale In Sect
-              </p>
+              <p className={"global_subHeading"}>{data.projectTitle}</p>
             </span>
             <span className={styles.price_details}>
               <span className={styles.price_iconBox}>
@@ -51,7 +62,7 @@ export default function ListingCard() {
                 {" "}
                 <BsBuildingCheck />
               </span>
-              <span className={styles.mainDetail_text}>Godrej </span>
+              <span className={"mainDetail_text"}>{data.builder} </span>
             </div>
             <div className={styles.mainDetail_Box}>
               {" "}
@@ -59,7 +70,7 @@ export default function ListingCard() {
                 {" "}
                 <CiLocationOn />
               </span>
-              <span className={styles.mainDetail_text}>Gurgaon </span>
+              <span className={"mainDetail_text"}>{data.city} </span>
             </div>
           </div>
           <div className={styles.baise_deatils}>
@@ -72,7 +83,9 @@ export default function ListingCard() {
                 <div className={styles.unitBox_details}>
                   <div className={styles.baiseBox_title}>Unit Types</div>
                   <div className={styles.baiseBox_value}>
-                    2 BHK , 3BHK, 4 BHK
+                    {data.typesofUnits.map((el, index) => (
+                      <span key={index}>{el} </span>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -96,7 +109,7 @@ export default function ListingCard() {
                 </div>
                 <div className={styles.baiseBox_details}>
                   <div className={styles.baiseBox_title}>RERA No</div>
-                  <div className={styles.baiseBox_value}>403 of 2019</div>
+                  <div className={styles.baiseBox_value}>{data.reraNo}</div>
                 </div>
               </div>
             </div>
@@ -107,8 +120,10 @@ export default function ListingCard() {
       <div className={styles.card_actionContainer}>
         <div className={styles.dekstop_actionBox}>
           <div className={styles.card_priceBox}>
-            <div>1.25 Cr</div>
-            <div>₹10,695/sqft</div>
+            <div>
+              {data.price} <span>{data.pricePrefix}</span>
+            </div>
+            <div>₹ {data.basicPrice}</div>
           </div>
           <div className={styles.dekstop_actionWrapper}>
             <ActionBtn
@@ -120,6 +135,8 @@ export default function ListingCard() {
               label="Details"
               btnDesign="cardDetailBtn"
               buttonPadding="buttonPadding"
+              onClick={handelProjectDetail}
+              itemId={data.slug}
             />
           </div>
         </div>
