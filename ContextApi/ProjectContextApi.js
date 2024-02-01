@@ -32,6 +32,7 @@ export default function ProjectContextApiProvider({ children }) {
   const [ProjectThumblin, setProjectThumblin] = useState({});
   const [projectCoverImages, setProjectCoverImages] = useState([]);
   const [peojectFloorPlanImages, setpeojectFloorPlanImages] = useState([]);
+  const [toggleAction, settoggleAction] = useState(false);
 
   const handelnewProject = genericDataHandler(createNewProject);
   const handelUpadteProject = genericDataAndSlugHandler(UpdateProjectDeatils);
@@ -122,6 +123,8 @@ export default function ProjectContextApiProvider({ children }) {
         handelView,
         handelEdit,
         handelDeleteProject,
+        toggleAction,
+        settoggleAction,
       }}
     >
       {children}

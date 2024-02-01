@@ -31,6 +31,8 @@ export default function UpdateProject(props) {
     actionLoading,
     setactionLoading,
     handelUpadteProject,
+    toggleAction,
+    settoggleAction,
   } = useContext(ProjectContext);
   const {
     pageTitle,
@@ -46,7 +48,7 @@ export default function UpdateProject(props) {
 
   useEffect(() => {
     handelGetProject(id);
-  }, [id, actionLoading]);
+  }, [id, toggleAction]);
 
   console.log(projectData);
   console.log(id);
@@ -55,7 +57,7 @@ export default function UpdateProject(props) {
     <>
       <div className={styles.mainContainer}>
         <div className={styles.pageTitle}>{pageTitle}</div>
-        {!loading && Object.keys(projectData).length > 0 && (
+        {Object.keys(projectData).length > 0 && (
           <div className={styles.componentWarper}>
             <div className={styles.left_Side}>
               <div>
@@ -124,6 +126,8 @@ export default function UpdateProject(props) {
                   deleteAction={handelDeleteThumblinImage}
                   loading={actionLoading}
                   setloading={setactionLoading}
+                  refreshstate={toggleAction}
+                  setRefresh={settoggleAction}
                   updateFiled="ProjectThumblin"
                 />
               </div>
