@@ -36,13 +36,11 @@ export default function AuthFormUi(props) {
 
   // handlesubmitForm
   const handleForm = async (data) => {
-    console.log(data);
     try {
       setloading(true);
       const result = verifyToken
         ? await handleFormSubmit(data, verifyToken)
         : await handleFormSubmit(data);
-      console.log(result);
       setloading(false);
       if (result.data.apiFor === "register") {
         router.push(`/userauth/verify-otp/${result.data.UrlToken}`);
@@ -51,13 +49,12 @@ export default function AuthFormUi(props) {
 
       if (result.data.apiFor === "Login") {
         authenticate(result.data.user, result.data.token, () => {
-          router.push("/");
+          router.push("/super-admin");
           setloading(false);
         });
       }
 
       if (result.data.apiFor === "forgatePassword") {
-        console.log(result);
         setloading(false);
       }
 

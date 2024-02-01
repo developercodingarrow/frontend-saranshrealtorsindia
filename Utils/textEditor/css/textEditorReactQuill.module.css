@@ -16,18 +16,22 @@
 }
 
 .card_body {
+  position: relative;
   padding: 32px;
   height: 350px;
 }
 
-/* .reactQuill_style {
-  height: 220px;
-} */
+.reactQuill_style {
+  height: 180px;
+}
 .textEditor_wrapper {
   margin-bottom: 20px;
 }
 
 .submitBtn_wrapper {
+  position: absolute;
+  bottom: 20px;
+  right: 35px;
   display: flex;
   justify-content: flex-end;
 }

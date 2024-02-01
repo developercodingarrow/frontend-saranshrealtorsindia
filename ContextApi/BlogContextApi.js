@@ -18,6 +18,7 @@ import {
 
 import {
   genericDataHandler,
+  newgenericDataHandler,
   genericDataAndSlugHandler,
   genericGetHandler,
   genericPagePushHandler,
@@ -30,10 +31,16 @@ export default function BlogContextApiProvider({ children }) {
   const [allblogs, setallblogs] = useState([]);
   const [blogThumblin, setblogThumblin] = useState({});
   const [blogCoverImage, setblogCoverImage] = useState({});
+  const [toggleAction, settoggleAction] = useState(false);
+  const [blogDetails, setblogDetails] = useState({});
 
   const handelnewBlog = genericDataHandler(createNewBlog);
   const handelUpadteBlog = genericDataAndSlugHandler(updateBlog);
-  const handelDeleteBlog = genericDataHandler(deleteBlog);
+  const handelDeleteBlog = newgenericDataHandler(
+    deleteBlog,
+    settoggleAction,
+    toggleAction
+  );
 
   const handelAllBlogs = async () => {
     try {
@@ -47,8 +54,10 @@ export default function BlogContextApiProvider({ children }) {
   const handelGetBlog = async (id) => {
     try {
       const res = await getBlogByID(id);
+      console.log(res);
       setblogThumblin(res.data.result.BlogThumblin);
       setblogCoverImage(res.data.result.BlogCoverImage);
+      setblogDetails(res.data.result);
     } catch (error) {
       console.log(error);
     }
@@ -79,6 +88,10 @@ export default function BlogContextApiProvider({ children }) {
         handelView,
         handelEdit,
         handelDeleteBlog,
+        toggleAction,
+        settoggleAction,
+        blogDetails,
+        setblogDetails,
       }}
     >
       {children}

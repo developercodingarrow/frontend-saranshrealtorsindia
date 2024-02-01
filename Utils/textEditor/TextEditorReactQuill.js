@@ -1,4 +1,5 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import styles from "./css/textEditorReactQuill.module.css";
 import dynamic from "next/dynamic"; // If using Next.js
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
@@ -10,8 +11,16 @@ import {
 import SubmitBtn from "../Elements/buttonsElements/SubmitBtn";
 
 export default function TextEditorReactQuill(props) {
-  const { handeSubmit, dataFor, updateFiled, defultvalue } = props;
-  const [editorValue, seteditorValue] = useState(defultvalue);
+  const { handeSubmit, dataFor, updateFiled, defultvalue, apiData } = props;
+  const [editorValue, seteditorValue] = useState("");
+
+  useEffect(() => {
+    // Update editorValue state when apiData changes
+    if (apiData) {
+      seteditorValue(apiData);
+    }
+  }, [apiData]);
+
   const handelEditorOnChange = (e) => {
     seteditorValue(e);
   };
@@ -21,6 +30,9 @@ export default function TextEditorReactQuill(props) {
     try {
       const res = await handeSubmit({ [updateFiled]: editorValue }, dataFor);
       console.log(res);
+      if (res.data.status === "success") {
+        toast.success("succes");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -28,6 +40,7 @@ export default function TextEditorReactQuill(props) {
 
   return (
     <div className={styles.card_wrapper}>
+      <Toaster />
       <div className={styles.card_titleBox}>
         <p>Poject Brief</p>
       </div>

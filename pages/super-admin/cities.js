@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import DashboardLayout from "../../Layouts/DashBoardLayout/DashboardLayout";
 import TwoCloumTableForm from "../../Layouts/TwoColumLayout/TwoCloumTableForm";
 import { CreatecitysFileds, CityDetailsApi } from "../../JsonData/formFileds";
@@ -8,9 +8,23 @@ import {
   SuperAdminColum,
 } from "../../JsonData/TableData";
 import { CityContext } from "../../ContextApi/CityContextApi";
+import { AppContext } from "../../ContextApi/AppContextApi";
 
 export default function CitiesPage() {
-  const { allCites } = useContext(CityContext);
+  const {
+    allCites,
+    handelDeleteCity,
+    handelAllCites,
+    handelnewCity,
+    toggleAction,
+  } = useContext(CityContext);
+  const { modelPassData, setmodelPassData, isModalOpen, setIsModalOpen } =
+    useContext(AppContext);
+
+  useEffect(() => {
+    handelAllCites();
+  }, [toggleAction]);
+
   return (
     <DashboardLayout>
       <TwoCloumTableForm
@@ -24,6 +38,8 @@ export default function CitiesPage() {
         tableData={allCites}
         SuperAdminColum={SuperAdminColum}
         sideForm={true}
+        modelYesAct={handelDeleteCity}
+        createNew={handelnewCity}
       />
     </DashboardLayout>
   );

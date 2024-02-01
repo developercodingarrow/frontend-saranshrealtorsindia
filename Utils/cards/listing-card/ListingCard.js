@@ -22,8 +22,6 @@ export default function ListingCard(props) {
   const router = useRouter();
   const { data } = props;
 
-  console.log("cards component");
-  console.log(data);
   const cardImage = data.ProjectThumblin;
 
   const handelProjectDetail = (slug) => {

@@ -6,8 +6,8 @@ import CryptoJS from "crypto-js";
 const encryptionKey = "my-secret-key";
 
 export const setLoginCookies = (key, value) => {
-  const expirationInSeconds = 3600;
-  Cookies.set(key, value, { expires: expirationInSeconds / (60 * 60) });
+  const expirationInSeconds = 36000;
+  Cookies.set(key, value);
 };
 
 export const getLoginCookies = (key) => {
@@ -22,13 +22,14 @@ export const setLocalStorage = (key, value) => {
 };
 
 export const authenticate = (data, token, cb) => {
-  const userData = JSON.stringify(data.user);
+  const userData = JSON.stringify(data);
+  console.log(userData);
   // Encrypt the data using AES encryption
   const encryptedData = CryptoJS.AES.encrypt(
     userData,
     encryptionKey
   ).toString();
-  console.log("Encrypted user data:", encryptedData);
+
   setLocalStorage("user", encryptedData);
   setLoginCookies("jwt", token);
 
@@ -41,7 +42,13 @@ export const getEncryptedData = (encryptedUserData) => {
     if (encryptedUserData) {
       const bytes = CryptoJS.AES.decrypt(encryptedUserData, encryptionKey);
       const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+      // Check if decrypted data is empty
+      if (!decryptedData) {
+        return null;
+      }
+
       const userData = JSON.parse(decryptedData);
+      console.log(userData);
       return userData;
     }
   } catch (error) {

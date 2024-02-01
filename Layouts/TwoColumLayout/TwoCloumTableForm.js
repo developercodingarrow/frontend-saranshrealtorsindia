@@ -10,9 +10,11 @@ import TableTitle from "../DashBoardLayout/TableTitle";
 import FillterBar from "../DashBoardLayout/FillterBar";
 import TableWrapper from "../DashBoardLayout/TableWrapper";
 import Model from "../../Utils/model/Model";
+import LoadingPagWrapper from "../../Utils/Elements/Loading/LoadingPagWrapper";
 
 export default function TwoCloumTableForm(props) {
   const {
+    loading,
     pageTitle,
     tableTitle,
     formTitle,
@@ -31,10 +33,14 @@ export default function TwoCloumTableForm(props) {
     createNew,
   } = props;
 
-  const { isModalOpen, setIsModalOpen, handleOpenModal, handleCloseModal } =
-    useContext(AppContext);
+  const {
+    userRole,
+    isModalOpen,
+    setIsModalOpen,
+    handleOpenModal,
+    handleCloseModal,
+  } = useContext(AppContext);
 
-  const userRole = "super-admin";
   const { visibalRows, setvisibalRows } = useContext(FillterContext);
 
   const tableColumns = useUserRoleColumns(userRole, tableColumn, {
@@ -51,6 +57,9 @@ export default function TwoCloumTableForm(props) {
         isOpen={isModalOpen}
         onClose={handleCloseModal}
       />
+
+      {loading && <LoadingPagWrapper />}
+
       <div className={styles.mainContainer}>
         <PageHeader
           pageTitle="Products"
@@ -82,6 +91,7 @@ export default function TwoCloumTableForm(props) {
                 customeInputs={formFields}
                 apiData={apiData}
                 actionType={forAction}
+                handelfomSubmit={createNew}
               />
             </div>
           )}

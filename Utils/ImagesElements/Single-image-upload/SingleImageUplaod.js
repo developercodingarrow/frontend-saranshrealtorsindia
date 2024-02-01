@@ -1,4 +1,5 @@
 import React, { useRef, useMemo } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import styles from "./css/singleImageUpload.module.css";
 import useImageUpload from "../../../custome-hooks/useImageUpload";
 import Image from "next/image";
@@ -16,6 +17,8 @@ export default function SingleImageUplaod(props) {
     loading,
     setloading,
     updateFiled,
+    refreshstate,
+    setRefresh,
   } = props;
 
   const testhandel = () => {
@@ -49,8 +52,13 @@ export default function SingleImageUplaod(props) {
       setloading(true);
       const res = await handelfomSubmit(originalFile, updateFiled, dataFor);
       console.log(res);
-      setloading(false);
-      // alert("uploaded");
+      // res.data.status === "success"
+      if (res.data.status === "success") {
+        toast.success("succes");
+        setloading(false);
+        setRefresh(!refreshstate);
+        removeImage();
+      }
     } catch (error) {
       setloading(false);
       console.log(error);
@@ -61,8 +69,13 @@ export default function SingleImageUplaod(props) {
     try {
       setloading(true);
       const res = await deleteAction("", dataFor);
-      console.log(res);
-      setloading(false);
+      console.log(res.statusText);
+      if (res.statusText === "No Content") {
+        toast.success("succes");
+        setloading(false);
+        setRefresh(!refreshstate);
+        removeImage();
+      }
     } catch (error) {
       setloading(false);
       console.log(error);
@@ -73,6 +86,7 @@ export default function SingleImageUplaod(props) {
 
   return (
     <div className={styles.card_wrapper}>
+      <Toaster />
       <div className={styles.card_titleBox}>
         <p>{title}</p>
       </div>

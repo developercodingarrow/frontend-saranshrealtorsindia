@@ -38,11 +38,14 @@ export default function ProjectContextApiProvider({ children }) {
   const handelDeleteProject = genericDataHandler(deleteProject);
   const handelAllProjects = async () => {
     try {
+      setloading(true); // Set loading state to true before fetching data
       const res = await getAllProjetcs();
       console.log(res);
       setallProject(res.data.result);
     } catch (error) {
       console.log(error);
+    } finally {
+      setloading(false); // Set loading state to false after fetching or encountering an error
     }
   };
 

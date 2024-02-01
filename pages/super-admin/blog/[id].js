@@ -5,7 +5,7 @@ import UpdateBlog from "../../../Layouts/blog/UpdateBlog";
 export default function UpdateBlogPage() {
   return (
     <DashboardLayout>
-      <UpdateBlog pageTitle="UPDATE PROJECT" />
+      <UpdateBlog pageTitle="UPDATE BLOG" />
     </DashboardLayout>
   );
 }

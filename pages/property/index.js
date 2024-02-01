@@ -9,8 +9,6 @@ export default function PropertyListingPage({ initialProject }) {
 
   setallListing(initialProject);
 
-  console.log(allListing);
-
   return (
     <ProjectListingLayout>
       <h1>Property Listing page</h1>
@@ -23,7 +21,6 @@ export async function getServerSideProps(context) {
   try {
     const queryObj = context.query;
     const result = await fillterdProjetcs(queryObj);
-    console.log(result);
 
     if (result.data.status === "success") {
       return {

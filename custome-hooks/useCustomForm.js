@@ -4,16 +4,26 @@ import SelectElement from "../Utils/Elements/select-elements/SelectElement";
 import CheckBoxElement from "../Utils/Elements/checkbox-elements/CheckBoxElement";
 import RadioElement from "../Utils/Elements/radio-elements/RadioElement";
 import TextareaElement from "../Utils/Elements/inputs-elements/TextareaElement";
+import { useEffect } from "react";
 
 export function useCustomForm(apiData) {
   const { handleSubmit, formState, control, watch, setValue } = useForm({
     mode: "all",
+    defaultValues: apiData,
   });
 
+  useEffect(() => {
+    // Set default values when apiData changes
+    if (apiData) {
+      Object.entries(apiData).forEach(([name, value]) => {
+        setValue(name, value);
+      });
+    }
+  }, [apiData, setValue]);
+
   const renderInput = (input, dynamicData) => {
-    console.log(dynamicData);
     let InputComponent, specificProps;
-    let defaultValue = apiData[input.name];
+    let defaultValues = apiData[input.name];
     switch (input.type) {
       case "text":
         InputComponent = InputElement;
@@ -24,7 +34,7 @@ export function useCustomForm(apiData) {
           inputContainer: "block_container",
           inputLabel: input.label,
           lableStyle: "lable_style",
-          defaultValue: defaultValue || "",
+          defaultValue: defaultValues || "",
         };
         break;
       case "textarea":
@@ -36,7 +46,7 @@ export function useCustomForm(apiData) {
           inputContainer: "block_container",
           inputLabel: input.label,
           lableStyle: "lable_style",
-          defaultValue: defaultValue || "",
+          defaultValue: defaultValues || "",
         };
         break;
       case "select":
@@ -63,7 +73,7 @@ export function useCustomForm(apiData) {
           checkBoxOptions: input.options,
           inputLabel: input.label,
           onChange: (selectedOptions) => setValue(input.name, selectedOptions), // Update the form value
-          defaultValue: defaultValue || [],
+          defaultValue: defaultValues || [],
           checkBoxStyle: "inLine_customCheckbox_wrapper",
           checkBoxContainerStyle: "inLine_checkBox_container",
         };
@@ -77,7 +87,7 @@ export function useCustomForm(apiData) {
           inputLabel: input.label,
           lableStyle: "lable_style",
           inputContainer: "inlineRadio_container",
-          defaultValue: defaultValue || "",
+          defaultValue: defaultValues || "",
           radiostyle: "inlineRadio_container",
           radioTitleGap: "title_rowGap",
           radio_textgap: "radio_btn_textGap",

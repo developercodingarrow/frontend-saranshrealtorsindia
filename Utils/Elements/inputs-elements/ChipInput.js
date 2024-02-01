@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import styles from "./css/chipInput.module.css";
 import SubmitBtn from "../buttonsElements/SubmitBtn";
 
 const ChipInput = (props) => {
-  const { title, handeSubmit, dataFor, updateFiled } = props;
+  const { title, handeSubmit, dataFor, updateFiled, apiData } = props;
   const [inputValue, setInputValue] = useState("");
+  console.log(apiData); // real estate, property, gurgaon
   const [chips, setChips] = useState([]);
+
+  useEffect(() => {
+    // If apiData is available, split it into chips and setChips state
+    if (apiData) {
+      const apiChips = apiData.split(", ").map((chip) => chip.trim());
+      setChips(apiChips);
+    }
+  }, [apiData]);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -31,12 +41,16 @@ const ChipInput = (props) => {
     try {
       const res = await handeSubmit({ [updateFiled]: chipsString }, dataFor);
       console.log(res);
+      if (res.data.status === "success") {
+        toast.success("succes");
+      }
     } catch (error) {
       console.log(error);
     }
   };
   return (
     <div className={styles.card_wrapper}>
+      <Toaster />
       <div className={styles.card_titleBox}>
         <p>{title}</p>
       </div>

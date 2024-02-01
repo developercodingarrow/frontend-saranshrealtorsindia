@@ -1,7 +1,7 @@
 export const CreatecitysFileds = [
   {
     id: 1,
-    name: "cityNameName",
+    name: "city",
     type: "text",
     placeholder: "City Name",
     label: "City Name", // Changed 'lable' to 'label'
@@ -12,14 +12,14 @@ export const CreatecitysFileds = [
 ];
 
 export const CityDetailsApi = {
-  id: 1,
+  id: 2,
   //   cityNameName: "Gurgaon",
 };
 
 export const CreateDeveloeprFileds = [
   {
-    id: 1,
-    name: "develoeprName",
+    id: 3,
+    name: "builderName",
     type: "text",
     placeholder: "Develeper Name",
     label: "Developer Name", // Changed 'lable' to 'label'
@@ -30,71 +30,14 @@ export const CreateDeveloeprFileds = [
 ];
 
 export const DeveloperDetailsApi = {
-  id: 1,
+  id: 4,
 };
-
-export const projectDetails = [
-  {
-    id: 1,
-    name: "projectTitle",
-    type: "text",
-    placeholder: "Project Name",
-    label: "Project Name",
-    validation: {
-      required: "Project NAME is required.",
-    },
-  },
-
-  {
-    id: 2,
-    name: "projectStatus",
-    type: "radio",
-    label: "Project Status",
-    options: ["Ready To Move", "under Constructor", "Upcoming Project"],
-    // validation: {
-    //   required: "Please select a business type.",
-    // },
-  },
-
-  {
-    id: 3,
-    name: "typesofUnits",
-    type: "checkbox",
-    label: "project Units",
-    options: ["2 BHK", "3 BHK", "4 BHK"],
-    // validation: {
-    //   required: "Please select at least one Project Unit type.",
-    // },
-  },
-
-  {
-    id: 8,
-    name: "builder",
-    type: "select",
-    placeholder: "Builder ",
-    label: "Builder/Developer", // Changed 'lable' to 'label'
-    options: ["Godrej", "GLS", "DLF", "Pareena"],
-    // validation: {
-    //   required: "Builder Name is required.",
-    // },
-  },
-  {
-    id: 9,
-    name: "reraNo",
-    type: "text",
-    placeholder: "RERA NO",
-    label: "RERA NO ",
-    // validation: {
-    //   required: "RERA NO is required.",
-    // },
-  },
-];
 
 export const ProjectDetailsApi = {};
 
 export const ProjectStatus = [
   {
-    id: 1,
+    id: 9,
     name: "projectStatus",
     type: "radio",
     label: "Project Status",
@@ -107,7 +50,7 @@ export const ProjectStatus = [
 
 export const ProjectUnitsType = [
   {
-    id: 1,
+    id: 10,
     name: "projectUnits",
     type: "checkbox",
     label: "project Units",
@@ -120,7 +63,7 @@ export const ProjectUnitsType = [
 
 export const ProjectPrices = [
   {
-    id: 1,
+    id: 11,
     name: "price",
     type: "text",
     label: "unit price",
@@ -155,7 +98,7 @@ export const ProjectPrices = [
 
 export const ProjectLocation = [
   {
-    id: 1,
+    id: 12,
     name: "city",
     type: "apiSelectList",
     label: "City",
@@ -167,7 +110,7 @@ export const ProjectLocation = [
 
 export const projectArea = [
   {
-    id: 1,
+    id: 13,
     name: "ProjectArea",
     type: "text",
     placeholder: "Project Area",
@@ -199,13 +142,13 @@ export const projectArea = [
   },
 ];
 
-export const blogtitle = [
+export const blogtitleFiled = [
   {
-    id: 1,
+    id: 14,
     name: "blogTitle",
     type: "text",
-    placeholder: "Blog Title",
-    label: "Blog Title", // Changed 'lable' to 'label'
+    placeholder: "write Blog Title",
+    label: "Blog Title",
     validation: {
       required: "Blog Title is required.",
     },
@@ -214,7 +157,7 @@ export const blogtitle = [
 
 export const metaescription = [
   {
-    id: 1,
+    id: 15,
     name: "metaDescription",
     type: "textarea",
     placeholder: "Meta Description",
@@ -226,18 +169,18 @@ export const metaescription = [
 ];
 
 export const BlogDetailsApi = {
-  id: 1,
+  id: 16,
   //   cityNameName: "Gurgaon",
 };
 
 export const dummyapi = {
-  id: 1,
+  id: 17,
   //   cityNameName: "Gurgaon",
 };
 
 export const enquireyFormFiled = [
   {
-    id: 1,
+    id: 18,
     name: "name",
     type: "text",
     placeholder: "Enter Your Name",
@@ -247,7 +190,7 @@ export const enquireyFormFiled = [
     },
   },
   {
-    id: 2,
+    id: 19,
     name: "email",
     type: "text",
     placeholder: "Enter Your E-mail",
@@ -258,7 +201,7 @@ export const enquireyFormFiled = [
   },
 
   {
-    id: 3,
+    id: 20,
     name: "number",
     type: "text",
     placeholder: "Enter Your Mobile Number",
@@ -269,7 +212,7 @@ export const enquireyFormFiled = [
   },
 
   {
-    id: 3,
+    id: 21,
     name: "message",
     type: "textarea",
     placeholder: "Message",
@@ -279,7 +222,7 @@ export const enquireyFormFiled = [
 
 export const contactFormFiled = [
   {
-    id: 1,
+    id: 22,
     name: "name",
     type: "text",
     placeholder: "Enter Your Name",
@@ -289,7 +232,7 @@ export const contactFormFiled = [
     },
   },
   {
-    id: 2,
+    id: 23,
     name: "email",
     type: "text",
     placeholder: "Enter Your E-mail",
@@ -300,7 +243,7 @@ export const contactFormFiled = [
   },
 
   {
-    id: 3,
+    id: 24,
     name: "number",
     type: "text",
     placeholder: "Enter Your Mobile Number",
@@ -311,10 +254,67 @@ export const contactFormFiled = [
   },
 
   {
-    id: 3,
+    id: 25,
     name: "message",
     type: "textarea",
     placeholder: "Message",
     lable: "Message",
+  },
+];
+
+/****************************************
+ * ***********Review Data************
+ ***************************************/
+export const projectDetails = [
+  {
+    id: 5,
+    name: "projectTitle",
+    type: "text",
+    placeholder: "Project Name",
+    label: "Project Name",
+    validation: {
+      required: "Project NAME is required.",
+    },
+  },
+
+  {
+    id: 6,
+    name: "projectStatus",
+    type: "radio",
+    label: "Project Status",
+    options: ["Ready To Move", "Under Constructor", "Upcoming Project"],
+    validation: {
+      required: "Please select a Project Status.",
+    },
+  },
+
+  {
+    id: 7,
+    name: "typesofUnits",
+    type: "checkbox",
+    label: "project Units",
+    options: ["2 BHK", "3 BHK", "4 BHK"],
+    validation: {
+      required: "Please select at least one Project Unit type.",
+    },
+  },
+
+  {
+    id: 8,
+    name: "builder",
+    type: "select",
+    placeholder: "Builder ",
+    label: "Builder/Developer", // Changed 'lable' to 'label'
+    options: ["Godrej", "GLS", "DLF", "Pareena"],
+    validation: {
+      required: "Builder Name is required.",
+    },
+  },
+  {
+    id: 9,
+    name: "reraNo",
+    type: "text",
+    placeholder: "RERA NO",
+    label: "RERA NO ",
   },
 ];

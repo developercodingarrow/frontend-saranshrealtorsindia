@@ -2,7 +2,11 @@ import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import DashboardLayout from "../../../Layouts/DashBoardLayout/DashboardLayout";
 import BlogList from "../../../Layouts/blog/BlogList";
-import { blogData, blogDataColoum } from "../../../JsonData/TableData";
+import {
+  blogData,
+  blogDataColoum,
+  SuperAdminColum,
+} from "../../../JsonData/TableData";
 import { BlogContext } from "../../../ContextApi/BlogContextApi";
 import TwoCloumTableForm from "../../../Layouts/TwoColumLayout/TwoCloumTableForm";
 
@@ -15,11 +19,12 @@ export default function BlogListPage() {
     handelView,
     handelEdit,
     handelDeleteBlog,
+    toggleAction,
   } = useContext(BlogContext);
 
   useEffect(() => {
     handelAllBlogs();
-  }, []);
+  }, [toggleAction]);
 
   const handelCreateNew = async () => {
     try {
@@ -41,6 +46,7 @@ export default function BlogListPage() {
         tableTitle="Product List"
         tableData={allblogs}
         tableColumn={blogDataColoum}
+        SuperAdminColum={SuperAdminColum}
         sideForm={false}
         createNewBtn="Create New Blog"
         createNew={handelCreateNew}

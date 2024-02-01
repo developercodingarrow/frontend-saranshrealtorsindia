@@ -1,7 +1,7 @@
 export const cityDataColoum = [
   { label: "S No", key: "_id", component: "number" },
   { label: "Date", key: "updatedAt", component: "date" },
-  { label: "City Name", key: "cityName", component: "text" },
+  { label: "City NAME", key: "city", component: "text" },
 ];
 
 export const SuperAdminColum = [
@@ -203,7 +203,6 @@ export const blogDataColoum = [
   { label: "Title", key: "blogTitle", component: "text" },
   { label: "View", key: "slug", component: "view" },
   { label: "Edit", key: "slug", component: "update" },
-  { label: "Delete", key: "slug", component: "delete" },
 ];
 
 export const blogData = [
@@ -276,5 +275,4 @@ export const projectDataColoum = [
   { label: "Title", key: "projectTitle", component: "text" },
   { label: "View", key: "_id", component: "view" },
   { label: "Edit", key: "slug", component: "update" },
-  { label: "Delete", key: "slug", component: "delete" },
 ];

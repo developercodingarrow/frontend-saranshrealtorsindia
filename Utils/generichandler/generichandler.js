@@ -10,6 +10,23 @@ export const genericDataHandler = (sendDataFunction) => {
   };
 };
 
+// GENERIC HANDLER FOR SEND ONLY DATA
+export const newgenericDataHandler = (
+  sendDataFunction,
+  settoggleState,
+  toggleState
+) => {
+  return async (data) => {
+    try {
+      const result = await sendDataFunction(data);
+      settoggleState(!toggleState);
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 // GENERIC HANDLER FOR SEND DATA AND OPTIONAL UrlToken
 export const genericDataAndSlugHandler = (sendDataFunction) => {
   return async (data, slug) => {
@@ -36,6 +53,5 @@ export const genericGetByIDHandler = (sendDataFunction) => {
 };
 
 export const genericPagePushHandler = (router, baseRoute, passValue) => {
-  alert(passValue);
   router.push(`${baseRoute}/${passValue}`);
 };

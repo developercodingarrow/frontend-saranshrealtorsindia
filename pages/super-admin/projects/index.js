@@ -4,10 +4,16 @@ import DashboardLayout from "../../../Layouts/DashBoardLayout/DashboardLayout";
 import { ProjectContext } from "../../../ContextApi/ProjectContextApi";
 import { AppContext } from "../../../ContextApi/AppContextApi";
 import ProjectList from "../../../Layouts/createProjectLayout/ProjectList";
-import { projectDataColoum } from "../../../JsonData/TableData";
+import {
+  projectDataColoum,
+  SuperAdminColum,
+} from "../../../JsonData/TableData";
 import TwoCloumTableForm from "../../../Layouts/TwoColumLayout/TwoCloumTableForm";
+import LoadingPagWrapper from "../../../Utils/Elements/Loading/LoadingPagWrapper";
 
 export default function ProjectsList() {
+  const { modelPassData, setmodelPassData, isModalOpen, setIsModalOpen } =
+    useContext(AppContext);
   const router = useRouter();
   const {
     handelAllProjects,
@@ -16,11 +22,12 @@ export default function ProjectsList() {
     handelView,
     handelEdit,
     handelDeleteProject,
+    loading,
   } = useContext(ProjectContext);
 
   useEffect(() => {
     handelAllProjects();
-  }, []);
+  }, [isModalOpen]);
 
   console.log(allProject);
 
@@ -43,6 +50,7 @@ export default function ProjectsList() {
         tableTitle="Product List"
         tableData={allProject}
         tableColumn={projectDataColoum}
+        SuperAdminColum={SuperAdminColum}
         sideForm={false}
         createNewBtn="Create New Project"
         createNew={handelCreateNew}
@@ -50,6 +58,7 @@ export default function ProjectsList() {
         editAction={handelEdit}
         modelYesAct={handelDeleteProject}
         folderPath="project-thumblin"
+        loading={loading}
       />
     </DashboardLayout>
   );

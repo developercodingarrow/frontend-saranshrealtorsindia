@@ -1,4 +1,5 @@
 import React from "react";
+import toast, { Toaster } from "react-hot-toast";
 import styles from "./css/formCard.module.css";
 import { useCustomForm } from "../../custome-hooks/useCustomForm";
 import SubmitBtn from "../Elements/buttonsElements/SubmitBtn";
@@ -29,6 +30,11 @@ export default function FormCard(props) {
       console.log(data);
       const res = await handelfomSubmit(data, dataFor);
       console.log(res);
+      if (res.data.status === "success") {
+        toast.success("sucess");
+      } else if (res.data.status === "Error") {
+        toast.error(res.data.message);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -36,6 +42,7 @@ export default function FormCard(props) {
 
   return (
     <>
+      <Toaster />
       <div className={styles.card_wrapper}>
         <div className={styles.card_titleBox}>
           <p>{title}</p>

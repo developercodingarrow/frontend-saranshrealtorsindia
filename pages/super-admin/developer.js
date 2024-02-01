@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import DashboardLayout from "../../Layouts/DashBoardLayout/DashboardLayout";
 import TwoCloumTableForm from "../../Layouts/TwoColumLayout/TwoCloumTableForm";
 import {
@@ -13,7 +13,18 @@ import {
 import { BuilderContext } from "../../ContextApi/BuilderContextApi";
 
 export default function DeveloperPage() {
-  const { allBuilders } = useContext(BuilderContext);
+  const {
+    allBuilders,
+    handelAllBuilder,
+    handelDeleteBuilder,
+    toggleAction,
+    settoggleAction,
+    handelnewBuilder,
+  } = useContext(BuilderContext);
+
+  useEffect(() => {
+    handelAllBuilder();
+  }, [toggleAction]);
   return (
     <DashboardLayout>
       <TwoCloumTableForm
@@ -27,6 +38,8 @@ export default function DeveloperPage() {
         tableData={allBuilders}
         SuperAdminColum={SuperAdminColum}
         sideForm={true}
+        modelYesAct={handelDeleteBuilder}
+        createNew={handelnewBuilder}
       >
         <p>Table</p>
       </TwoCloumTableForm>

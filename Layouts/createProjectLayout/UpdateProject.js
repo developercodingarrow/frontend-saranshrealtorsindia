@@ -48,7 +48,7 @@ export default function UpdateProject(props) {
     handelGetProject(id);
   }, [id, actionLoading]);
 
-  console.log("Project Data:", projectData);
+  console.log(projectData);
   console.log(id);
 
   return (

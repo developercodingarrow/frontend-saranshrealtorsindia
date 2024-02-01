@@ -6,15 +6,24 @@ import React, {
   useEffect,
 } from "react";
 
-import { createNewBuilder, allBuilder } from "../Actions/builderAction";
+import {
+  createNewBuilder,
+  allBuilder,
+  deleteBuilder,
+} from "../Actions/builderAction";
+
+import {
+  genericDataHandler,
+  newgenericDataHandler,
+  genericDataAndSlugHandler,
+  genericGetByIDHandler,
+  genericPagePushHandler,
+} from "../Utils/generichandler/generichandler";
 export const BuilderContext = createContext();
 
 export default function BuilderContextAppiProvide({ children }) {
   const [allBuilders, setallBuilders] = useState([]);
-
-  useEffect(() => {
-    handelAllBuilder();
-  }, []);
+  const [toggleAction, settoggleAction] = useState(false);
 
   const handelAllBuilder = async () => {
     try {
@@ -25,8 +34,30 @@ export default function BuilderContextAppiProvide({ children }) {
     }
   };
 
+  const handelnewBuilder = newgenericDataHandler(
+    createNewBuilder,
+    settoggleAction,
+    toggleAction
+  );
+
+  const handelDeleteBuilder = newgenericDataHandler(
+    deleteBuilder,
+    settoggleAction,
+    toggleAction
+  );
+
   return (
-    <BuilderContext.Provider value={{ allBuilders, setallBuilders }}>
+    <BuilderContext.Provider
+      value={{
+        allBuilders,
+        handelAllBuilder,
+        setallBuilders,
+        handelDeleteBuilder,
+        toggleAction,
+        settoggleAction,
+        handelnewBuilder,
+      }}
+    >
       {children}
     </BuilderContext.Provider>
   );

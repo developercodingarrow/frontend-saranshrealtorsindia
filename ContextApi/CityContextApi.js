@@ -6,15 +6,21 @@ import React, {
   useEffect,
 } from "react";
 
-import { createNewCity, allCity } from "../Actions/cityAction";
+import {
+  genericDataHandler,
+  newgenericDataHandler,
+  genericDataAndSlugHandler,
+  genericGetByIDHandler,
+  genericPagePushHandler,
+} from "../Utils/generichandler/generichandler";
+import { getLoginCookies } from "../Actions/authAction";
+import { createNewCity, allCity, deleteCity } from "../Actions/cityAction";
 export const CityContext = createContext();
 
 export default function CityContextAppiProvide({ children }) {
+  const loginToken = getLoginCookies();
   const [allCites, setallCites] = useState([]);
-
-  useEffect(() => {
-    handelAllCites();
-  }, []);
+  const [toggleAction, settoggleAction] = useState(false);
 
   const handelAllCites = async () => {
     try {
@@ -25,8 +31,28 @@ export default function CityContextAppiProvide({ children }) {
     }
   };
 
+  const handelnewCity = newgenericDataHandler(
+    createNewCity,
+    settoggleAction,
+    toggleAction
+  );
+  const handelDeleteCity = newgenericDataHandler(
+    deleteCity,
+    settoggleAction,
+    toggleAction
+  );
+
   return (
-    <CityContext.Provider value={{ allCites, setallCites }}>
+    <CityContext.Provider
+      value={{
+        allCites,
+        setallCites,
+        handelDeleteCity,
+        handelAllCites,
+        handelnewCity,
+        toggleAction,
+      }}
+    >
       {children}
     </CityContext.Provider>
   );

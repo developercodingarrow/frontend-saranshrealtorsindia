@@ -59,6 +59,7 @@
 .option_wraper {
   height: 100%;
   padding: 15px;
+  z-index: 10;
 }
 
 .close_aside_Drawer_toogleBox {
@@ -99,6 +100,7 @@
   top: 0px;
   display: flex;
   align-items: center;
+  z-index: 8;
 }
 
 .navBarTitleBox {

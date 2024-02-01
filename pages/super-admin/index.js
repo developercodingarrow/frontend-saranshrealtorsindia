@@ -7,11 +7,14 @@ import {
   CitysampleData,
   SuperAdminColum,
 } from "../../JsonData/TableData";
+import AdminAuth from "../../private/AdminAuth";
 
 export default function SuperAdminDashBoardPage() {
   return (
+    <AdminAuth> 
     <DashboardLayout>
       <p>Table</p>
     </DashboardLayout>
+    </AdminAuth>
   );
 }
