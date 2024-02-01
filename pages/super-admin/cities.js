@@ -39,7 +39,7 @@ export default function CitiesPage() {
         SuperAdminColum={SuperAdminColum}
         sideForm={true}
         modelYesAct={handelDeleteCity}
-        createNew={handelnewCity}
+        handelcreateNew={handelnewCity}
       />
     </DashboardLayout>
   );

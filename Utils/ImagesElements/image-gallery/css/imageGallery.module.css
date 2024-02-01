@@ -36,6 +36,19 @@
   border-radius: 10px;
   width: 130px;
   height: 200px;
+  position: relative;
+}
+
+.loadingContainer {
+  position: absolute;
+  top: 0;
+  width: 90%;
+  height: 90%;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid green;
 }
 
 .card_body {

@@ -11,10 +11,7 @@ export const CreatecitysFileds = [
   },
 ];
 
-export const CityDetailsApi = {
-  id: 2,
-  //   cityNameName: "Gurgaon",
-};
+export const CityDetailsApi = {};
 
 export const CreateDeveloeprFileds = [
   {
@@ -29,9 +26,7 @@ export const CreateDeveloeprFileds = [
   },
 ];
 
-export const DeveloperDetailsApi = {
-  id: 4,
-};
+export const DeveloperDetailsApi = {};
 
 export const ProjectDetailsApi = {};
 
@@ -175,7 +170,6 @@ export const BlogDetailsApi = {
 
 export const dummyapi = {
   id: 17,
-  //   cityNameName: "Gurgaon",
 };
 
 export const enquireyFormFiled = [
@@ -301,11 +295,10 @@ export const projectDetails = [
 
   {
     id: 8,
-    name: "builder",
-    type: "select",
+    name: "builderName",
+    type: "apiSelectList",
     placeholder: "Builder ",
     label: "Builder/Developer", // Changed 'lable' to 'label'
-    options: ["Godrej", "GLS", "DLF", "Pareena"],
     validation: {
       required: "Builder Name is required.",
     },

@@ -25,6 +25,20 @@
 
 .card_body {
   padding: 10px;
+  position: relative;
+  min-height: 100px;
+  box-sizing: border-box;
+}
+
+.loadingContainer {
+  position: absolute;
+  top: 0;
+  width: 90%;
+  height: 90%;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dropBox {

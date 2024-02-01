@@ -4,6 +4,7 @@ import styles from "./css/createPtojectLayout.module.css";
 import FormCard from "../../Utils/cards/FormCard";
 import { ProjectContext } from "../../ContextApi/ProjectContextApi";
 import { CityContext } from "../../ContextApi/CityContextApi";
+import { BuilderContext } from "../../ContextApi/BuilderContextApi";
 import SingleImageUplaod from "../../Utils/ImagesElements/Single-image-upload/SingleImageUplaod";
 import {
   handelUploadThumblin,
@@ -19,7 +20,8 @@ import TextEditorReactQuill from "../../Utils/textEditor/TextEditorReactQuill";
 export default function UpdateProject(props) {
   const router = useRouter();
   const { id } = router.query;
-  const { allCites } = useContext(CityContext);
+  const { allCites, handelAllCites } = useContext(CityContext);
+  const { allBuilders, handelAllBuilder } = useContext(BuilderContext);
   const {
     loading,
     setloading,
@@ -48,10 +50,9 @@ export default function UpdateProject(props) {
 
   useEffect(() => {
     handelGetProject(id);
+    handelAllCites();
+    handelAllBuilder();
   }, [id, toggleAction]);
-
-  console.log(projectData);
-  console.log(id);
 
   return (
     <>
@@ -68,6 +69,7 @@ export default function UpdateProject(props) {
                   actionType="submit"
                   handelfomSubmit={handelProjectSubmit}
                   dataFor={id}
+                  dynamicData={allBuilders}
                 />
               </div>
 
@@ -94,15 +96,17 @@ export default function UpdateProject(props) {
               </div>
 
               <div>
-                <FormCard
-                  title="Select City"
-                  customeInputs={ProjectLocationFiled}
-                  apiData={projectData}
-                  actionType="submit"
-                  handelfomSubmit={handelProjectSubmit}
-                  dataFor={id}
-                  dynamicData={allCites}
-                />
+                {allCites.length > 0 && (
+                  <FormCard
+                    title="Select City"
+                    customeInputs={ProjectLocationFiled}
+                    apiData={projectData}
+                    actionType="submit"
+                    handelfomSubmit={handelProjectSubmit}
+                    dataFor={id}
+                    dynamicData={allCites}
+                  />
+                )}
               </div>
 
               <div>
@@ -138,9 +142,11 @@ export default function UpdateProject(props) {
                   dataFor={id}
                   apiImages={projectCoverImages}
                   deletAction={handelDeleteCoverImage}
-                  loadingAction={loading}
-                  setloading={setloading}
+                  loading={actionLoading}
+                  setloading={setactionLoading}
                   imageFor="ProjectCoverImage"
+                  refreshstate={toggleAction}
+                  setRefresh={settoggleAction}
                 />
               </div>
 
@@ -154,6 +160,8 @@ export default function UpdateProject(props) {
                   loadingAction={loading}
                   setloading={setloading}
                   imageFor="floorPlanImages"
+                  refreshstate={toggleAction}
+                  setRefresh={settoggleAction}
                 />
               </div>
             </div>

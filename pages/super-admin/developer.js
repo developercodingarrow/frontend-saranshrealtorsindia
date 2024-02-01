@@ -39,7 +39,7 @@ export default function DeveloperPage() {
         SuperAdminColum={SuperAdminColum}
         sideForm={true}
         modelYesAct={handelDeleteBuilder}
-        createNew={handelnewBuilder}
+        handelcreateNew={handelnewBuilder}
       >
         <p>Table</p>
       </TwoCloumTableForm>

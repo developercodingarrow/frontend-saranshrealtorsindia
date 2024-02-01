@@ -61,7 +61,9 @@ export function useCustomForm(apiData) {
       case "apiSelectList":
         InputComponent = SelectElement;
         specificProps = {
-          selectOptions: dynamicData.map((item) => item[input.name]) || [],
+          selectOptions: dynamicData.map((item) => item[input.name]) || [
+            "create data for this filed",
+          ],
           inputLabel: input.label,
           lableStyle: "lable_style",
           inputContainer: "block_container",

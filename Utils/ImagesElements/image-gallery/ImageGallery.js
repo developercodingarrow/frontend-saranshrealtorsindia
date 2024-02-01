@@ -1,9 +1,11 @@
 import React, { useRef, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import styles from "./css/imageGallery.module.css";
 import Image from "next/image";
 import { MdDelete, GoUpload, IoMdCheckmark } from "../../ApplicationIcon";
 import { useImageGalleryUpload } from "../../../custome-hooks/useImageGalleryUpload";
 import ClickBtn from "../../Elements/buttonsElements/ClickBtn";
+import LoadingSpinner from "../../Elements/Loading/Loading";
 
 export default function ImageGallery(props) {
   const {
@@ -14,6 +16,9 @@ export default function ImageGallery(props) {
     apiImages,
     deletAction,
     setloading,
+    loading,
+    refreshstate,
+    setRefresh,
   } = props;
 
   const fileInputRef = useRef(null);
@@ -36,8 +41,13 @@ export default function ImageGallery(props) {
     try {
       setloading(true);
       const res = await handelfomSubmit(selectedImages, imageFor, dataFor);
-      setloading(false);
       console.log(res);
+      if (res.data.status === "success") {
+        toast.success("sucess");
+        setloading(false);
+        setRefresh(!refreshstate);
+        removeImage();
+      }
     } catch (error) {
       setloading(false);
       console.log(error);
@@ -46,20 +56,25 @@ export default function ImageGallery(props) {
 
   const handelDelete = async (id) => {
     try {
+      console.log(id);
       setloading(true);
       const res = await deletAction(id, dataFor);
       console.log(res);
-      setloading(false);
+      if (res.data.status === "Success") {
+        toast.success("sucess");
+        setloading(false);
+        setRefresh(!refreshstate);
+        removeImage();
+      }
     } catch (error) {
       setloading(false);
       console.log(error);
     }
   };
 
-  console.log(apiImages);
-
   return (
     <div className={styles.card_wrapper}>
+      <Toaster />
       <div className={styles.card_titleBox}>
         <p>{title}</p>
       </div>
@@ -70,36 +85,44 @@ export default function ImageGallery(props) {
             {apiImages.map((image, index) => {
               return (
                 <div className={styles.uploadImage_container}>
-                  <div className={styles.uploadImage_body}>
-                    <Image
-                      src={`/project-images/${image.url}`}
-                      alt="Uploaded"
-                      width={350}
-                      height={300}
-                      className={styles.thumblinStyle}
-                    />
-                    <div className={styles.right_IconBox}>
-                      {" "}
-                      <IoMdCheckmark />{" "}
+                  {loading ? (
+                    <div className={styles.loadingContainer}>
+                      <LoadingSpinner />
                     </div>
-                  </div>
-                  <div className={styles.uploadImage_footer}>
-                    <div className={styles.uploadImage_FooterDetails}>
-                      <p className={styles.Uplaoded_imageName}>
-                        {" "}
-                        pathcover image
-                      </p>
-                      <p className={styles.uploed_imageSize}>
-                        {" "}
-                        22 <span>kb</span>{" "}
-                      </p>
-                    </div>
-                    <div className={styles.image_actionBox}>
-                      <div className={styles.image_actionBtn}>
-                        <MdDelete onClick={() => handelDelete(image._id)} />
+                  ) : (
+                    <>
+                      <div className={styles.uploadImage_body}>
+                        <Image
+                          src={`/project-images/${image.url}`}
+                          alt="Uploaded"
+                          width={350}
+                          height={300}
+                          className={styles.thumblinStyle}
+                        />
+                        <div className={styles.right_IconBox}>
+                          {" "}
+                          <IoMdCheckmark />{" "}
+                        </div>
                       </div>
-                    </div>
-                  </div>
+                      <div className={styles.uploadImage_footer}>
+                        <div className={styles.uploadImage_FooterDetails}>
+                          <p className={styles.Uplaoded_imageName}>
+                            {" "}
+                            pathcover image
+                          </p>
+                          <p className={styles.uploed_imageSize}>
+                            {" "}
+                            22 <span>kb</span>{" "}
+                          </p>
+                        </div>
+                        <div className={styles.image_actionBox}>
+                          <div className={styles.image_actionBtn}>
+                            <MdDelete onClick={() => handelDelete(image._id)} />
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               );
             })}
@@ -146,7 +169,11 @@ export default function ImageGallery(props) {
                 <p>Drop File</p>
               </div>
               <div className={styles.uploadBtn_wrapper}>
-                <ClickBtn handelClick={handelUplaod} icon="upload" />
+                <ClickBtn
+                  handelClick={handelUplaod}
+                  icon="upload"
+                  btnDesign="btnStyle"
+                />
               </div>
             </div>
           </div>

@@ -31,6 +31,7 @@ export default function TwoCloumTableForm(props) {
     modelYesAct,
     createNewBtn,
     createNew,
+    handelcreateNew,
   } = props;
 
   const {
@@ -91,7 +92,8 @@ export default function TwoCloumTableForm(props) {
                 customeInputs={formFields}
                 apiData={apiData}
                 actionType={forAction}
-                handelfomSubmit={createNew}
+                handelfomSubmit={handelcreateNew}
+                dataFor={""}
               />
             </div>
           )}

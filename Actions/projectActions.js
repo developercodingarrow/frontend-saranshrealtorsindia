@@ -79,7 +79,7 @@ export const deleteProjectFloorPlanImages = async (id, projectId) => {
   const data = {
     imageId: id,
   };
-  const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/delete-cover-image/${projectId}`;
+  const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/delete-floor-plan-image/${projectId}`;
   const method = "DELETE";
   return performAPIAction(method, url, data);
 };
