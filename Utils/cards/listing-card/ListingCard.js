@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./css/listingcard.module.css";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import sampleImage from "../../../public/web-static-images/sampleImage.png";
+import sampleImage from "../../../public/web-static-images/project-dummy-image.jpg";
 
 import {
   LuIndianRupee,
@@ -31,14 +31,28 @@ export default function ListingCard(props) {
     <div className={styles.card_container}>
       <div className={styles.card_detailsWrapper}>
         <div className={styles.cardImage_container}>
-          {cardImage && (
-            <Image
-              src={`/project-thumblin/${data.ProjectThumblin.url}`}
-              width={250}
-              height={250}
-              alt={data.ProjectThumblin.altText}
-              className={styles.image_Style}
-            />
+          {cardImage ? (
+            <>
+              {cardImage && (
+                <Image
+                  src={`/project-thumblin/${data.ProjectThumblin.url}`}
+                  width={250}
+                  height={250}
+                  alt={data.ProjectThumblin.altText}
+                  className={styles.image_Style}
+                />
+              )}
+            </>
+          ) : (
+            <>
+              <Image
+                src={sampleImage}
+                width={250}
+                height={250}
+                alt={"sample image"}
+                className={styles.image_Style}
+              />
+            </>
           )}
         </div>
         <div className={styles.details_Container}>
@@ -71,24 +85,18 @@ export default function ListingCard(props) {
               <span className={"mainDetail_text"}>{data.city} </span>
             </div>
           </div>
-          <div className={styles.baise_deatils}>
-            <div className={styles.baise_UnitBox}>
-              <div className={styles.baiseBox}>
-                <div className={styles.unitBox_icon}>
-                  {" "}
-                  <TbSofa />
-                </div>
-                <div className={styles.unitBox_details}>
-                  <div className={styles.baiseBox_title}>Unit Types</div>
-                  <div className={styles.baiseBox_value}>
-                    {data.typesofUnits.map((el, index) => (
-                      <span key={index}>{el} </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+          <div className={styles.unitType_box}>
+            <div className={styles.unitIconBox}>
+              {" "}
+              <TbSofa />
             </div>
-
+            <div className={styles.unitValueBox}>
+              {data.typesofUnits.map((el, index) => (
+                <span key={index}>{el} </span>
+              ))}
+            </div>
+          </div>
+          <div className={styles.baise_deatils}>
             <div className={styles.baise_areWarpper}>
               <div className={styles.baiseAreaBox}>
                 <div className={styles.areaBox_icon}>

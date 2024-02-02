@@ -6,12 +6,11 @@
 }
 
 .title {
-  margin-bottom: 5px;
   color: var(--ts-text-color);
-  font-size: 16px;
-  padding: 5px;
+  font-size: 14px;
+  padding: 0px;
   font-family: var(--ts-font-family);
-  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .price_sliderWrapper {

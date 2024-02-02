@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./css/dekstopFillterDrawer.module.css";
 import FillterHeader from "./FillterHeader";
 import { dekstopFillterOptions } from "../../JsonData/fillterFileds";
 import PriceSlider from "../../Utils/data-fillter/price/PriceSlider";
 import { useFillterUrlUpdater } from "../../custome-hooks/useFillterUrlUpdater";
 import CheckBoxFillter from "../../Utils/data-fillter/checkBox/CheckBoxFillter";
+import { CityContext } from "../../ContextApi/CityContextApi";
+import { BuilderContext } from "../../ContextApi/BuilderContextApi";
 
 export default function DekstopFillterDrawer() {
   const {
@@ -18,7 +20,21 @@ export default function DekstopFillterDrawer() {
     handelsearchTermChange,
     searchTerm,
     handleReset,
+    handleUnitTypeChange,
+    selectedunitTypes,
+    handleProjectStatusChange,
+    slectedprojectStatus,
   } = useFillterUrlUpdater();
+  const { allCites, handelAllCites } = useContext(CityContext);
+  const { allBuilders, handelAllBuilder } = useContext(BuilderContext);
+
+  useEffect(() => {
+    handelAllCites();
+    handelAllBuilder();
+  }, []);
+
+  console.log(allBuilders);
+
   const renderOptions = (data) => {
     switch (data.render) {
       case "minPriceRange":
@@ -32,10 +48,11 @@ export default function DekstopFillterDrawer() {
           </div>
         );
       case "cityCheckBox":
+        const cityOptions = allCites.map((cityData) => cityData.city);
         return (
           <div>
             <CheckBoxFillter
-              options={data.options}
+              options={cityOptions}
               checkedItems={selectedCities}
               onCheckboxChange={handleCityChange}
               titel="Select Your City"
@@ -44,13 +61,52 @@ export default function DekstopFillterDrawer() {
         );
 
       case "builderCheckBox":
+        const builderOptions = allBuilders.map(
+          (builderData) => builderData.builderName
+        );
+        return (
+          <div>
+            <CheckBoxFillter
+              options={builderOptions}
+              checkedItems={selectedBuilders}
+              onCheckboxChange={handleBuilderSelection}
+              titel="Select Your Builder"
+            />
+          </div>
+        );
+
+      case "projectStatusCheckBox":
         return (
           <div>
             <CheckBoxFillter
               options={data.options}
-              checkedItems={selectedBuilders}
-              onCheckboxChange={handleBuilderSelection}
-              titel="Select Your Builder"
+              checkedItems={slectedprojectStatus}
+              onCheckboxChange={handleProjectStatusChange}
+              titel="Project Status"
+            />
+          </div>
+        );
+
+      case "circleCheckBox":
+        return (
+          <div>
+            <CheckBoxFillter
+              options={data.options}
+              checkedItems={selectedunitTypes}
+              onCheckboxChange={handleUnitTypeChange}
+              titel="Unit Types"
+            />
+          </div>
+        );
+
+      case "projectTypeCheckBox":
+        return (
+          <div>
+            <CheckBoxFillter
+              options={data.options}
+              checkedItems={selectedCities}
+              onCheckboxChange={handleCityChange}
+              titel="Unit Types"
             />
           </div>
         );

@@ -64,10 +64,22 @@
   box-shadow: var(--ts-box-shadow);
 }
 
-.baise_UnitBox {
-  width: 40%;
-  border: 1px solid var(--ts-separator);
-  padding: 5px;
+.unitType_box {
+  display: flex;
+  column-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.unitIconBox {
+  display: flex;
+  align-items: center;
+}
+
+.unitValueBox {
+  font-weight: var(--ts-font-weight-300);
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: var(--bs-font-family);
 }
 
 .baiseBox {
@@ -102,6 +114,10 @@
 
 .baiseBox_title {
   margin-bottom: 5px;
+  font-weight: var(--ts-font-weight-300);
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: var(--bs-font-family);
 }
 
 .card_actionContainer {

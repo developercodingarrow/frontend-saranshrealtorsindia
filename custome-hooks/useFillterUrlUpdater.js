@@ -9,6 +9,8 @@ export const useFillterUrlUpdater = () => {
   const [selectedBuilders, setSelectedBuilders] = useState([]);
   const [normalizedPrice, setNormalizedPrice] = useState(0);
   const [searchTerm, setsearchTerm] = useState("");
+  const [selectedunitTypes, setselectedunitTypes] = useState([]);
+  const [slectedprojectStatus, setslectedprojectStatus] = useState([]);
 
   const handleSliderChange = (e) => {
     const newNormalizedPrice = Math.round(parseFloat(e.target.value));
@@ -60,6 +62,18 @@ export const useFillterUrlUpdater = () => {
       queryParams.delete("builder");
     }
 
+    if (selectedunitTypes.length > 0) {
+      queryParams.set("unitTypes", selectedunitTypes.join(","));
+    } else {
+      queryParams.delete("unitTypes");
+    }
+
+    if (slectedprojectStatus.length > 0) {
+      queryParams.set("projectStatus", slectedprojectStatus.join(","));
+    } else {
+      queryParams.delete("projectStatus");
+    }
+
     if (searchTerm) {
       queryParams.set("searchTerm", searchTerm);
     } else {
@@ -74,7 +88,13 @@ export const useFillterUrlUpdater = () => {
         query: newQueryString,
       });
     }
-  }, [selectedCities, selectedBuilders, searchTerm]);
+  }, [
+    selectedCities,
+    selectedBuilders,
+    searchTerm,
+    selectedunitTypes,
+    slectedprojectStatus,
+  ]);
 
   const handelsearchTermChange = (e) => {
     setsearchTerm(e.target.value);
@@ -87,6 +107,30 @@ export const useFillterUrlUpdater = () => {
       } else {
         return prevSelectedCities.filter(
           (selectedCity) => selectedCity !== city
+        );
+      }
+    });
+  };
+
+  const handleUnitTypeChange = (units, isChecked) => {
+    setselectedunitTypes((prevSelectedUinites) => {
+      if (isChecked) {
+        return [...prevSelectedUinites, units];
+      } else {
+        return prevSelectedUinites.filter(
+          (selectedUnits) => selectedUnits !== units
+        );
+      }
+    });
+  };
+
+  const handleProjectStatusChange = (staus, isChecked) => {
+    setslectedprojectStatus((prevSelectedStatus) => {
+      if (isChecked) {
+        return [...prevSelectedStatus, staus];
+      } else {
+        return prevSelectedStatus.filter(
+          (selectedStatus) => selectedStatus !== staus
         );
       }
     });
@@ -123,5 +167,9 @@ export const useFillterUrlUpdater = () => {
     handelsearchTermChange,
     searchTerm,
     handleReset,
+    handleUnitTypeChange,
+    selectedunitTypes,
+    handleProjectStatusChange,
+    slectedprojectStatus,
   };
 };

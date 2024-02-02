@@ -90,12 +90,22 @@ export const dekstopFillterOptions = [
   },
 
   {
-    id: 5,
+    id: 6,
     name: "projectStatus",
     type: "checkbox",
     render: "projectStatusCheckBox",
-    label: ["Upcoming Project", "Ready to move", "under construction"],
-    options: ["upcoming Project", "ready to move", "under construction"],
+    label: ["upcoming Project", "ready to move", "under constructor"],
+    options: ["upcoming Project", "ready to move", "under constructor"],
     placeholder: "Project Status",
+  },
+
+  {
+    id: 7,
+    name: "projectType",
+    type: "checkbox",
+    render: "projectTypeCheckBox",
+    label: ["Affordable", "Luxury", "Ultra Luxury"],
+    options: ["affordable", "luxury", "ultra luxury"],
+    placeholder: "Bulders",
   },
 ];
