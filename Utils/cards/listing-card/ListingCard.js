@@ -17,10 +17,12 @@ import {
   IoArrowRedoOutline,
 } from "../../ApplicationIcon";
 import ActionBtn from "../../Elements/buttonsElements/ActionBtn";
+import usePriceFormatter from "../../../custome-hooks/usePriceFormatter";
 
 export default function ListingCard(props) {
   const router = useRouter();
   const { data } = props;
+  const { formatPrice } = usePriceFormatter();
 
   const cardImage = data.ProjectThumblin;
 
@@ -127,7 +129,7 @@ export default function ListingCard(props) {
         <div className={styles.dekstop_actionBox}>
           <div className={styles.card_priceBox}>
             <div>
-              {data.price} <span>{data.pricePrefix}</span>
+              {formatPrice(data.price)} <span>{data.pricePrefix}</span>
             </div>
             <div>₹ {data.basicPrice}</div>
           </div>
