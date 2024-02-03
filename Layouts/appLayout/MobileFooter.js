@@ -12,7 +12,7 @@ import {
 export default function MobileFooter() {
   return (
     <div className={styles.mobile_footer}>
-      <Link href="/property" className={styles.footerTab_link}>
+      <Link href="/" className={styles.footerTab_link}>
         <span className={styles.footerTab_icon}>
           <FcHome />
         </span>

@@ -51,9 +51,10 @@ export default function ProjectListingLayout({ children }) {
         </div>
 
         <div className={styles.projectListing_Container}>
-          {allListing?.map((project, i) => {
-            return <ListingCard data={project} key={project._id} />;
-          })}
+          {allListing &&
+            allListing?.map((project, i) => {
+              return <ListingCard data={project} key={project._id} />;
+            })}
         </div>
         <div className={styles.listing_rightSide}>
           <EnquireForm />
