@@ -10,6 +10,7 @@ export default function RadioElement(props) {
     radioTitleGap,
     radio_textgap,
     radioOptionBox,
+    inputLabel,
   } = props;
 
   const handleRadioChange = (option) => {
@@ -19,7 +20,7 @@ export default function RadioElement(props) {
   const radioContainer = `${styles[radiostyle]} ${styles[radioTitleGap]}`;
   return (
     <div className={radioContainer}>
-      <div className={styles.radio_title}>lable</div>
+      <div className={styles.radio_title}>{inputLabel}</div>
       <div className={styles[radioOptionBox]}>
         {radioOptions.map((option, index) => (
           <div

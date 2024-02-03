@@ -50,3 +50,29 @@ export const asidefooterLink = [
     link: "/",
   },
 ];
+
+export const dekstopNavBarTab = [
+  {
+    name: "Home",
+    hrfLink: "/",
+  },
+  {
+    name: "About us",
+    hrfLink: "/about-us",
+  },
+
+  {
+    name: "Project",
+    hrfLink: "/property",
+  },
+
+  {
+    name: "Blog",
+    hrfLink: "/blog",
+  },
+
+  {
+    name: "Contat us",
+    hrfLink: "/contact-us",
+  },
+];

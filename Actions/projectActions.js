@@ -43,6 +43,20 @@ export const deleteProject = async (requestData) => {
   return performAPIAction(method, url, data);
 };
 
+export const updateFeatureProject = async (projectId) => {
+  const data = {};
+  const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/update-feature-project/${projectId}`;
+  const method = "patch";
+  return performAPIAction(method, url, data);
+};
+
+export const isActiveProject = async (projectId) => {
+  const data = {};
+  const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/update-is-active/${projectId}`;
+  const method = "patch";
+  return performAPIAction(method, url, data);
+};
+
 export const ProjectUploadThumblin = async (formData, id) => {
   console.log(id);
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/update-project-thumblin/${id}`;

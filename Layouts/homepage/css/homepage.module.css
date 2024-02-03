@@ -22,7 +22,7 @@
 
 .team_section,
 .testimonials_section {
-  padding: 100px;
+  padding: 100px 250px;
 }
 
 @media screen and (max-width: 992px) {

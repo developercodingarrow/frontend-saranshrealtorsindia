@@ -6,14 +6,17 @@
 
 .inLine_customCheckbox_wrapper {
   display: flex;
+  flex-direction: column;
   column-gap: var(--ts-gap-20);
   row-gap: var(--ts-gap-20);
+  margin-bottom: 20px;
 }
 
 .inLine_checkBox_container {
   display: flex;
   row-gap: var(--ts-gap-20);
   column-gap: var(--ts-gap-20);
+  flex-wrap: wrap;
 }
 
 /* Block style Part */
@@ -67,4 +70,17 @@
 }
 .checkedMark {
   color: var(--ts-primary); /* Color for the checkmark */
+}
+
+@media screen and (max-width: 992px) {
+  .inLine_customCheckbox_wrapper {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .inLine_checkBox_container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
 }

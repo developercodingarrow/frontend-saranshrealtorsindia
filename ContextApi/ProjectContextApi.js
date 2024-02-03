@@ -83,6 +83,8 @@ export default function ProjectContextApiProvider({ children }) {
           projectArea: project.projectArea || "",
           basicPrice: project.basicPrice || "",
           projectDescription: project.projectDescription,
+          isActive: project.isActive,
+          featured: project.featured,
         });
 
         // Set the ProjectCoverImage data state

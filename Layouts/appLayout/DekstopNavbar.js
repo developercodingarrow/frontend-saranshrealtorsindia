@@ -2,27 +2,8 @@ import React from "react";
 import styles from "./css/dekstopNavbar.module.css";
 import Image from "next/image";
 import logo from "../../public/web-static-images/saransh logo.png";
+import { dekstopNavBarTab } from "../../JsonData/PageLinks";
 import Link from "next/link";
-const pagleTabs = [
-  {
-    name: "Home",
-  },
-  {
-    name: "About us",
-  },
-
-  {
-    name: "Project",
-  },
-
-  {
-    name: "Blog",
-  },
-
-  {
-    name: "Contat us",
-  },
-];
 
 export default function DekstopNavbar() {
   return (
@@ -37,10 +18,10 @@ export default function DekstopNavbar() {
       </div>
 
       <div className={styles.pageTab_container}>
-        {pagleTabs.map((el) => {
+        {dekstopNavBarTab.map((el) => {
           return (
             <div className={styles.pageTabBox}>
-              <Link href={"/"} className={styles.pageTabLink}>
+              <Link href={`${el.hrfLink}`} className={styles.pageTabLink}>
                 {el.name}
               </Link>
             </div>

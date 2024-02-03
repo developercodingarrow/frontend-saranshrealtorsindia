@@ -4,6 +4,7 @@ import { FaBars } from "../../Utils/ApplicationIcon";
 import { getClassName } from "./DashBoardResposiveLogic";
 import { UserDashBoardContext } from "../../ContextApi/UserDashBoardContextApi";
 import AsideOptions from "./AsideOptions";
+import MobileFooter from "../appLayout/MobileFooter";
 
 export default function DashboardLayout({ children }) {
   const { uDSideBarToggle, handelUserSideBarToggle, handelOpenSideBarDrawer } =
@@ -39,6 +40,11 @@ export default function DashboardLayout({ children }) {
               </div>
             </div>
             <div className={styles.dynimic_content_Container}>{children}</div>
+            <div className={styles.footer_container}>
+              <div className={styles.mobile_footerWrapper}>
+                <MobileFooter />
+              </div>
+            </div>
           </div>
         </div>
       </div>

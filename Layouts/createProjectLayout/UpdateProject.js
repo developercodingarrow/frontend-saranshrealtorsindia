@@ -16,6 +16,11 @@ import {
 } from "../../Utils/ImagesElements/imageHandlers";
 import ImageGallery from "../../Utils/ImagesElements/image-gallery/ImageGallery";
 import TextEditorReactQuill from "../../Utils/textEditor/TextEditorReactQuill";
+import SwitchBtn from "../../Utils/Elements/buttonsElements/SwitchBtn";
+import {
+  updateFeatureProject,
+  isActiveProject,
+} from "../../Actions/projectActions";
 
 export default function UpdateProject(props) {
   const router = useRouter();
@@ -54,10 +59,41 @@ export default function UpdateProject(props) {
     handelAllBuilder();
   }, [id, toggleAction]);
 
+  console.log(projectData);
+
   return (
     <>
       <div className={styles.mainContainer}>
-        <div className={styles.pageTitle}>{pageTitle}</div>
+        <div className={styles.pageTopBar}>
+          <div className={styles.pageTitle}>{pageTitle}</div>
+          <div className={styles.swicth_btnContainer}>
+            <div className={styles.switchBtn_warpper}>
+              <span>Feature</span>
+              <span>
+                {projectData && (
+                  <SwitchBtn
+                    btnSatus={projectData.featured}
+                    dataId={id}
+                    handelToggel={updateFeatureProject}
+                  />
+                )}
+              </span>
+            </div>
+            <div className={styles.switchBtn_warpper}>
+              <span>status</span>
+              <span>
+                {projectData && (
+                  <SwitchBtn
+                    btnSatus={projectData.isActive}
+                    dataId={id}
+                    handelToggel={isActiveProject}
+                  />
+                )}
+              </span>
+            </div>
+          </div>
+        </div>
+
         {Object.keys(projectData).length > 0 && (
           <div className={styles.componentWarper}>
             <div className={styles.left_Side}>
