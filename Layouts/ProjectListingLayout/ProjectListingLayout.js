@@ -13,8 +13,6 @@ import DekstopFillterDrawer from "./DekstopFillterDrawer";
 import { AppContext } from "../../ContextApi/AppContextApi";
 import ListingCard from "../../Utils/cards/listing-card/ListingCard";
 import ListingSearch from "../../Utils/data-fillter/searchInputs/listing-search/ListingSearch";
-
-import Image from "next/image";
 import { ListingContext } from "../../ContextApi/userinterface/ListingContextApi";
 import ListingNavBar from "./ListingNavBar";
 import AppDrawer from "../appLayout/AppDrawer";
@@ -27,6 +25,7 @@ export default function ProjectListingLayout({ children }) {
     useContext(AppContext);
   const { allListing } = useContext(ListingContext);
 
+  // console.log(allListing);
   return (
     <div className={styles.main_container}>
       <AppDrawer />

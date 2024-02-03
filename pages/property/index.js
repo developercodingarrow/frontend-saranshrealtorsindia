@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import ProjectListingLayout from "../../Layouts/ProjectListingLayout/ProjectListingLayout";
 import { ListingContext } from "../../ContextApi/userinterface/ListingContextApi";
 import { fillterdProjetcs } from "../../Actions/projectActions";
 
 export default function PropertyListingPage({ initialProject }) {
-  const { allListing, setallListing, loadingProject, setloadingProject } =
-    useContext(ListingContext);
+  const { allListing, setallListing } = useContext(ListingContext);
 
   setallListing(initialProject);
 
@@ -25,7 +24,7 @@ export async function getServerSideProps(context) {
     if (result.data.status === "success") {
       return {
         props: {
-          initialProject: result.data.result,
+          initialProject: result.data.result || [],
         },
       };
     }

@@ -69,6 +69,14 @@ body {
   text-transform: uppercase;
 }
 
+.global_subHeading2 {
+  font-weight: var(--ts-font-weight-400);
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: var(--bs-font-family);
+  text-transform: uppercase;
+}
+
 .global_contentStyle {
   font-weight: var(--ts-font-weight-300);
   font-size: 16px;

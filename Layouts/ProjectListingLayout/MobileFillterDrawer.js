@@ -12,7 +12,8 @@ import { useFillterUrlUpdater } from "../../custome-hooks/useFillterUrlUpdater";
 import CheckBoxFillter from "../../Utils/data-fillter/checkBox/CheckBoxFillter";
 import FillterInput from "../../Utils/data-fillter/searchInputs/FillterInput";
 import FillterHeader from "./FillterHeader";
-
+import { CityContext } from "../../ContextApi/CityContextApi";
+import { BuilderContext } from "../../ContextApi/BuilderContextApi";
 export default function MobileFillterDrawer() {
   const [activeTab, setActiveTab] = useState("searchTerm");
   const {
@@ -26,7 +27,14 @@ export default function MobileFillterDrawer() {
     normalizedPrice,
     handelsearchTermChange,
     searchTerm,
+    selectedunitTypes,
+    handleUnitTypeChange,
+    slectedprojectStatus,
+    handleProjectStatusChange,
+    setsearchTerm,
   } = useFillterUrlUpdater();
+  const { allCites, handelAllCites } = useContext(CityContext);
+  const { allBuilders, handelAllBuilder } = useContext(BuilderContext);
 
   const renderOptions = () => {
     const activeTabData = tabOptions.find(
@@ -46,19 +54,21 @@ export default function MobileFillterDrawer() {
         );
       case "projectStatusCheckBox":
         return (
-          <CheckBoxFillter
-            label={label}
-            options={options}
-            checkedItems={checkedItems}
-            onCheckboxChange={handleCheckboxChange}
-            titel="Select Your City"
-          />
+          <div>
+            <CheckBoxFillter
+              options={options}
+              checkedItems={slectedprojectStatus}
+              onCheckboxChange={handleProjectStatusChange}
+              titel="Project Status"
+            />
+          </div>
         );
       case "cityCheckBox":
+        const cityOptions = allCites.map((cityData) => cityData.city);
         return (
           <CheckBoxFillter
             label={label}
-            options={options}
+            options={cityOptions}
             checkedItems={selectedCities}
             onCheckboxChange={handleCityChange}
             titel="Select Your City"
@@ -66,10 +76,13 @@ export default function MobileFillterDrawer() {
         );
 
       case "builderCheckBox":
+        const builderOptions = allBuilders.map(
+          (builderData) => builderData.builderName
+        );
         return (
           <CheckBoxFillter
             label={label}
-            options={options}
+            options={builderOptions}
             checkedItems={selectedBuilders}
             onCheckboxChange={handleBuilderSelection}
             titel="Select Your builder"
@@ -79,16 +92,17 @@ export default function MobileFillterDrawer() {
         return (
           <FillterInput
             handelsearch={handelsearchTermChange}
+            setsearchTerm={setsearchTerm}
             searchTerm={searchTerm}
           />
         );
       case "circleCheckBox":
         return (
           <ButtonCheckBox
-            label={label}
+            label={options}
             options={options}
-            checkedItems={checkedItems}
-            onCheckboxChange={handleCheckboxChange}
+            checkedItems={selectedunitTypes}
+            onCheckboxChange={handleUnitTypeChange}
           />
         );
       default:

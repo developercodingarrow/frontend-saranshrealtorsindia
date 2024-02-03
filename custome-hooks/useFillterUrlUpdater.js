@@ -96,8 +96,9 @@ export const useFillterUrlUpdater = () => {
     slectedprojectStatus,
   ]);
 
-  const handelsearchTermChange = (e) => {
-    setsearchTerm(e.target.value);
+  const handelsearchTermChange = (value) => {
+    console.log(value);
+    setsearchTerm(value);
   };
 
   const handleCityChange = (city, isChecked) => {
@@ -153,6 +154,7 @@ export const useFillterUrlUpdater = () => {
     setSelectedBuilders([]);
     setNormalizedPrice(0);
     setsearchTerm("");
+
     // Clear query parameters by replacing the URL
     router.replace(router.pathname);
   };
@@ -166,6 +168,7 @@ export const useFillterUrlUpdater = () => {
     normalizedPrice,
     handelsearchTermChange,
     searchTerm,
+    setsearchTerm,
     handleReset,
     handleUnitTypeChange,
     selectedunitTypes,

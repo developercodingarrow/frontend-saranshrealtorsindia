@@ -33,8 +33,6 @@ export default function DekstopFillterDrawer() {
     handelAllBuilder();
   }, []);
 
-  console.log(allBuilders);
-
   const renderOptions = (data) => {
     switch (data.render) {
       case "minPriceRange":
