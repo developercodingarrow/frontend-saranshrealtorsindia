@@ -4,22 +4,26 @@ import {
   ImageAPIAction,
 } from "./performAPIAction";
 
+import { getLoginCookies } from "./authAction";
+
+const loginToken = getLoginCookies();
+
 // API for CREATE NEW USER
 export const createNewProject = async (requestData) => {
   const url =
     "http://localhost:8000/api/v1/saranshrealtorsindia/project/create-project";
   const method = "post";
-  return performAPIAction(method, url, requestData);
+  return performAPIAction(method, url, requestData, loginToken);
 };
 
 export const getProjectByID = async (id) => {
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/get-single-project/${id}`;
-  return performGetAPIAction(url);
+  return performGetAPIAction(url, loginToken);
 };
 
 export const getAllProjetcs = async () => {
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/get-all-projects`;
-  return performGetAPIAction(url);
+  return performGetAPIAction(url, loginToken);
 };
 
 export const fillterdProjetcs = async (queryObj) => {
@@ -40,42 +44,42 @@ export const deleteProject = async (requestData) => {
   const url =
     "http://localhost:8000/api/v1/saranshrealtorsindia/project/delete-project";
   const method = "DELETE";
-  return performAPIAction(method, url, data);
+  return performAPIAction(method, url, data, loginToken);
 };
 
 export const updateFeatureProject = async (projectId) => {
   const data = {};
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/update-feature-project/${projectId}`;
   const method = "patch";
-  return performAPIAction(method, url, data);
+  return performAPIAction(method, url, data, loginToken);
 };
 
 export const isActiveProject = async (projectId) => {
   const data = {};
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/update-is-active/${projectId}`;
   const method = "patch";
-  return performAPIAction(method, url, data);
+  return performAPIAction(method, url, data, loginToken);
 };
 
 export const ProjectUploadThumblin = async (formData, id) => {
   console.log(id);
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/update-project-thumblin/${id}`;
   const method = "patch";
-  return ImageAPIAction(method, url, formData);
+  return ImageAPIAction(method, url, formData, loginToken);
 };
 
 export const ProjectUploadCoverImages = async (formData, id) => {
   console.log(id);
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/update-project-cover-images/${id}`;
   const method = "patch";
-  return ImageAPIAction(method, url, formData);
+  return ImageAPIAction(method, url, formData, loginToken);
 };
 
 export const ProjectFloorPlanImages = async (formData, id) => {
   console.log(id);
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/update-project-floor-plan-images/${id}`;
   const method = "patch";
-  return ImageAPIAction(method, url, formData);
+  return ImageAPIAction(method, url, formData, loginToken);
 };
 
 export const deleteProjectCoverImages = async (id, projectId) => {
@@ -85,7 +89,7 @@ export const deleteProjectCoverImages = async (id, projectId) => {
   };
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/delete-cover-image/${projectId}`;
   const method = "DELETE";
-  return performAPIAction(method, url, data);
+  return performAPIAction(method, url, data, loginToken);
 };
 
 export const deleteProjectFloorPlanImages = async (id, projectId) => {
@@ -95,7 +99,7 @@ export const deleteProjectFloorPlanImages = async (id, projectId) => {
   };
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/delete-floor-plan-image/${projectId}`;
   const method = "DELETE";
-  return performAPIAction(method, url, data);
+  return performAPIAction(method, url, data, loginToken);
 };
 
 export const deleteProjectThumblinImages = async (id, projectId) => {
@@ -103,12 +107,12 @@ export const deleteProjectThumblinImages = async (id, projectId) => {
   const data = {};
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/delete-project-thumblin/${projectId}`;
   const method = "DELETE";
-  return performAPIAction(method, url, data);
+  return performAPIAction(method, url, data, loginToken);
 };
 
 export const UpdateProjectDeatils = async (requestData, projectId) => {
   console.log(requestData);
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/project/update-project/${projectId}`;
   const method = "patch";
-  return performAPIAction(method, url, requestData);
+  return performAPIAction(method, url, requestData, loginToken);
 };

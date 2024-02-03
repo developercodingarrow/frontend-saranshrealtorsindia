@@ -168,9 +168,7 @@ export const BlogDetailsApi = {
   //   cityNameName: "Gurgaon",
 };
 
-export const dummyapi = {
-  id: 17,
-};
+export const dummyapi = {};
 
 export const enquireyFormFiled = [
   {
@@ -273,6 +271,17 @@ export const projectDetails = [
 
   {
     id: 6,
+    name: "propertytype",
+    type: "radio",
+    label: "Property Type",
+    options: ["affordable", "luxury"],
+    validation: {
+      required: "Please select a Project Status.",
+    },
+  },
+
+  {
+    id: 7,
     name: "projectStatus",
     type: "radio",
     label: "Project Status",
@@ -283,7 +292,7 @@ export const projectDetails = [
   },
 
   {
-    id: 7,
+    id: 8,
     name: "typesofUnits",
     type: "checkbox",
     label: "project Units",
@@ -294,7 +303,7 @@ export const projectDetails = [
   },
 
   {
-    id: 8,
+    id: 9,
     name: "builderName",
     type: "apiSelectList",
     placeholder: "Builder ",
@@ -304,7 +313,7 @@ export const projectDetails = [
     },
   },
   {
-    id: 9,
+    id: 10,
     name: "reraNo",
     type: "text",
     placeholder: "RERA NO",

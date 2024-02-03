@@ -6,6 +6,7 @@ import CityContextAppiProvide from "../ContextApi/CityContextApi";
 import FillterContextAppiProvide from "../ContextApi/FillterContext";
 import ProjectContextApiProvider from "../ContextApi/ProjectContextApi";
 import UserDashBoardContextApi from "../ContextApi/UserDashBoardContextApi";
+import EnquireyContextAppiProvide from "../ContextApi/enquireyContectApi";
 import ListingContextAppiProvide from "../ContextApi/userinterface/ListingContextApi";
 import UIBlogContextApiProvider from "../ContextApi/userinterface/UiBlogContectApi";
 import "../styles/globals.css";
@@ -23,7 +24,9 @@ export default function App({ Component, pageProps }) {
                     <BuilderContextAppiProvide>
                       <ListingContextAppiProvide>
                         <UIBlogContextApiProvider>
-                          <Component {...pageProps} />;
+                          <EnquireyContextAppiProvide>
+                            <Component {...pageProps} />;
+                          </EnquireyContextAppiProvide>
                         </UIBlogContextApiProvider>
                       </ListingContextAppiProvide>
                     </BuilderContextAppiProvide>
