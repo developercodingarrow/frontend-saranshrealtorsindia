@@ -13,5 +13,15 @@ export const createNewEnquirey = async (requestData) => {
 
 export const allEnquire = async () => {
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/enquiry/all-enquirey`;
-  return performGetAPIAction(url);
+  return performGetAPIAction(url, loginToken);
+};
+
+export const deleteEnquire = async (requestData) => {
+  const data = {
+    id: requestData,
+  };
+  const url =
+    "http://localhost:8000/api/v1/saranshrealtorsindia/enquiry/delete-enquery";
+  const method = "DELETE";
+  return performAPIAction(method, url, data, loginToken);
 };

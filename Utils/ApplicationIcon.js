@@ -3,6 +3,7 @@ import {
   AiOutlineFacebook,
   AiOutlineClose,
   AiOutlineDashboard,
+  AiOutlineNotification,
 } from "react-icons/ai";
 import {
   FaXTwitter,
@@ -128,5 +129,6 @@ export {
   BiCctv,
   MdOutlineSportsTennis,
   ImPower,
+  AiOutlineNotification,
   // Add more icons as needed
 };

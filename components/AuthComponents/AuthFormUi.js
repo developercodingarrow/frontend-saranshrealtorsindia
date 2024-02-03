@@ -47,6 +47,11 @@ export default function AuthFormUi(props) {
         setloading(false);
       }
 
+      if (result.data.apiFor === "opt-verification") {
+        setloading(false);
+        router.push("/");
+      }
+
       if (result.data.apiFor === "Login") {
         authenticate(result.data.user, result.data.token, () => {
           router.push("/super-admin");

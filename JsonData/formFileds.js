@@ -173,7 +173,7 @@ export const dummyapi = {};
 export const enquireyFormFiled = [
   {
     id: 18,
-    name: "name",
+    name: "userName",
     type: "text",
     placeholder: "Enter Your Name",
     lable: "Name",
@@ -183,7 +183,7 @@ export const enquireyFormFiled = [
   },
   {
     id: 19,
-    name: "email",
+    name: "userEmail",
     type: "text",
     placeholder: "Enter Your E-mail",
     lable: "E-mail",
@@ -194,7 +194,7 @@ export const enquireyFormFiled = [
 
   {
     id: 20,
-    name: "number",
+    name: "userNumber",
     type: "text",
     placeholder: "Enter Your Mobile Number",
     lable: "Mobile Number",
@@ -205,7 +205,7 @@ export const enquireyFormFiled = [
 
   {
     id: 21,
-    name: "message",
+    name: "userMessage",
     type: "textarea",
     placeholder: "Message",
     lable: "Message",

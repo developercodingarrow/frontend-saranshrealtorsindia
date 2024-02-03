@@ -4,6 +4,7 @@ import {
   FaMagnifyingGlassLocation,
   FaPersonShelter,
   IoNewspaperOutline,
+  AiOutlineNotification,
 } from "../Utils/ApplicationIcon";
 
 export const asidebarOptions = [
@@ -31,6 +32,18 @@ export const asidebarOptions = [
     name: "DEVELOPER",
     iconComponent: FaPersonShelter, // Use the imported component
     link: "/super-admin/developer",
+  },
+
+  {
+    name: "Enquries",
+    iconComponent: AiOutlineNotification, // Use the imported component
+    link: "/super-admin/enquries",
+  },
+
+  {
+    name: "Create Admin",
+    iconComponent: AiOutlineNotification, // Use the imported component
+    link: "/super-admin/admins/admin-registration",
   },
 ];
 

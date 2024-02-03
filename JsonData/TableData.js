@@ -276,3 +276,14 @@ export const projectDataColoum = [
   { label: "View", key: "_id", component: "view" },
   { label: "Edit", key: "slug", component: "update" },
 ];
+
+export const enquiesTableColumn = [
+  { label: "S No", key: "_id", component: "number" },
+  { label: "Date", key: "updatedAt", component: "date" },
+  { label: "User Name", key: "userName", component: "text" },
+  { label: "Email", key: "userEmail", component: "text" },
+  { label: "Number", key: "userNumber", component: "text" },
+  { label: "Enqury page", key: "enquryPath", component: "text" },
+  { label: "Message", key: "userMessage", component: "text" },
+  { label: "DELETE", key: "_id", component: "delete" },
+];
