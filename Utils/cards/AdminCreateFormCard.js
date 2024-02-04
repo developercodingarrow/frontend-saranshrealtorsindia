@@ -24,8 +24,8 @@ export default function AdminCreateFormCard(props) {
     errors,
   } = useCustomeAuthFormLogic(customeInputs, formType);
 
-  const handleForm = () => {
-    handelformSubmit();
+  const handleForm = (data) => {
+    handelformSubmit(data);
   };
 
   return (

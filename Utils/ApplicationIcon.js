@@ -59,6 +59,7 @@ import {
   IoArrowRedoOutline,
   IoGameControllerOutline,
   IoBicycleSharp,
+  IoCheckmarkCircleSharp,
 } from "react-icons/io5";
 import { FcHome } from "react-icons/fc";
 import { TbSofa } from "react-icons/tb";
@@ -130,5 +131,6 @@ export {
   MdOutlineSportsTennis,
   ImPower,
   AiOutlineNotification,
+  IoCheckmarkCircleSharp,
   // Add more icons as needed
 };

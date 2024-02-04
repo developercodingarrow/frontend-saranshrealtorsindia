@@ -84,6 +84,8 @@ export const createNewUser = async (requestData) => {
   return performAPIAction(method, url, requestData);
 };
 
+
+
 // API FOR OTP VERIFICATION
 export const verifyOtp = async (requestData, verifyToken) => {
   const url = `http://localhost:8000/api/v1/saranshrealtorsindia/user/verify-otp/${verifyToken}`;

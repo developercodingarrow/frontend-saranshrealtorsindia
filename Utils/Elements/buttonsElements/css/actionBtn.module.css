@@ -69,3 +69,8 @@
   background: #ed6789eb;
   color: white;
 }
+
+.doneBtnPadding {
+  padding: 3px 10px;
+  border-radius: 5px;
+}

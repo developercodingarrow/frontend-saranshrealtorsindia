@@ -287,3 +287,11 @@ export const enquiesTableColumn = [
   { label: "Message", key: "userMessage", component: "text" },
   { label: "DELETE", key: "_id", component: "delete" },
 ];
+
+export const newAdminTableColumn = [
+  { label: "S No", key: "_id", component: "number" },
+  { label: "Date", key: "updatedAt", component: "date" },
+  { label: "Name", key: "name", component: "text" },
+  { label: "Email", key: "email", component: "text" },
+  { label: "Role", key: "role", component: "text" },
+];
