@@ -8,13 +8,14 @@ import {
   SuperAdminColum,
 } from "../../JsonData/TableData";
 import AdminAuth from "../../private/AdminAuth";
+import DashBoardStatsLayout from "../../Layouts/TwoColumLayout/DashBoardStatsLayout";
 
 export default function SuperAdminDashBoardPage() {
   return (
-    <AdminAuth> 
-    <DashboardLayout>
-      <p>Table</p>
-    </DashboardLayout>
+    <AdminAuth>
+      <DashboardLayout>
+        <DashBoardStatsLayout />
+      </DashboardLayout>
     </AdminAuth>
   );
 }
