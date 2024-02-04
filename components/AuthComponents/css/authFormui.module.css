@@ -45,3 +45,12 @@
 .SubmitbtnBox {
   margin-bottom: var(--ts-20-px);
 }
+
+@media screen and (max-width: 992px) {
+  .mainContainer {
+    padding: 10px;
+  }
+  .formContainer {
+    width: 100%;
+  }
+}

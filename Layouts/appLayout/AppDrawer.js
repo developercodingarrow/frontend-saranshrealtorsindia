@@ -4,6 +4,7 @@ import Image from "next/image";
 import logo from "../../public/web-static-images/saransh logo.png";
 import { AppContext } from "../../ContextApi/AppContextApi";
 import Link from "next/link";
+import { dekstopNavBarTab } from "../../JsonData/PageLinks";
 const pageLink = [
   {
     name: "Home",
@@ -53,10 +54,10 @@ export default function AppDrawer() {
 
         <div className={styles.optionTab_wrapper}>
           <div className={styles.top_options}>
-            {pageLink.map((el) => {
+            {dekstopNavBarTab.map((el) => {
               return (
                 <div className={styles.tabs}>
-                  <Link href={"/"} className={styles.tabLinkStyle}>
+                  <Link href={`${el.hrfLink}`} className={styles.tabLinkStyle}>
                     {" "}
                     {el.name}{" "}
                   </Link>

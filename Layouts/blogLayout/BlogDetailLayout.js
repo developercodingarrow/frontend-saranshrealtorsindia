@@ -9,6 +9,8 @@ import Link from "next/link";
 import EnquireForm from "../../Utils/cards/EnquireForm";
 import SideBar from "../../Utils/cards/sideBarCard/SideBar";
 import { UIBlogContext } from "../../ContextApi/userinterface/UiBlogContectApi";
+import DekstopFooter from "../appLayout/DekstopFooter";
+import MobileFooter from "../appLayout/MobileFooter";
 
 export default function BlogDetailLayout({ children }) {
   const { showSideBar, showAppDrawer, toggleSideBar, toggleAppDrawer } =
@@ -55,6 +57,15 @@ export default function BlogDetailLayout({ children }) {
           <div className={styles.Blog_sidebar}>
             <SideBar title="Recent Blog" />
           </div>
+        </div>
+      </div>
+
+      <div className={styles.footer_container}>
+        <div className={styles.dekstop_footerWrapper}>
+          <DekstopFooter />
+        </div>
+        <div className={styles.mobile_footerWrapper}>
+          <MobileFooter />
         </div>
       </div>
     </div>
