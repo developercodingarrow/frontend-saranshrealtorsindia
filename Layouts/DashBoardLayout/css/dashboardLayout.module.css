@@ -100,7 +100,7 @@
   top: 0px;
   display: flex;
   align-items: center;
-  z-index: 8;
+  z-index: 1;
 }
 
 .navBarTitleBox {
@@ -119,6 +119,7 @@
   top: 0px;
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 .navToogle_Box {

@@ -34,7 +34,6 @@ export default function EnquireForm() {
       console.log(res);
       if (res.data.status === "success") {
         toast.success("Thank You for your Enquirey");
-        alert("Thank You for your Enquirey");
       } else if (res.data.status === "Error") {
         toast.error(res.data.message);
       }

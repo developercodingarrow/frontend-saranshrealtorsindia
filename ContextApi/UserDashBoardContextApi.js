@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 export const UserDashBoardContext = createContext();
 
 export default function UserDashBoardContextApi({ children }) {
-  const [uDSideBarToggle, setuDSideBarToggle] = useState(true);
+  const [uDSideBarToggle, setuDSideBarToggle] = useState(false);
 
   const handelUserSideBarToggle = () => {
     setuDSideBarToggle(!uDSideBarToggle);

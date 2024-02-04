@@ -118,3 +118,9 @@
 .image_actionBtn:hover {
   color: var(--ts-disable-primary);
 }
+
+@media screen and (max-width: 992px) {
+  .card_wrapper {
+    margin: 10px 0px;
+  }
+}
